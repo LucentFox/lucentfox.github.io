@@ -1,6 +1,6 @@
 title: Home
 description: A loosely organized collection of notes, guides, and the occasional rant.
-theme: jekyll-theme-midnight
+theme: jekyll-theme-modernist
 
 # Markdown settings
 markdown: kramdown
