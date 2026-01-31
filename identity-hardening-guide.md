@@ -100,6 +100,8 @@ Passkeys are a newer technology that replaces passwords entirely. Instead of typ
 
 > **What if I lose my phone?** Passkeys can sync across your devices through your password manager or iCloud/Google account. If you lose everything, you'll fall back to password recovery, which is why you should keep your password manager and recovery options in good shape.
 
+> **Do passkeys replace MFA?** Not quite. Passkeys are MFA in themselves (device + biometric), but most sites still allow password login as an alternative. If your password login has no MFA, that's still an open door for attackers to use instead of the passkey. Keep MFA enabled on password login even after setting up passkeys.
+
 ---
 
 ## Critical Actions
