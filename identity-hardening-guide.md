@@ -160,7 +160,8 @@ Tax refund fraud is common and frustrating to resolve.
 
 - [ ] **Enable an IRS IP PIN** at [sa.www4.irs.gov/ola/profile/ippin](https://sa.www4.irs.gov/ola/profile/ippin)
   - Note: Requires an ID.me account; you'll need to set one up if you don't have one
-- [ ] **Store your IP PIN** in your password manager (renewed annually)
+  - Once enabled, a new PIN is auto-generated each year; just log in to retrieve it
+- [ ] **Store your IP PIN** in your password manager
 
 > **How does tax fraud work?** A criminal files a tax return in your name early in the season, claims a big refund, and gets the money. When you file your real return later, the IRS rejects it as a duplicate. Sorting this out can take months. The IP PIN is a six-digit code only you and the IRS know - without it, a return filed under your SSN gets rejected automatically.
 
@@ -174,10 +175,11 @@ Tax refund fraud is common and frustrating to resolve.
 
 If you don't create this account, an attacker could create one in your name.
 
-- [ ] **Create a "my Social Security" account** at [ssa.gov/myaccount](https://www.ssa.gov/myaccount/)
-- [ ] **Enable MFA**
-- [ ] **Verify contact information**
-- [ ] **Review earnings history** for signs of SSN misuse
+- [ ] **Log in or create a "my Social Security" account** at [ssa.gov/myaccount](https://www.ssa.gov/myaccount/)
+- [ ] **Verify contact information is current and correct**
+- [ ] **Review earnings history** for signs of SSN misuse (jobs you didn't work)
+
+That's it. Logging in claims the account and verifying your info ensures you're in control.
 
 > **Why create an account if I don't need one yet?** The SSA only allows one online account per Social Security number. If you don't claim yours, a criminal can create one using your stolen info, then redirect your benefits, change your address, or lock you out. It's like squatting on a domain name - claim it before someone else does.
 
