@@ -156,7 +156,8 @@ Your phone number is used for MFA, account recovery, and identity verification. 
 
 Tax refund fraud is common and frustrating to resolve.
 
-- [ ] **Enable an IRS IP PIN** at [irs.gov/identity-theft-fraud-scams/get-an-identity-protection-pin](https://www.irs.gov/identity-theft-fraud-scams/get-an-identity-protection-pin)
+- [ ] **Enable an IRS IP PIN** at [sa.www4.irs.gov/ola/profile/ippin](https://sa.www4.irs.gov/ola/profile/ippin)
+  - Note: Requires an ID.me account; you'll need to set one up if you don't have one
 - [ ] **Store your IP PIN** in your password manager (renewed annually)
 
 > **How does tax fraud work?** A criminal files a tax return in your name early in the season, claims a big refund, and gets the money. When you file your real return later, the IRS rejects it as a duplicate. Sorting this out can take months. The IP PIN is a six-digit code only you and the IRS know - without it, a return filed under your SSN gets rejected automatically.
