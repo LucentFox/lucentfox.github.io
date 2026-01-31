@@ -17,6 +17,6 @@ This work is licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/
 - Use plain, accessible language
 - Prefer practical advice over theory
 - Include explanatory "why" blocks for non-obvious recommendations
-- Use `☐` for checklist items
+- Use `- [ ]` for checklist items (markdown checkboxes)
 - Include full URLs in link text for printability
 - Avoid em dashes; use semicolons or commas instead
