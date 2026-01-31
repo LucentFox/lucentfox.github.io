@@ -1,4 +1,4 @@
-# lucentfox.github.io
+# The Fox Den
 
 A loosely organized collection of notes, guides, and the occasional rant. Things I've figured out the hard way so maybe you don't have to. Co-authored with [Claude Code](https://claude.ai/code).
 
