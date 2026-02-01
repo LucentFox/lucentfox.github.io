@@ -319,9 +319,3 @@ Keep records for disputes, insurance, or legal action.
 ---
 
 *Last updated: January 2026*
-
----
-
-This work is licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/). You're free to share and adapt it with attribution, but not for commercial use.
-
-© 2026 lucentfox
