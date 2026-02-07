@@ -9,6 +9,7 @@ No schedule. No algorithm. Just stuff I thought was worth writing down.
 ## Guides
 
 - [Identity & Financial Hardening Guide](identity-hardening-guide.md) - A checklist for locking down your credit, accounts, and personal information. Because the corporations losing your data certainly aren't going to protect you.
+- [The No-Nonsense Guide to Raising Your Credit Score](credit-score-guide.md) - Practical advice for building and maintaining a high credit score. No fluff, just what actually works.
 
 ---
 
