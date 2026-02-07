@@ -43,7 +43,7 @@ Payment history accounts for 35% of your score. Late payments hurt, and the dama
 
 ### Resolve Negative Marks Immediately
 
-If you have accounts in collections or other negative marks, resolve them quickly. A paid collection looks better than an unpaid one, and clearing these issues can help improve your score over time.
+If you have accounts in collections or other negative marks, resolve them quickly. Newer scoring models (FICO 9 and 10) ignore paid collections entirely, though older models like FICO 8 still ding you for them. Either way, paying off collections stops the calls and is usually the right move.
 
 - [ ] Pull your credit report to identify any negative marks
 - [ ] Contact collection agencies to negotiate payment or removal
@@ -77,8 +77,8 @@ These are important but secondary to the core principles above.
 
 Higher credit limits mean more available credit and lower utilization. Just don't use the extra headroom to spend more.
 
-- [ ] Request credit limit increases every six months
-- [ ] Call or use online banking to make the request
+- [ ] Request credit limit increases every six months or so
+- [ ] Check if your issuer does a hard or soft pull first (Amex, Capital One, Discover do soft pulls; Chase, BofA do hard pulls)
 - [ ] Don't be surprised by high limits; $10,000, $50,000, or even $100,000 limits are common for established borrowers
 - [ ] Limits are often a factor of your income; report income increases to your card issuers
 
@@ -129,7 +129,7 @@ Pick a card with the best perks for your spending, such as cash back or travel r
 To avoid interest charges, always pay the full balance by the due date.
 
 - [ ] Set up autopay for the statement balance (not minimum payment)
-- [ ] Use a card with a grace period where interest doesn't accrue until after the first billing cycle
+- [ ] Pay in full to keep the grace period; if you carry a balance, interest starts accruing immediately on new purchases
 - [ ] Never carry a balance if you can avoid it; interest adds up fast
 
 ### Set a Budget
@@ -197,13 +197,13 @@ It seems backwards, but banks want to see you use credit, not avoid it. Someone 
 
 ### How does having multiple credit cards impact my credit score?
 
-Multiple cards help. More cards means more available credit (lower utilization) and longer combined history. Having around 5 cards, even if you barely touch some of them, tends to work well. If you know you want multiple cards, getting them sooner rather than later lets them all age together. Hard inquiries fade after 2 years; account age keeps growing forever.
+Multiple cards help. More cards means more available credit (lower utilization) and longer combined history. Having around 5 cards, even if you barely touch some of them, tends to work well. If you know you want multiple cards, getting them sooner rather than later lets them all age together. Hard inquiries only affect your score for about 12 months (though they stay on your report for 2 years); account age keeps growing forever.
 
 ### What's the difference between a soft inquiry and a hard inquiry on my credit report?
 
 A **soft inquiry** occurs when you or a company checks your credit for non-lending purposes, such as pre-approval offers, background checks, or checking your own score. These don't affect your score.
 
-A **hard inquiry** happens when you apply for credit (credit cards, loans, mortgages). It can temporarily lower your score by a few points. Multiple hard inquiries in a short period for the same type of loan (mortgage, auto) are usually grouped together and counted as one inquiry.
+A **hard inquiry** happens when you apply for credit (credit cards, loans, mortgages). It can temporarily lower your score by a few points (usually under 5). Multiple hard inquiries in a short period for mortgages, auto loans, or student loans are grouped together and counted as one inquiry (the "rate shopping" window is 14-45 days depending on FICO version). This exception does not apply to credit card applications.
 
 ### How can I improve my score quickly if I'm planning a big purchase soon?
 
