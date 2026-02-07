@@ -10,11 +10,11 @@ A practical checklist for securing your identity, whether you've received a brea
 - **Something you have** (your phone or a hardware key)
 - **Something you are** (your fingerprint or face)
 
-Using more than one factor makes accounts dramatically harder to break into. This guide helps you layer these factors across your most important accounts, and freeze or restrict insecure access to important institutions like credit bureaus, the IRS, and your mobile carrier.
+Using more than one factor makes accounts much harder to break into. This guide helps you layer these factors across your important accounts and freeze or restrict access to institutions like credit bureaus, the IRS, and your mobile carrier.
 
 ---
 
-## Why This Matters (Even Without a Breach)
+## Why This Matters
 
 You don't need to wait for a breach notification to take these steps. Your personal information is already circulating from years of data collection, previous breaches, and public records. The question isn't *if* your data has been exposed; it's *how much* and *when* someone will try to use it.
 
@@ -25,8 +25,8 @@ Taking these precautions now means:
 
 This guide is organized into three tiers:
 - **Critical:** Do these immediately; they block the most common attacks
-- **Suggested:** Important protections that significantly reduce risk
-- **Optional:** Long-term hygiene for those who want comprehensive coverage
+- **Suggested:** Worth doing after the critical items
+- **Optional:** For when you have time and want thorough coverage
 
 ---
 
@@ -225,7 +225,7 @@ These accounts are often overlooked and have weaker security.
 
 ## Optional Actions
 
-*Long-term hygiene for comprehensive protection. Do these when you have time.*
+*These can wait. Do them when you have time.*
 
 ### Freeze Secondary Credit Bureaus
 
