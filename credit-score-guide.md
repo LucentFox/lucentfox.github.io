@@ -197,7 +197,7 @@ It seems backwards, but banks want to see you use credit, not avoid it. Someone 
 
 ### How does having multiple credit cards impact my credit score?
 
-Multiple credit cards help if you manage them well. More cards means more available credit (lower utilization) and more history. But opening a bunch at once dings you with hard inquiries and drags down your average account age. Space out applications and only open cards you'll actually use.
+Multiple cards help. More cards means more available credit (lower utilization) and longer combined history. Having around 5 cards, even if you barely touch some of them, tends to work well. If you know you want multiple cards, getting them sooner rather than later lets them all age together. Hard inquiries fade after 2 years; account age keeps growing forever.
 
 ### What's the difference between a soft inquiry and a hard inquiry on my credit report?
 
