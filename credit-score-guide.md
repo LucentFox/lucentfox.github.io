@@ -1,9 +1,8 @@
 # The No-Nonsense Guide to Raising Your Credit Score
 
-Achieving and maintaining a high credit score doesn't have to be complicated. This guide breaks down the key components, their importance, and actionable tips to help you master your credit profile.
+A credit score is just a trust metric. Banks use it to decide if you're a safe bet. This guide covers what actually moves the needle and what you can ignore.
 
-> **Guiding Principle:** A credit score measures trust. Banks use it to decide if lending to you is a safe bet.
-> Build trust through responsible use, long history, and low utilization.
+> **Guiding Principle:** Build trust through responsible use, long history, and low utilization.
 
 ---
 
@@ -219,9 +218,3 @@ To improve your score quickly:
 ---
 
 *Last updated: February 2026*
-
----
-
-This work is licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/). You're free to share and adapt it with attribution, but not for commercial use.
-
-© 2026 lucentfox

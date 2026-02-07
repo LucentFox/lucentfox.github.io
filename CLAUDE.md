@@ -2,15 +2,7 @@
 
 ## License
 
-All documents in this repository should include the following license notice at the end:
-
-```
----
-
-This work is licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/). You're free to share and adapt it with attribution, but not for commercial use.
-
-© 2026 lucentfox
-```
+The license footer is added automatically via the Jekyll layout (`_layouts/default.html`). Do not include it in markdown files.
 
 ## Style
 
@@ -25,6 +17,7 @@ This work is licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/
 
 Write like a person, not a language model. Common tells to avoid:
 
+- **Restating the title:** The intro should add context, not echo what the title already says. If the title is "Guide to X," don't open with "This guide will help you with X."
 - **Overexplaining in parentheticals:** Don't insert "(even if you haven't been breached)" or similar qualifiers. Trust the reader.
 - **Intensifiers that add nothing:** Skip "significantly," "dramatically," "incredibly," "extremely." If something matters, show why; don't just add adjectives.
 - **Corporate filler words:** Avoid "leverage," "utilize," "robust," "comprehensive," "crucial," "essential." Use normal words.
