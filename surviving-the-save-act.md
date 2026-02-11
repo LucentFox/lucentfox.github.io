@@ -126,7 +126,7 @@ Re-register to vote at [secure.utah.gov/voterreg](https://secure.utah.gov/voterr
 
 **Petitions:** No cure process. If your signature doesn't match your voter file, it's simply invalidated. This matters if you sign ballot initiative or candidate petitions.
 
-**Salt Lake County:** (385) 468-7400 or [saltlakecounty.gov/clerk/elections](https://www.saltlakecounty.gov/clerk/elections/)
+**Salt Lake County:** (385) 468-7400 | vote@saltlakecounty.gov | [saltlakecounty.gov/clerk/elections](https://www.saltlakecounty.gov/clerk/elections/)
 
 ---
 

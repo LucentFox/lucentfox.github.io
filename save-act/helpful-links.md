@@ -15,6 +15,8 @@ Resources for voter registration, ID, and the SAVE Act.
 
 ## Salt Lake County Resources
 
+**Contact:** (385) 468-7400 | vote@saltlakecounty.gov | 2001 S State St, Suite S1-200, SLC 84114
+
 - **[Salt Lake County Elections](https://www.saltlakecounty.gov/clerk/elections/)** - County clerk's election homepage
 - **[Check Voter Registration (SL County)](https://www.saltlakecounty.gov/clerk/elections/register/check-voter-registration/)** - Verify your registration in Salt Lake County
 - **[Cure Letter Information](https://www.saltlakecounty.gov/clerk/elections/cure/)** - What to do if your ballot signature is flagged
