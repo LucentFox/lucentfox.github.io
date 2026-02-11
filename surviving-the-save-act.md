@@ -122,7 +122,9 @@ Re-register to vote at [secure.utah.gov/voterreg](https://secure.utah.gov/voterr
 
 ### If your signature doesn't match
 
-Election officials will contact you before rejecting your ballot. Watch for a "cure letter" via mail, email, text, or phone. Sign the affidavit and return it before the deadline (typically a few days after Election Day).
+**Ballots:** Election officials will contact you before rejecting your ballot. Watch for a "cure letter" via mail, email, text, or phone. Sign the affidavit and return it before the deadline (typically a few days after Election Day).
+
+**Petitions:** No cure process. If your signature doesn't match your voter file, it's simply invalidated. This matters if you sign ballot initiative or candidate petitions.
 
 **Salt Lake County:** (385) 468-7400 or [saltlakecounty.gov/clerk/elections](https://www.saltlakecounty.gov/clerk/elections/)
 
