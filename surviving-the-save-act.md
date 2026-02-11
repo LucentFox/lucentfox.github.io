@@ -48,13 +48,15 @@ The Safeguard American Voter Eligibility (SAVE) Act would require documentary pr
 
 The SAVE Act (H.R. 22 in the 119th Congress) would require voters to provide documentary proof of citizenship when registering to vote. It passed the House in early 2025 but still needs Senate approval.
 
-### What the bill would require
+### Current law vs. proposed
 
-- **Documentary proof of citizenship** for new voter registrations and updates
-- **In-person document presentation** at election offices (no more mail-in registration)
-- States to **remove noncitizens** from voter rolls
+| | Current | SAVE Act |
+|---|---------|----------|
+| **What you prove** | Identity (attestation of citizenship) | Citizenship (documentary proof) |
+| **How you register** | Online, by mail, or in person | In person only |
+| **Documents needed** | Photo ID or two non-photo docs | Passport, birth certificate, or similar |
 
-About 21 million voting-age Americans lack easy access to citizenship documents. For acceptable documents and how to get them, see [ID Requirements & Documents](save-act/id-requirements.md).
+For the full list of acceptable documents, see [ID Requirements & Documents](save-act/id-requirements.md).
 
 ---
 
