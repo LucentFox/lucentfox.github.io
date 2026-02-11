@@ -22,9 +22,9 @@ Resources for voter registration, ID, and the SAVE Act.
 
 ## Salt Lake City
 
-Salt Lake City doesn't administer its own elections; all city, county, state, and federal elections for SLC residents are handled by the Salt Lake County Clerk. The city does maintain a voter information page that consolidates key links:
+SLC elections are administered by Salt Lake County. The city maintains a voter info page:
 
-- **[SLC Voter Information](https://www.slc.gov/attorney/voter-information/)** - City-maintained page with registration links and voting guidance for Salt Lake City residents
+- **[SLC Voter Information](https://www.slc.gov/attorney/voter-information/)** - City-maintained page consolidating registration links and voting guidance
 
 ## Federal Resources
 
@@ -44,4 +44,4 @@ Salt Lake City doesn't administer its own elections; all city, county, state, an
 
 ---
 
-[Back to main guide](../navigating-the-save-act.md)
+[Back to main guide](../surviving-the-save-act.md)
