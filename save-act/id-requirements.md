@@ -10,30 +10,39 @@ These are the ID requirements in effect now. Utah has flexible options until str
 
 ### One photo ID
 
-Any of these works on its own:
+Any of these works on its own (must be currently valid):
+
+| Document |
+|----------|
+| Utah driver's license |
+| State or federal government-issued ID card |
+| Utah concealed carry permit |
+| U.S. passport |
+| Tribal ID (photo not required) |
+
+### Or two documents showing name + residence
+
+If you don't have a photo ID, use **two documents** that show your name and provide evidence you live in the precinct:
 
 | Document | Notes |
 |----------|-------|
-| Utah driver's license or state ID | Most common option |
-| U.S. passport | Valid or expired |
-| Tribal ID | With photo |
-| Military ID | Any branch |
-| Utah concealed carry permit | With photo |
-
-### Or two non-photo documents
-
-If you don't have a photo ID, you can use **two documents** that together show your name and address:
-
-| Document | Requirements |
-|----------|--------------|
 | Utility bill | Within 90 days |
-| Bank statement | Recent |
-| Birth certificate | Any |
-| Social Security card | Any |
-| Paycheck | Recent |
-| Government check | Recent |
-| Vehicle registration | Current |
-| Hunting/fishing license | Current |
+| Bank or financial account statement | |
+| Certified birth certificate | |
+| Social Security card | |
+| State or federal government check | |
+| Paycheck | |
+| Utah hunting or fishing license | Currently valid |
+| U.S. military ID | Currently valid |
+| Certified naturalization documents | Not a green card |
+| Court records (adoption or name change) | Certified copy |
+| Bureau of Indian Affairs card | |
+| Tribal treaty card | |
+| Medicaid, Medicare, or EBT card | Currently valid |
+| Local government ID | Currently valid |
+| Employer ID | Currently valid |
+| College, university, or technical school ID | Currently valid, in-state school |
+| Utah vehicle registration | Current |
 
 ### No ID at all?
 
