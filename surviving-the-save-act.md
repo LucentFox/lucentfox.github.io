@@ -13,50 +13,24 @@ The Safeguard American Voter Eligibility (SAVE) Act would require documentary pr
 
 ## Table of Contents
 
-1. [Bill Status](#bill-status)
-2. [What Is the SAVE Act?](#what-is-the-save-act)
-3. [Misinformation vs. Reality](#misinformation-vs-reality)
-4. [Check Your Voter Registration](#check-your-voter-registration)
-5. [Verify Your Signature](#verify-your-signature)
-6. [ID Requirements & Documents](#id-requirements--documents)
-7. [Helpful Links](#helpful-links)
+1. [Bills Affecting Voting](#bills-affecting-voting)
+2. [Misinformation vs. Reality](#misinformation-vs-reality)
+3. [Check Your Voter Registration](#check-your-voter-registration)
+4. [Verify Your Signature](#verify-your-signature)
+5. [ID Requirements & Documents](#id-requirements--documents)
+6. [Helpful Links](#helpful-links)
 
 ---
 
-## Bill Status
+## Bills Affecting Voting
 
-| | |
-|---|---|
-| **Current status** | Awaiting Senate action (needs 60 votes to overcome filibuster) |
-| **Chance of passage** | ~20% |
-| **Status as of** | February 2026 |
-| **Check latest** | [congress.gov/bill/119th-congress/house-bill/22](https://www.congress.gov/bill/119th-congress/house-bill/22) |
+Three bills are shaping voter requirements: one federal, two state. See [Bills Affecting Voting](save-act/bills.md) for full details.
 
-| Step | Status | Date |
-|------|--------|------|
-| Introduced in House | Done | Jan 3, 2025 |
-| Passed House | Done | Apr 10, 2025 (220-208) |
-| Received in Senate | Done | Apr 10, 2025 |
-| Senate Committee | Pending | — |
-| Senate Floor Vote | Pending | — |
-| Conference Committee | — | — |
-| Presidential Signature | — | — |
-
----
-
-## What Is the SAVE Act?
-
-The SAVE Act (H.R. 22 in the 119th Congress) would require voters to provide documentary proof of citizenship when registering to vote. It passed the House in early 2025 but still needs Senate approval.
-
-### Current law vs. proposed
-
-| | Current | SAVE Act |
-|---|---------|----------|
-| **What you prove** | Identity (attestation of citizenship) | Citizenship (documentary proof) |
-| **How you register** | Online, by mail, or in person | In person only |
-| **Documents needed** | Photo ID or two non-photo docs | Passport, birth certificate, or similar |
-
-For the full list of acceptable documents, see [ID Requirements & Documents](save-act/id-requirements.md).
+| Bill | Status | What it does |
+|------|--------|--------------|
+| **SAVE Act** (federal) | Awaiting Senate (~20% chance) | Requires citizenship documents to register; eliminates online/mail registration |
+| **HB300** (Utah) | Law (signed Mar 2025) | Phases out auto mail voting by 2029; requires last 4 of ID on envelope |
+| **HB479** (Utah) | In committee | Would require in-person ballot return with ID |
 
 ---
 
