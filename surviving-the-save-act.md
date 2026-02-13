@@ -1,6 +1,6 @@
 # Surviving the SAVE Act
 
-The Safeguard American Voter Eligibility (SAVE) Act would require documentary proof of U.S. citizenship to register to vote in federal elections. This guide covers what the bill proposes, how to check your registration in Salt Lake County, and how to ensure your ballot won't get flagged for a signature mismatch.
+The Safeguard American Voter Eligibility (SAVE) Act would require documentary proof of U.S. citizenship to register to vote in federal elections. An expanded version, the SAVE America Act (H.R. 7296), passed the House on February 11, 2026, adding photo ID requirements for voting. This guide covers what the bills propose, how to check your registration in Salt Lake County, and how to ensure your ballot won't get flagged for a signature mismatch.
 
 ### What this guide covers
 
@@ -24,13 +24,14 @@ The Safeguard American Voter Eligibility (SAVE) Act would require documentary pr
 
 ## Bills Affecting Voting
 
-Three bills are shaping voter requirements: one federal, two state. See [Bills Affecting Voting](save-act/bills.md) for full details.
+Four bills are shaping voter requirements: two federal, two state. See [Bills Affecting Voting](save-act/bills.md) for full details.
 
 | Bill | Status | What it does |
 |------|--------|--------------|
-| **SAVE Act** (federal) | Awaiting Senate (~20% chance) | Requires citizenship documents to register; eliminates online/mail registration |
-| **HB300** (Utah) | Law (signed Mar 2025) | Phases out auto mail voting by 2029; requires last 4 of ID on envelope |
-| **HB479** (Utah) | In committee | Would require in-person ballot return with ID |
+| **SAVE Act** (H.R. 22, federal) | Stalled in Senate; superseded by H.R. 7296 | Required citizenship documents to register; eliminated online/mail registration |
+| **SAVE America Act** (H.R. 7296, federal) | Passed House Feb 11, 2026 (~20% chance in Senate) | Everything in the SAVE Act, plus photo ID for in-person voting and ID copies for absentee ballots |
+| **HB300** (Utah) | Law (signed Mar 2025) | Phases out auto mail voting by 2029; requires last 4 of ID on envelope. Early testing raised security concerns; corrective bills pending. |
+| **HB479** (Utah) | In committee | Would require in-person ballot return with ID; $10M+ cost a concern |
 
 ---
 
