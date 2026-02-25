@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>State of the Dumpster Fire Bingo 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Permanent+Marker&family=Inter:wght@400;600&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #1a1a2e;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px 140px 20px;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* === DUMPSTER AND FLAMES === */
+  .dumpster {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .dumpster-body {
+    height: 60px;
+    background: linear-gradient(180deg, #2e7d32, #1b5e20, #174f1a);
+    border-top: 6px solid #4caf50;
+    position: relative;
+  }
+
+  .dumpster-body::before {
+    content: '';
+    position: absolute;
+    top: -18px;
+    left: 0;
+    right: 0;
+    height: 18px;
+    background: linear-gradient(180deg, #388e3c, #2e7d32);
+    border-top: 4px solid #66bb6a;
+    border-radius: 4px 4px 0 0;
+  }
+
+  .dumpster-body::after {
+    content: '';
+    position: absolute;
+    top: -22px;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: linear-gradient(180deg, #555, #333);
+    border-top: 2px solid #777;
+    border-radius: 3px 3px 0 0;
+  }
+
+  .dumpster-ribs {
+    position: absolute;
+    top: 6px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 80px,
+      rgba(0,0,0,0.15) 80px,
+      rgba(0,0,0,0.15) 82px
+    );
+  }
+
+  .dumpster-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 12px;
+    text-transform: uppercase;
+  }
+
+  /* === FLAMES === */
+  .flames-container {
+    position: fixed;
+    bottom: 55px;
+    left: -10%;
+    right: -10%;
+    height: 220px;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .flame-layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+  }
+
+  .flame-layer svg {
+    width: 50%;
+    height: 100%;
+    float: left;
+  }
+
+  .flame-back {
+    animation: flame-scroll-back 8s linear infinite;
+  }
+
+  .flame-mid {
+    animation: flame-scroll-mid 5s linear infinite;
+  }
+
+  .flame-front {
+    animation: flame-scroll-front 6s linear infinite;
+  }
+
+  @keyframes flame-scroll-back {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  @keyframes flame-scroll-mid {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  @keyframes flame-scroll-front {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .flame-glow {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 300px;
+    background: radial-gradient(ellipse at 50% 100%, rgba(255,100,0,0.25) 0%, rgba(255,50,0,0.12) 40%, transparent 70%);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  h1 {
+    font-family: 'Permanent Marker', cursive;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: #fff;
+    text-align: center;
+    margin-bottom: 4px;
+    text-shadow: 3px 3px 0 #c0392b, 6px 6px 0 #2c3e80;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 10;
+  }
+
+  .subtitle {
+    font-family: 'Oswald', sans-serif;
+    color: #e74c3c;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    font-size: clamp(0.7rem, 2vw, 1rem);
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 10;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow:
+      0 0 0 4px #c0392b,
+      0 0 0 8px #2c3e80,
+      0 0 0 12px #c0392b,
+      0 20px 60px rgba(0,0,0,0.5);
+    max-width: 700px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+  }
+
+  .bingo-header {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 6px;
+    margin-bottom: 6px;
+  }
+
+  .bingo-header span {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 4vw, 2.8rem);
+    text-align: center;
+    padding: 4px 0;
+    border-radius: 8px;
+    color: #fff;
+  }
+
+  .bingo-header span:nth-child(1) { background: #c0392b; }
+  .bingo-header span:nth-child(2) { background: #2c3e80; }
+  .bingo-header span:nth-child(3) { background: #c0392b; }
+  .bingo-header span:nth-child(4) { background: #2c3e80; }
+  .bingo-header span:nth-child(5) { background: #c0392b; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 6px;
+  }
+
+  .cell {
+    min-height: 100px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 8px 6px;
+    font-size: clamp(0.55rem, 1.4vw, 0.82rem);
+    font-weight: 600;
+    color: #2c3e50;
+    line-height: 1.25;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: #fafafa;
+    user-select: none;
+    position: relative;
+  }
+
+  .cell:hover {
+    border-color: #c0392b;
+    transform: scale(1.04);
+    z-index: 2;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  }
+
+  .cell.stamped {
+    background: linear-gradient(135deg, #c0392b, #e74c3c);
+    color: #fff;
+    border-color: #a93226;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  }
+
+  .cell.stamped::after {
+    content: '\2713';
+    position: absolute;
+    top: 3px;
+    right: 5px;
+    font-size: 0.7rem;
+    opacity: 0.7;
+  }
+
+  .center {
+    font-family: 'Permanent Marker', cursive;
+    font-size: clamp(0.6rem, 1.5vw, 0.95rem) !important;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .center .star {
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    line-height: 1;
+    color: #f1c40f;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+  }
+
+  .new-card-btn {
+    position: relative;
+    z-index: 10;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #fff;
+    background: linear-gradient(135deg, #c0392b, #e74c3c);
+    border: none;
+    padding: 12px 36px;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 18px;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 15px rgba(192,57,43,0.4);
+  }
+
+  .new-card-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(192,57,43,0.6);
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+  }
+
+  .footer {
+    color: #777;
+    text-align: center;
+    margin-top: 16px;
+    font-size: 0.75rem;
+    font-style: italic;
+    position: relative;
+    z-index: 10;
+  }
+
+  .instructions {
+    color: #95a5a6;
+    text-align: center;
+    margin-top: 14px;
+    font-size: 0.72rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 10;
+  }
+
+  @media print {
+    body { background: #fff; padding: 0; }
+    .card { box-shadow: none; border: 4px solid #333; }
+    .cell:hover { transform: none; }
+    .instructions { display: none; }
+    .new-card-btn { display: none; }
+    .dumpster, .flames-container, .flame-glow { display: none; }
+    h1 { color: #333; text-shadow: 2px 2px 0 #ccc; }
+    .subtitle { color: #c0392b; }
+  }
+
+  @keyframes flash {
+    0%, 100% { color: #fff; }
+    50% { color: #f1c40f; text-shadow: 3px 3px 0 #c0392b, 6px 6px 0 #2c3e80, 0 0 30px #f1c40f; }
+  }
+</style>
+</head>
+<body>
+
+<h1>STATE OF THE DUMPSTER FIRE<br>WE CALL THE UNITED STATES</h1>
+<div class="subtitle">Bullsh*t Bingo &mdash; 2026 Edition</div>
+
+<div class="card">
+  <div class="bingo-header">
+    <span>B</span><span>I</span><span>N</span><span>G</span><span>O</span>
+  </div>
+  <div class="grid" id="grid"></div>
+</div>
+
+<div class="flame-glow"></div>
+<div class="flames-container">
+  <!-- Back layer: dark red/orange, tall -->
+  <div class="flame-layer flame-back">
+    <svg viewBox="0 0 600 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,200 L0,140 Q10,130 15,100 Q20,60 30,80 Q35,95 40,70 Q50,20 60,60 Q65,80 70,50 Q80,10 90,55 Q95,75 100,60 Q110,30 120,65 Q125,80 130,55 Q140,15 150,60 Q155,75 160,50 Q170,5 180,55 Q185,70 190,45 Q200,10 210,60 Q215,80 220,55 Q230,20 240,65 Q245,80 250,60 Q260,25 270,70 Q275,85 280,60 Q290,30 300,75 Q305,90 310,65 Q320,25 330,70 Q335,85 340,55 Q350,15 360,60 Q365,80 370,50 Q380,10 390,55 Q395,75 400,45 Q410,5 420,55 Q425,70 430,50 Q440,20 450,65 Q455,80 460,55 Q470,25 480,70 Q485,85 490,60 Q500,30 510,70 Q515,85 520,60 Q530,20 540,65 Q545,80 550,55 Q560,25 570,70 Q580,45 590,80 Q595,100 600,140 L600,200 Z" fill="#cc3300" opacity="0.9"/>
+    </svg>
+    <svg viewBox="0 0 600 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,200 L0,140 Q10,130 15,100 Q20,60 30,80 Q35,95 40,70 Q50,20 60,60 Q65,80 70,50 Q80,10 90,55 Q95,75 100,60 Q110,30 120,65 Q125,80 130,55 Q140,15 150,60 Q155,75 160,50 Q170,5 180,55 Q185,70 190,45 Q200,10 210,60 Q215,80 220,55 Q230,20 240,65 Q245,80 250,60 Q260,25 270,70 Q275,85 280,60 Q290,30 300,75 Q305,90 310,65 Q320,25 330,70 Q335,85 340,55 Q350,15 360,60 Q365,80 370,50 Q380,10 390,55 Q395,75 400,45 Q410,5 420,55 Q425,70 430,50 Q440,20 450,65 Q455,80 460,55 Q470,25 480,70 Q485,85 490,60 Q500,30 510,70 Q515,85 520,60 Q530,20 540,65 Q545,80 550,55 Q560,25 570,70 Q580,45 590,80 Q595,100 600,140 L600,200 Z" fill="#cc3300" opacity="0.9"/>
+    </svg>
+  </div>
+  <!-- Mid layer: orange -->
+  <div class="flame-layer flame-mid">
+    <svg viewBox="0 0 600 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,200 L0,150 Q8,140 12,120 Q18,90 25,110 Q30,125 38,95 Q45,55 55,85 Q60,100 68,70 Q75,35 85,75 Q90,95 98,65 Q105,30 115,70 Q120,90 128,60 Q135,25 145,65 Q150,85 158,55 Q165,20 175,60 Q180,80 188,50 Q195,15 205,60 Q210,80 218,55 Q225,25 235,70 Q240,90 248,60 Q255,30 265,65 Q270,85 278,55 Q285,20 295,65 Q300,85 308,55 Q315,25 325,70 Q330,90 338,60 Q345,30 355,70 Q360,90 368,60 Q375,25 385,65 Q390,85 398,55 Q405,20 415,60 Q420,80 428,55 Q435,25 445,70 Q450,90 458,60 Q465,30 475,70 Q480,90 488,65 Q495,35 505,70 Q510,85 518,60 Q525,30 535,75 Q540,95 548,70 Q555,40 565,80 Q572,100 580,85 Q588,110 595,130 Q598,145 600,150 L600,200 Z" fill="#e65c00" opacity="0.9"/>
+      <path d="M0,200 L0,160 Q10,150 15,130 Q22,100 30,120 Q35,135 42,105 Q50,70 60,95 Q65,110 72,80 Q80,45 90,85 Q95,100 102,75 Q110,40 120,80 Q125,100 132,70 Q140,35 150,75 Q155,95 162,65 Q170,30 180,70 Q185,90 192,60 Q200,25 210,70 Q215,90 222,65 Q230,35 240,75 Q245,95 252,65 Q260,35 270,75 Q275,95 282,65 Q290,30 300,70 Q305,90 312,60 Q320,30 330,70 Q335,90 342,65 Q350,35 360,75 Q365,95 372,65 Q380,30 390,70 Q395,90 402,60 Q410,30 420,70 Q425,90 432,65 Q440,35 450,75 Q455,95 462,70 Q470,40 480,80 Q485,100 492,75 Q500,45 510,80 Q515,95 522,70 Q530,40 540,85 Q548,110 555,95 Q562,120 570,110 Q580,130 590,145 Q595,155 600,160 L600,200 Z" fill="#f08000" opacity="0.85"/>
+    </svg>
+    <svg viewBox="0 0 600 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,200 L0,150 Q8,140 12,120 Q18,90 25,110 Q30,125 38,95 Q45,55 55,85 Q60,100 68,70 Q75,35 85,75 Q90,95 98,65 Q105,30 115,70 Q120,90 128,60 Q135,25 145,65 Q150,85 158,55 Q165,20 175,60 Q180,80 188,50 Q195,15 205,60 Q210,80 218,55 Q225,25 235,70 Q240,90 248,60 Q255,30 265,65 Q270,85 278,55 Q285,20 295,65 Q300,85 308,55 Q315,25 325,70 Q330,90 338,60 Q345,30 355,70 Q360,90 368,60 Q375,25 385,65 Q390,85 398,55 Q405,20 415,60 Q420,80 428,55 Q435,25 445,70 Q450,90 458,60 Q465,30 475,70 Q480,90 488,65 Q495,35 505,70 Q510,85 518,60 Q525,30 535,75 Q540,95 548,70 Q555,40 565,80 Q572,100 580,85 Q588,110 595,130 Q598,145 600,150 L600,200 Z" fill="#e65c00" opacity="0.9"/>
+      <path d="M0,200 L0,160 Q10,150 15,130 Q22,100 30,120 Q35,135 42,105 Q50,70 60,95 Q65,110 72,80 Q80,45 90,85 Q95,100 102,75 Q110,40 120,80 Q125,100 132,70 Q140,35 150,75 Q155,95 162,65 Q170,30 180,70 Q185,90 192,60 Q200,25 210,70 Q215,90 222,65 Q230,35 240,75 Q245,95 252,65 Q260,35 270,75 Q275,95 282,65 Q290,30 300,70 Q305,90 312,60 Q320,30 330,70 Q335,90 342,65 Q350,35 360,75 Q365,95 372,65 Q380,30 390,70 Q395,90 402,60 Q410,30 420,70 Q425,90 432,65 Q440,35 450,75 Q455,95 462,70 Q470,40 480,80 Q485,100 492,75 Q500,45 510,80 Q515,95 522,70 Q530,40 540,85 Q548,110 555,95 Q562,120 570,110 Q580,130 590,145 Q595,155 600,160 L600,200 Z" fill="#f08000" opacity="0.85"/>
+    </svg>
+  </div>
+  <!-- Front layer: bright orange/yellow, shorter -->
+  <div class="flame-layer flame-front">
+    <svg viewBox="0 0 600 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,200 L0,160 Q10,148 15,130 Q22,105 30,125 Q38,140 45,115 Q52,85 62,105 Q68,120 75,95 Q82,65 92,90 Q98,108 105,85 Q112,55 122,85 Q128,105 135,80 Q142,55 152,80 Q158,100 165,75 Q172,50 182,80 Q188,100 195,75 Q202,50 212,80 Q218,100 225,75 Q232,50 242,78 Q248,95 255,72 Q262,48 272,78 Q278,98 285,75 Q292,50 302,80 Q308,100 315,75 Q322,50 332,80 Q338,100 345,78 Q352,55 362,82 Q368,100 375,78 Q382,55 392,85 Q398,105 405,80 Q412,55 422,85 Q428,105 435,80 Q442,58 452,85 Q458,105 465,82 Q472,58 482,88 Q488,108 495,85 Q502,60 512,88 Q518,105 525,85 Q532,62 542,90 Q548,110 555,95 Q562,115 570,105 Q578,125 585,118 Q592,138 598,150 L600,160 L600,200 Z" fill="#ff8c00" opacity="0.95"/>
+      <path d="M0,200 L0,170 Q12,158 18,140 Q25,115 35,135 Q42,150 50,125 Q58,100 68,120 Q75,138 82,115 Q90,85 100,110 Q108,130 115,105 Q122,80 132,105 Q138,125 145,100 Q152,75 162,100 Q168,120 175,98 Q182,72 192,98 Q198,118 205,95 Q212,70 222,98 Q228,118 235,95 Q242,72 252,100 Q258,120 265,98 Q272,75 282,100 Q288,120 295,95 Q302,72 312,98 Q318,118 325,95 Q332,72 342,98 Q348,118 355,98 Q362,75 372,102 Q378,120 385,98 Q392,78 402,105 Q408,125 415,100 Q422,78 432,105 Q438,125 445,102 Q452,80 462,108 Q468,128 475,105 Q482,82 492,108 Q498,125 505,105 Q512,82 522,108 Q528,128 535,108 Q542,88 550,110 Q558,130 565,118 Q572,140 580,132 Q588,148 595,158 L600,170 L600,200 Z" fill="#ffa500" opacity="0.9"/>
+      <path d="M0,200 L0,178 Q15,168 22,152 Q30,130 40,148 Q48,162 55,142 Q65,118 75,138 Q82,152 90,132 Q100,108 110,130 Q118,148 125,128 Q135,105 145,128 Q152,145 160,125 Q170,102 180,125 Q188,142 195,122 Q205,100 215,125 Q222,142 230,122 Q240,100 250,125 Q258,142 265,125 Q275,105 285,128 Q292,145 300,125 Q310,102 320,128 Q328,148 335,128 Q345,105 355,128 Q362,145 370,128 Q380,108 390,130 Q398,148 405,128 Q415,108 425,132 Q432,148 440,130 Q450,110 460,132 Q468,150 475,132 Q485,112 495,135 Q502,150 510,132 Q520,112 530,135 Q538,152 545,138 Q555,120 565,142 Q572,155 580,145 Q588,158 595,165 L600,178 L600,200 Z" fill="#ffb833" opacity="0.85"/>
+    </svg>
+    <svg viewBox="0 0 600 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,200 L0,160 Q10,148 15,130 Q22,105 30,125 Q38,140 45,115 Q52,85 62,105 Q68,120 75,95 Q82,65 92,90 Q98,108 105,85 Q112,55 122,85 Q128,105 135,80 Q142,55 152,80 Q158,100 165,75 Q172,50 182,80 Q188,100 195,75 Q202,50 212,80 Q218,100 225,75 Q232,50 242,78 Q248,95 255,72 Q262,48 272,78 Q278,98 285,75 Q292,50 302,80 Q308,100 315,75 Q322,50 332,80 Q338,100 345,78 Q352,55 362,82 Q368,100 375,78 Q382,55 392,85 Q398,105 405,80 Q412,55 422,85 Q428,105 435,80 Q442,58 452,85 Q458,105 465,82 Q472,58 482,88 Q488,108 495,85 Q502,60 512,88 Q518,105 525,85 Q532,62 542,90 Q548,110 555,95 Q562,115 570,105 Q578,125 585,118 Q592,138 598,150 L600,160 L600,200 Z" fill="#ff8c00" opacity="0.95"/>
+      <path d="M0,200 L0,170 Q12,158 18,140 Q25,115 35,135 Q42,150 50,125 Q58,100 68,120 Q75,138 82,115 Q90,85 100,110 Q108,130 115,105 Q122,80 132,105 Q138,125 145,100 Q152,75 162,100 Q168,120 175,98 Q182,72 192,98 Q198,118 205,95 Q212,70 222,98 Q228,118 235,95 Q242,72 252,100 Q258,120 265,98 Q272,75 282,100 Q288,120 295,95 Q302,72 312,98 Q318,118 325,95 Q332,72 342,98 Q348,118 355,98 Q362,75 372,102 Q378,120 385,98 Q392,78 402,105 Q408,125 415,100 Q422,78 432,105 Q438,125 445,102 Q452,80 462,108 Q468,128 475,105 Q482,82 492,108 Q498,125 505,105 Q512,82 522,108 Q528,128 535,108 Q542,88 550,110 Q558,130 565,118 Q572,140 580,132 Q588,148 595,158 L600,170 L600,200 Z" fill="#ffa500" opacity="0.9"/>
+      <path d="M0,200 L0,178 Q15,168 22,152 Q30,130 40,148 Q48,162 55,142 Q65,118 75,138 Q82,152 90,132 Q100,108 110,130 Q118,148 125,128 Q135,105 145,128 Q152,145 160,125 Q170,102 180,125 Q188,142 195,122 Q205,100 215,125 Q222,142 230,122 Q240,100 250,125 Q258,142 265,125 Q275,105 285,128 Q292,145 300,125 Q310,102 320,128 Q328,148 335,128 Q345,105 355,128 Q362,145 370,128 Q380,108 390,130 Q398,148 405,128 Q415,108 425,132 Q432,148 440,130 Q450,110 460,132 Q468,150 475,132 Q485,112 495,135 Q502,150 510,132 Q520,112 530,135 Q538,152 545,138 Q555,120 565,142 Q572,155 580,145 Q588,158 595,165 L600,178 L600,200 Z" fill="#ffb833" opacity="0.85"/>
+    </svg>
+  </div>
+</div>
+<div class="dumpster">
+  <div class="dumpster-body">
+    <div class="dumpster-ribs"></div>
+    <div class="dumpster-label">U.S.A.</div>
+  </div>
+</div>
+
+<button class="new-card-btn" onclick="newCard()">New Card</button>
+<div class="instructions">Click squares to stamp them &bull; Drink responsibly (or don't)</div>
+<div class="footer">Not responsible for alcohol poisoning, existential dread, or loss of faith in democracy.</div>
+
+<script>
+const SQUARES = [
+  // === SELF-AGGRANDIZEMENT ===
+  '"Biggest [anything] in history"',
+  '"Nobody knew [obvious thing] could be so complicated"',
+  '"Nobody\'s done more for [group] than me"',
+  "Refers to self in third person",
+  '"Many people are saying"',
+  '"Everybody knows it"',
+  '"I\'m the least racist person"',
+  '"I have the best words"',
+  '"I know more about [topic] than anyone"',
+  "Calls himself a genius",
+  "Calls himself a very stable genius",
+  "Claims best memory of any president ever",
+  "Says he has a very large brain",
+  '"People tell me I\'m the greatest"',
+  "Compares himself favorably to Lincoln",
+  "Claims he did more than FDR",
+  "Says he could have been a general",
+  "Claims doctors are amazed by his health",
+  "Says he has the stamina of a 30-year-old",
+  '"I alone can fix it"',
+  "Claims he invented a common phrase",
+  "Takes credit for the sun rising",
+  "Claims to have saved Christmas",
+  "Says his approval is the highest ever",
+  "Claims everyone in the room loves him",
+  "Says world leaders respect him more than any other president",
+  "Implies he should get a Nobel Prize",
+  "Claims he could have gone pro in any sport",
+  "Says he was the best student ever",
+  '"I understand the military better than the generals"',
+  "Brags about his TV ratings",
+  "Mentions his Electoral College win from 2016",
+  "Claims he got more votes than anyone in history",
+  "Brags about the size of his rallies",
+  "Says he built the greatest economy ever",
+  '"I think I\'m actually humble"',
+  "Claims he wrote the best-selling book of all time",
+  "Says he could have been a doctor",
+  '"Nobody has ever seen anything like it"',
+  "Claims he is the most persecuted person in history",
+  "Compares his suffering to Jesus",
+  "Says he sacrificed more than any veteran",
+  "Claims he has perfect genes",
+  "Brags about acing a cognitive test",
+  '"Person, woman, man, camera, TV"',
+  "Says his IQ is one of the highest",
+  "Claims he would have won the popular vote if not for fraud",
+  "Says people cry when they meet him",
+  "Claims foreign leaders call him for advice",
+  '"They say sir you\'re the greatest president"',
+
+  // === LIES AND STATISTICS ===
+  "Makes up a statistic on the spot",
+  "Takes credit for Obama-era stat",
+  "Claims economy was worst ever before him",
+  "Claims he won the popular vote",
+  "Cites a Fox News chyron as a source",
+  "Uses a percentage that doesn't add up",
+  "Inflates a number by at least 10x",
+  "Claims unemployment is at a record low (it isn't)",
+  "Lies about the trade deficit",
+  "Fabricates a crime statistic",
+  "Misquotes his own policy",
+  "Says GDP grew more than it did",
+  "Claims illegal immigration dropped 100%",
+  "Invents a country's trade terms",
+  "Lies about the size of the tax cut",
+  "Claims wages went up when they went down",
+  "Says the stock market tripled",
+  "Fabricates an approval rating",
+  "Claims manufacturing jobs doubled",
+  "Invents a poll that doesn't exist",
+  "Says border crossings are at zero",
+  "Claims his wall is complete",
+  "Says drug prices dropped 90%",
+  "Claims he passed more bills than any president",
+  "Lies about the national debt",
+  "Claims gas prices are the lowest ever",
+  "Fabricates a NATO spending figure",
+  "Invents an election fraud number",
+  "Says inflation was 0% under him",
+  "Claims crime is the worst ever (it isn't)",
+  "Quotes a study that doesn't exist",
+  "Attributes someone else's quote to himself",
+  "Cites a debunked statistic",
+  "Says billions when he means millions",
+  "Confuses deficit with debt",
+  "Claims victory on something still pending",
+  "Says trillions when he means billions",
+  "Gets a basic date wrong",
+  "Claims he predicted something that already happened",
+  "Recites a fake Lincoln quote",
+
+  // === VERBAL TICS AND SPEECH ===
+  'Says "millions and millions"',
+  'Says "billions and billions"',
+  'Says "tremendous"',
+  'Says "frankly"',
+  'Uses "beautiful" to describe legislation',
+  'Says "believe me"',
+  'Says "like you\'ve never seen before"',
+  '"A lot of people don\'t know this"',
+  "Audible slurring",
+  "Sniffs into the microphone",
+  "Trails off mid-sentence",
+  "Forgets what he was saying",
+  "Starts a sentence over three times",
+  "Uses a word that isn't a word",
+  "Mispronounces a common word",
+  '"Sir, sir" fake anecdote',
+  "Says 'strongly' as an adverb for everything",
+  "Repeats the same phrase three times in a row",
+  "Long dramatic pause for no reason",
+  "Whispers into the mic for emphasis",
+  "Yells a random word",
+  '"And by the way"',
+  "Uses 'nasty' to describe a woman",
+  "Says 'perfect' about a phone call",
+  "Calls something 'a disgrace'",
+  '"I will tell you"',
+  '"To be honest with you"',
+  '"People come up to me"',
+  '"The likes of which nobody has ever seen"',
+  "Uses 'very' more than 5 times in one sentence",
+  "Says 'incredible' about his own work",
+  "Pronounces 'China' in that weird way",
+  "Says 'huge' with extra emphasis",
+  "Calls something 'the best deal ever'",
+  '"Not a lot of people know this"',
+  "Uses 'bigly' or something that sounds like it",
+  "Says 'covfefe' energy detected",
+  '"Some people say" (no one says this)',
+  '"They\'re saying" (who?)',
+  "Says 'strongly' and 'powerful' in the same sentence",
+  "Mangles a multi-syllable word",
+  '"Excuse me, excuse me"',
+  "Pronounces 'anonymous' wrong",
+  "Says 'oranges' instead of 'origins'",
+  "Calls something 'very very very' good",
+  '"Everybody\'s talking about it"',
+  "Calls a plan 'incredible' with no details",
+  "Uses finger quotes for no reason",
+  '"Nobody thought it was possible"',
+  '"They said it couldn\'t be done"',
+
+  // === TANGENTS AND DIGRESSIONS ===
+  "Goes on tangent about Hannibal Lecter",
+  "Windmill cancer",
+  "Random aside about shark vs. electric boat",
+  "Inexplicable detour about water pressure",
+  "Brings up his shower complaints",
+  "Rants about low-flow toilets",
+  "Talks about how dishwashers used to work",
+  "Somehow ends up talking about Al Capone",
+  "Mentions the Titanic for no reason",
+  "Segues into a golf story",
+  "Starts talking about a TV show mid-policy point",
+  "Brings up crowd size at an unrelated moment",
+  "Tells a story about a limo ride",
+  "Goes off about lightbulb regulations",
+  "Rants about his hair being real",
+  "Discusses the aerodynamics of his hair",
+  "Mentions McDonald's unprompted",
+  "Talks about the beauty of clean coal",
+  "Random compliment about a Fox News host",
+  "Starts reviewing a building he owns",
+  "Describes a meal he had recently",
+  "Talks about how tall he is",
+  "Brings up Rosie O'Donnell for no reason",
+  "Mentions his Hollywood Walk of Fame star",
+  "Somehow references Home Alone 2",
+  "Starts talking about how he was in a movie",
+  "Discusses the ratings of The Apprentice",
+  "Brings up a beauty pageant he ran",
+  "Talks about the time he met a celebrity",
+  "Rants about the Oscars",
+  "Mentions Elon Musk for no reason",
+  "Goes on about the border mid-economic point",
+  "Random tangent about airport names",
+  "Talks about how maps should show his name",
+  "Discusses his penthouse unprompted",
+  "Mentions his yacht",
+  "Random anecdote about a dictator being nice",
+  "Tells a story that contradicts itself",
+  "Goes on a tangent about fictional characters",
+  "Brings up the Central Park jogger case",
+
+  // === ATTACKING OPPONENTS ===
+  "Calls someone a nasty nickname",
+  "Blames Biden for something Trump did",
+  "Attacks a Democrat by name",
+  "Mentions Hillary's emails",
+  "Mentions the 'Russia hoax'",
+  "Calls the press 'the enemy of the people'",
+  "Attacks a specific journalist",
+  "Mocks someone's appearance",
+  "Threatens to sue someone",
+  "Calls a judge unfair",
+  "Accuses Democrats of treason",
+  "Blames Obama for literally anything",
+  "Claims Democrats want open borders",
+  "Says Democrats hate America",
+  "Attacks a Gold Star family",
+  "Calls a war hero a loser",
+  "Insults a foreign ally",
+  "Mocks a disability",
+  "Calls a woman 'nasty'",
+  "Accuses the FBI of persecution",
+  "Claims the DOJ is weaponized against him",
+  "Says the election was rigged",
+  "Calls prosecutors politically motivated",
+  "Attacks a Republican who disagreed with him",
+  "Calls someone a RINO",
+  "Mispronounces an opponent's name on purpose",
+  "Calls the investigation a witch hunt",
+  "Accuses someone of being a communist",
+  "Says Democrats want to destroy the country",
+  "Claims the media makes up sources",
+  "Calls a news network fake news",
+  "Says SNL should be investigated",
+  "Attacks a late-night host",
+  "Calls a book about him fiction",
+  "Claims a recording was doctored",
+  "Says the Deep State is after him",
+  "Blames Pelosi for January 6th",
+  "Claims Antifa did January 6th",
+  "Calls a city a 'disaster' (it's fine)",
+  "Says a blue state is failing (it's thriving)",
+
+  // === FOREIGN POLICY / WORLD LEADERS ===
+  "Mispronounces a world leader's name",
+  "Threatens a random country",
+  "Confuses two completely different countries",
+  "Calls a dictator 'a strong leader'",
+  "Says he and Putin get along great",
+  "Brags about love letters from Kim Jong Un",
+  "Claims he stopped World War III",
+  "Says NATO countries owe him money personally",
+  "Confuses NATO with a subscription service",
+  "Claims a country is paying us tariffs (that's not how tariffs work)",
+  "Says China is scared of him",
+  "Claims Mexico paid for the wall",
+  "Says he could negotiate peace anywhere in 24 hours",
+  "Claims a trade war was easy to win",
+  "Compliments an authoritarian's physique",
+  "Says a dictator was very nice to him",
+  "Claims he fixed the Middle East",
+  "Says Europe takes advantage of us",
+  "Confuses the UK with England with Britain",
+  "Brags about pulling out of the Paris Accord",
+  "Claims he knows more about ISIS than generals",
+  "Says he defeated ISIS personally",
+  "Claims he brokered peace in Korea",
+  "Threatens to nuke someone casually",
+  "Says he could buy Greenland",
+  "Mentions wanting to buy Greenland again",
+  "Claims Canada should be a state",
+  "Threatens tariffs on an ally",
+  "Says Japan's prime minister loves him",
+  "Calls Africa a country",
+  "Confuses Austria and Australia",
+  "Claims he made Saudi Arabia behave",
+  "Says he saved NATO",
+  "Brags about moving the embassy to Jerusalem",
+  "Calls the Panama Canal American property",
+  "Threatens to invade an ally for a canal",
+  "Says he renamed a Gulf",
+  "Claims tariffs made America rich",
+  "Thinks tariffs are paid by foreign countries",
+  "Calls a democratic ally 'very unfair'",
+
+  // === PHYSICAL / APPEARANCE ===
+  "Visible spray tan line",
+  "Hair moves independently of his head",
+  "Tie is comically long",
+  "Squints at the teleprompter",
+  "Weird hand gestures",
+  "Does the accordion hands",
+  "Makes the tiny OK sign",
+  "Leans forward at a strange angle",
+  "Death grip on the podium",
+  "Drinks water with two hands",
+  "Sips water dramatically",
+  "Struggles with a bottle cap",
+  "Turns to the wrong camera",
+  "Stands at that weird forward tilt",
+  "Orange hue is visible from space",
+  "Suit is obviously too big",
+  "Red tie reaches his knees",
+  "Visible hair helmet shellac",
+  "Sweating visibly",
+  "Makes a duck face",
+  "Does the 'tough guy' jaw clench",
+  "Raises both fists for no reason",
+  "Points at random people in the audience",
+  "Winks at the camera creepily",
+  "Does a thumbs up at an inappropriate moment",
+  "Hugs a flag",
+  "Dry mouth lip smacking",
+  "Shuffles his papers aggressively",
+  "Adjusts the microphone unnecessarily",
+  "Awkward dance move at the podium",
+
+  // === CROWD / AUDIENCE REACTIONS ===
+  "Standing ovation from sycophants lasts uncomfortably long",
+  "Camera cuts to someone visibly uncomfortable",
+  "One side stands while the other sits",
+  "Someone falls asleep",
+  "Visible eye roll from a Democrat",
+  "Pelosi-style sarcastic clap",
+  "Someone mouths 'what the f***'",
+  "Camera finds a confused foreign dignitary",
+  "Someone checks their phone",
+  "A military officer stares blankly into the void",
+  "Supreme Court justices sit in stone silence",
+  "Someone laughs at something not meant to be funny",
+  "The VP nods like a bobblehead",
+  "A senator's face goes viral",
+  "Audience member holds up a sign",
+  "Someone shouts from the gallery",
+  "Standing ovation for a lie",
+  "Camera catches two people whispering",
+  "Someone claps at the wrong time",
+  "Awkward silence after a punchline",
+  "A cabinet member claps too enthusiastically",
+  "Someone in the audience does a facepalm",
+  "Camera finds a veteran who looks betrayed",
+  "Reporter seen mouthing 'oh my god'",
+  "Half the room refuses to stand",
+
+  // === POLICY NONSENSE ===
+  "Invisible infrastructure week",
+  "Claims the wall is almost finished",
+  "Announces a plan with zero details",
+  "Promises a healthcare plan 'in two weeks'",
+  "Says he'll release his tax returns soon",
+  "Proposes something blatantly unconstitutional",
+  "Contradicts his own policy from last week",
+  "Takes credit for a bill he didn't sign",
+  "Claims he lowered drug prices to nothing",
+  "Says he'll end all crime immediately",
+  "Promises to cure a disease",
+  "Says he'll solve homelessness in a week",
+  "Claims he'll bring back manufacturing overnight",
+  "Announces a commission that never meets",
+  "Promises an executive order on everything",
+  "Says he'll fix education by defunding it",
+  "Claims privatization will solve everything",
+  "Proposes a Space Force victory lap",
+  "Promises a middle-class tax cut that's actually for billionaires",
+  "Says he'll fix the opioid crisis (again)",
+  "Announces infrastructure week (again)",
+  "Claims Obamacare is dead (it's not)",
+  "Promises to protect pre-existing conditions while trying to remove them",
+  "Says he'll bring back coal",
+  "Claims clean coal is a real thing",
+  "Announces a deal that was already in progress",
+  "Proposes renaming something after himself",
+  "Says he fixed the VA (he didn't)",
+  "Claims he built more wall than exists",
+  "Promises something that's already law",
+
+  // === MEDIA AND TECHNOLOGY ===
+  "Mentions his Truth Social account",
+  "Complains about Twitter banning him",
+  "Attacks a specific newspaper",
+  "Claims ratings for this speech are the highest ever",
+  "References a Fox News segment from this morning",
+  "Quotes an anonymous 'very smart person'",
+  "Says the internet loves him",
+  "Claims more followers than anyone",
+  "Attacks a tech company",
+  "Says AI is very powerful and he's looking into it",
+  "Claims he understands technology better than tech people",
+  "Says social media is unfair to conservatives",
+  "Mentions a TV show that got cancelled",
+  "References a meme about himself approvingly",
+  "Claims he's the most covered president ever",
+  "Says the media is afraid of him",
+  "Complains about fact-checkers",
+  "Calls a reporter a terrible person",
+  "Claims newspapers are going out of business because of him",
+  "Brags about breaking the internet",
+
+  // === FAMILY AND CRONIES ===
+  "Mentions Ivanka like she's still relevant",
+  "Compliments Jared Kushner's Middle East peace",
+  "Mentions Don Jr. approvingly",
+  "Calls a convicted felon 'a great patriot'",
+  "Praises an indicted ally",
+  "Claims Melania is the best First Lady ever",
+  "Says his children are business geniuses",
+  "Mentions a family member's business deal",
+  "Praises someone who was just arrested",
+  "Claims Melania loves doing this",
+  "References Barron's height",
+  "Says Eric is very smart",
+  "Mentions Tiffany (surprise!)",
+  "Claims his family has sacrificed greatly",
+  "Praises a cabinet member who resigned in disgrace",
+  "Brags about a friend's yacht",
+  "Mentions a billionaire donor by name",
+  "Calls a grifter 'tremendous'",
+  "Claims loyalty is the most important quality",
+  "Praises someone who will be indicted next week",
+
+  // === RACISM / XENOPHOBIA / FEAR ===
+  "Describes immigrants as animals",
+  "Claims immigrants are eating pets",
+  "Says 'bad hombres'",
+  "Mentions the migrant caravan",
+  "Describes a country as a 'sh*thole'",
+  "Claims immigrants are all criminals",
+  "Uses 'the Blacks' as a demographic term",
+  "Says 'I love the Hispanics'",
+  "Claims there are terrorists in the caravan",
+  "Describes a neighborhood as 'infested'",
+  "Uses the word 'invasion' about immigration",
+  "Claims MS-13 is in every city",
+  "Says sanctuary cities are war zones",
+  "Calls asylum seekers 'illegals'",
+  "Implies all Muslims are dangerous",
+  "Claims immigrants are poisoning the blood of the country",
+  "Says certain people come from 'very rough' countries",
+  "Uses 'urban' as a dog whistle",
+  "Brings up the border wall with scary music energy",
+  "Claims undocumented people are voting",
+  "Says immigrants are taking 'Black jobs'",
+  "Says immigrants are taking 'Hispanic jobs'",
+  "Implies entire religions are threats",
+  "Fear-mongers about a specific country's people",
+  "Claims crime is only happening in blue cities",
+
+  // === CORRUPTION AND GRIFT ===
+  "Plugs a Trump property",
+  "Mentions Mar-a-Lago",
+  "References a Trump hotel",
+  "Brags about his golf courses",
+  "Promotes a product during the speech",
+  "Mentions a business deal approvingly",
+  "Claims he lost money being president",
+  "Says he donates his salary (doesn't mention grift)",
+  "Plugs Trump Steaks energy",
+  "References Trump University positively",
+  "Mentions his 'brand'",
+  "Talks about real estate mid-policy",
+  "Claims he could be making billions instead",
+  "Brags about a building he owns",
+  "References his net worth",
+  "Says he's the poorest rich person ever",
+  "Complains the presidency costs him money",
+  "Mentions a licensing deal",
+  "Brags about a Trump Tower somewhere",
+  "Plugs his sneaker line",
+  "References his NFT collection",
+  "Mentions his Bible sales",
+  "Plugs Trump-branded merchandise",
+  "Claims his businesses create the most jobs",
+  "Mentions his cryptocurrency",
+
+  // === DEMOCRATIC NORMS / AUTHORITARIANISM ===
+  "Jokes about staying president forever",
+  "References being president for more than two terms",
+  "Attacks the judicial system",
+  "Questions the legitimacy of elections",
+  "Suggests jailing political opponents",
+  "Praises a dictator's control over their country",
+  "Implies he should have unchecked power",
+  "Calls oversight 'presidential harassment'",
+  "Dismisses constitutional constraints",
+  "Suggests the free press should be limited",
+  "Implies protesters should be roughed up",
+  "References 'law and order' ominously",
+  "Suggests he's above the law",
+  "Claims executive privilege over everything",
+  "Says he can declassify things with his mind",
+  "Attacks a state's election results",
+  "Suggests voter ID would prevent Democrats from winning",
+  "Claims mail-in ballots are all fraudulent",
+  "Says he needs more power to fix things",
+  "References Article II giving him unlimited power",
+
+  // === SCIENCE AND HEALTH ===
+  "Climate change denial",
+  "Claims it's cold therefore no global warming",
+  "Suggests injecting disinfectant",
+  "Says something medically impossible",
+  "Claims a random substance cures something",
+  "Contradicts the CDC",
+  "Contradicts the WHO",
+  "Says vaccines cause something they don't",
+  "Claims he knows more than Fauci",
+  "Suggests UV light inside the body",
+  "Denies something scientifically proven",
+  "Claims doctors called to thank him",
+  "Says a pandemic was no big deal",
+  "Claims he handled COVID perfectly",
+  "Suggests a home remedy for a disease",
+  "Says exercise depletes your life battery",
+  "Claims the body has finite energy",
+  "Contradicts his own health officials",
+  "Says he'll bring back a banned substance",
+  "Claims windmills cause health problems",
+
+  // === RELIGION AND CULTURE WAR ===
+  "Claims God chose him specifically",
+  "Holds a Bible upside down energy",
+  "Says 'Merry Christmas' like he invented it",
+  "Claims he saved 'Merry Christmas'",
+  "References the 'War on Christmas'",
+  "Brings up abortion to change the subject",
+  "Claims Democrats are anti-God",
+  "Says he's the most religious president",
+  "Quotes a Bible verse incorrectly",
+  "Calls something 'Two Corinthians' energy",
+  "Claims the country was founded as a Christian nation",
+  "Brings up prayer in schools",
+  "Says the Ten Commandments should be in classrooms",
+  "Claims he reads the Bible more than anyone",
+  "Invokes God to justify a policy",
+  "Says he's being persecuted like early Christians",
+  "Claims churches love him",
+  "References a pastor who endorsed him",
+  "Says America needs more God",
+  "Claims he personally saved religious liberty",
+
+  // === JAN 6TH / ELECTION DENIAL ===
+  "Calls Jan 6th rioters 'patriots'",
+  "Says Jan 6th was 'a day of love'",
+  "Claims he told people to be peaceful",
+  "Blames Pelosi for Jan 6th security",
+  "Says Antifa infiltrated Jan 6th",
+  "Calls his indictments election interference",
+  "Claims 2020 was stolen",
+  "References 'the steal'",
+  "Promises to pardon Jan 6th defendants",
+  "Calls himself a political prisoner",
+  "Compares his legal troubles to Mandela",
+  "Says the FBI planted evidence",
+  "Claims the documents were declassified",
+  "Says he had every right to keep documents",
+  "Calls Jack Smith deranged",
+  "Attacks a specific judge in his cases",
+  "Claims all charges are politically motivated",
+  "Says he did nothing wrong (about everything)",
+  "References 'perfect' phone calls",
+  "Claims the Georgia call was perfect",
+
+  // === ECONOMY LIES SPECIFICALLY ===
+  "Claims the Dow is at a record because of him",
+  "Takes credit for jobs created before he took office",
+  "Lies about the unemployment rate",
+  "Says tariffs brought in trillions (they didn't)",
+  "Claims he created more jobs than anyone",
+  "Says he built the best economy in world history",
+  "Claims no one paid taxes under his plan",
+  "Says the middle class got the biggest tax cut (they didn't)",
+  "Claims billionaires pay more because of him",
+  "Says small businesses are booming (they're closing)",
+  "Claims GDP growth was 10%",
+  "Says he eliminated the trade deficit (he widened it)",
+  "Lies about farm subsidies",
+  "Claims auto plants are opening everywhere",
+  "Says oil production is highest ever because of him",
+  "Claims he brought back steel",
+  "Says energy independence happened because of him",
+  "Claims inflation was zero under him",
+  "Lies about consumer confidence numbers",
+  "Claims the dollar is strongest ever",
+
+  // === TOTALLY UNHINGED ===
+  "Suggests something that makes the teleprompter operator wince",
+  "Says something his own staff clearly didn't approve",
+  "Goes completely off script",
+  "Reads stage directions out loud",
+  "Says the quiet part out loud",
+  "Makes a joke that lands with dead silence",
+  "Tries to start a chant during the SOTU",
+  "Starts freestyling",
+  "Does a weird impression of someone",
+  "Makes a sound effect",
+  "Tells a story that is clearly made up on the spot",
+  "References a conspiracy theory",
+  "Says something that makes Vance visibly uncomfortable",
+  "Makes Mike Johnson's face do something weird",
+  "Says something Fox News will have to spin later",
+  "Accidentally says the opposite of what he means",
+  "Gets confused about which speech he's giving",
+  "Confuses the SOTU with a rally",
+  "Asks the crowd to cheer",
+  "Tells the audience to boo someone",
+  "Starts a sentence that has no possible ending",
+  "Uses a metaphor that collapses immediately",
+  "Threatens to leave if people aren't nicer",
+  "Complains the podium is too short",
+  "Says something that will become a meme by morning",
+
+  // === SPECIFIC RECURRING CLAIMS ===
+  "Claims he aced a cognitive test",
+  "Mentions the test where he identified an elephant",
+  "Crowd size delusion",
+  "Claims his inauguration was the biggest ever",
+  "Says the border is the most secure ever",
+  "Claims he ended ISIS in 30 days",
+  "Says he rebuilt the military",
+  "Claims veterans love him more than anyone",
+  "Says he fixed the VA",
+  "Claims he passed VA accountability (Obama signed it)",
+  "Says NATO pays more because of him",
+  "Claims he got Japan to build car factories",
+  "Says Apple is building a factory in Texas",
+  "Claims Foxconn built a factory (they didn't)",
+  "Says he created opportunity zones (Tim Scott did)",
+  "Claims criminal justice reform was all him",
+  "Says he brought back 'Made in America'",
+  "Claims he passed the most legislation ever",
+  "Says he signed more executive orders than anyone",
+  "Claims he filled more judicial vacancies (McConnell held them open)",
+
+  // === MISC COMEDY GOLD ===
+  "Stares directly into an eclipse energy",
+  "Paper towel toss energy",
+  "Sharpie on a weather map energy",
+  "Suggests nuking a hurricane energy",
+  "Salutes a North Korean general energy",
+  "Drives a truck and honks the horn energy",
+  "Awkwardly pulls someone's hand in a handshake",
+  "Does the power handshake pull",
+  "Feeds fish by dumping the entire box",
+  "Shoves a world leader out of the way",
+  "Walks in front of the Queen energy",
+  "Gets lost on the way to his limo",
+  "Forgets which way to walk off stage",
+  "Walks toward Air Force One with toilet paper on shoe",
+  "Struggles with an umbrella",
+  "Leaves an umbrella open on the stairs",
+  "Slowly walks down a ramp",
+  "Holds a glass of water like it might attack him",
+  "Signs his name in giant Sharpie",
+  "Shows a printed screenshot of a tweet",
+
+  // === ELON / DOGE / TECH BROS ===
+  "Mentions DOGE department",
+  "Praises Elon's cost-cutting genius",
+  "Claims DOGE saved trillions (it didn't)",
+  "Says Elon is the smartest person alive",
+  "Claims they found fraud everywhere",
+  "Mentions firing government workers proudly",
+  "Brags about cutting programs people need",
+  "Says privatization will fix government",
+  "Claims Elon works for free (he doesn't)",
+  "Mentions Twitter/X as a bastion of free speech",
+  "Says tech billionaires are the new patriots",
+  "Claims AI will solve every problem",
+  "Says Elon will put us on Mars",
+  "Praises crypto as the future",
+  "Mentions his own cryptocurrency again",
+  "Claims the government was wasting every dollar",
+  "Says bureaucrats are the real enemy",
+  "Praises disruption like a TED talk",
+  "Claims Silicon Valley loves him now",
+  "Mentions a specific app or website no one uses",
+
+  // === PROJECTION ===
+  "Accuses others of exactly what he's doing",
+  "Calls someone corrupt while being investigated",
+  "Says someone is a liar mid-lie",
+  "Accuses Dems of weaponizing government while weaponizing government",
+  "Calls someone divisive during a divisive rant",
+  "Claims others are obsessed with him",
+  "Says someone has cognitive decline",
+  "Accuses media of spreading disinformation while spreading it",
+  "Calls an opponent a puppet",
+  "Says someone is controlled by special interests",
+  "Accuses opponents of cheating",
+  "Claims others are being investigated for political reasons",
+  "Says Democrats are destroying democracy",
+  "Accuses someone of being a narcissist",
+  "Claims others take too much credit",
+  "Says politicians lie to the American people",
+  "Accuses judges of bias",
+  "Claims the other party divides Americans",
+  "Says opponents are wasting taxpayer money",
+  "Accuses others of nepotism",
+
+  // === CATCHPHRASES AND GREATEST HITS ===
+  '"We\'re gonna win so much you\'ll be tired of winning"',
+  '"Make America Great Again" during the speech',
+  "Does a call-and-response with the audience",
+  '"Build the wall" chant energy',
+  '"Lock her up" energy in 2026',
+  '"Drain the swamp" (he is the swamp)',
+  '"America First" but it\'s just him first',
+  '"Fake news" at a congressional address',
+  "Points at someone and mouths 'I love you'",
+  '"Thank you, thank you" for too long',
+  '"That I can tell you"',
+  "Pauses for applause that doesn't come",
+  "Pauses for applause that goes on forever",
+  "Does the clap-point at someone in the balcony",
+  '"Low energy" reference about anyone',
+  "Calls something 'a total disaster'",
+  '"We have no choice"',
+  '"What do you have to lose?"',
+  '"We will never surrender"',
+  "Ends with a weird fist pump",
+
+  // === ABSURD MOMENTS ===
+  "Starts talking about toilets",
+  "Mentions shower water pressure again",
+  "Claims airports existed during the Revolution",
+  "Confuses a state with a country",
+  "Tells a story where he's clearly the villain but doesn't realize it",
+  "Brags about something embarrassing",
+  "Misidentifies someone in the audience",
+  "Confuses his own cabinet members",
+  "Says he never said something we have on tape",
+  "Claims a photo was doctored (it wasn't)",
+  "References a TV character as if they're real",
+  "Tells an anecdote that makes him look bad",
+  "Claims an award he never received",
+  "Says he was invited somewhere he wasn't",
+  "Claims he turned down Time Person of the Year",
+  "References being on the cover of Time (it was fake)",
+  "Talks about his childhood like it was Dickensian",
+  "Claims he had a small loan of a million dollars",
+  "Tells a war story he heard secondhand as his own",
+  "Accidentally compliments an opponent",
+
+  // === META / BREAKING THE FOURTH WALL ===
+  "Complains about the teleprompter",
+  "Acknowledges the cameras uncomfortably",
+  "Mentions that he's being broadcast live",
+  "Says 'this is being recorded'",
+  "Talks about how long the speech is",
+  "Mentions he was told to keep it short",
+  "Says 'I shouldn't say this but'",
+  "Warns his staff won't like what he's about to say",
+  "Mentions his speechwriters dismissively",
+  "Says the speech was written by great people",
+  "Abandons the teleprompter visibly",
+  "Looks at his notes and gives up",
+  "Asks if the mic is working",
+  "Comments on the room temperature",
+  "Mentions how many people are watching",
+  "Says this speech will be studied in history",
+  "Claims this is the best SOTU speech ever given",
+  "Mentions the TV ratings mid-speech",
+  "Asks if everyone is having a good time",
+  "Complains about the lighting",
+
+  // === PROMISES THAT WILL NEVER HAPPEN ===
+  "Promises a healthcare plan in two weeks",
+  "Says infrastructure will be done this year",
+  "Claims the wall will be finished next month",
+  "Promises to release his tax returns",
+  "Says he'll balance the budget",
+  "Claims he'll eliminate the national debt",
+  "Promises middle-class tax cuts (for billionaires)",
+  "Says he'll bring back every overseas job",
+  "Claims he'll end all wars",
+  "Promises to fix Social Security without cutting it",
+  "Says he'll cure cancer",
+  "Claims prescription drugs will be free",
+  "Promises the best healthcare in the world",
+  "Says every American will have a job",
+  "Claims he'll end homelessness",
+  "Promises flying cars basically",
+  "Says he'll make America energy dominant",
+  "Claims he'll end the drug crisis",
+  "Promises something he already promised 6 years ago",
+  "Says 'we will do it very quickly'",
+
+  // === REACTIONS AND CONSEQUENCES ===
+  "Fox News calls it 'presidential' no matter what",
+  "CNN panel looks exhausted",
+  "MSNBC host's head explodes",
+  "Fact-checkers crash from overload",
+  "Wikipedia has to be locked for edits",
+  "The stock market reacts immediately",
+  "A foreign ally issues a confused statement",
+  "The White House has to 'clarify' within the hour",
+  "His own party distances themselves by morning",
+  "A new hashtag is trending before he finishes",
+  "Someone in the audience goes viral",
+  "A diplomat is seen texting furiously",
+  "The VP tries not to react",
+  "A general maintains the most neutral face in history",
+  "Late-night hosts have too much material",
+  "The speech gets a content warning",
+  "Closed captions give up",
+  "The sign language interpreter looks distressed",
+  "Social media crashes",
+  "The bartender at the nearest DC bar runs out of bourbon",
+];
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function newCard() {
+  const grid = document.getElementById('grid');
+  grid.innerHTML = '';
+  const picked = shuffle(SQUARES).slice(0, 24);
+  // Insert center at position 12
+  picked.splice(12, 0, null);
+
+  for (let i = 0; i < 25; i++) {
+    const cell = document.createElement('div');
+    cell.className = 'cell';
+    cell.onclick = function() { stamp(this); };
+
+    if (i === 12) {
+      cell.classList.add('center');
+      cell.innerHTML = '<span class="star">\u2605</span>Dies on Stage';
+    } else {
+      cell.textContent = picked[i];
+    }
+    grid.appendChild(cell);
+  }
+}
+
+function stamp(el) {
+  el.classList.toggle('stamped');
+  checkBingo();
+}
+
+function checkBingo() {
+  const cells = document.querySelectorAll('#grid .cell');
+  const grid = [];
+  for (let r = 0; r < 5; r++) {
+    grid[r] = [];
+    for (let c = 0; c < 5; c++) {
+      grid[r][c] = cells[r * 5 + c].classList.contains('stamped');
+    }
+  }
+
+  let bingo = false;
+  for (let r = 0; r < 5; r++) {
+    if (grid[r].every(v => v)) bingo = true;
+  }
+  for (let c = 0; c < 5; c++) {
+    if (grid.every(row => row[c])) bingo = true;
+  }
+  if ([0,1,2,3,4].every(i => grid[i][i])) bingo = true;
+  if ([0,1,2,3,4].every(i => grid[i][4 - i])) bingo = true;
+
+  if (bingo) {
+    document.querySelector('h1').style.animation = 'none';
+    setTimeout(() => {
+      document.querySelector('h1').style.animation = 'flash 0.5s ease 3';
+    }, 10);
+  }
+}
+
+// Generate on load
+newCard();
+
+// === GENERATE FLAMES ===
+(function() {
+  const container = document.querySelector('.flames-container');
+  const colors = [
+    ['#ff4500', '#ff6a00', '#ff8c00'],  // deep orange
+    ['#ff3300', '#ff5500', '#ff7700'],  // red-orange
+    ['#ffaa00', '#ffcc00', '#ffdd44'],  // yellow
+    ['#ff2200', '#ff4400', '#ff6600'],  // red
+    ['#ff5500', '#ff7700', '#ffaa00'],  // orange
+  ];
+
+  for (let i = 0; i < 35; i++) {
+    const flame = document.createElement('div');
+    flame.className = 'flame';
+    const c = colors[Math.floor(Math.random() * colors.length)];
+    const w = 40 + Math.random() * 80;
+    const h = 80 + Math.random() * 180;
+    const left = (i / 35) * 100 + (Math.random() * 4 - 2);
+    const dur = 0.8 + Math.random() * 1.5;
+    const delay = Math.random() * -2;
+    const anim = ['flicker', 'flicker2', 'flicker3'][Math.floor(Math.random() * 3)];
+
+    flame.style.cssText = `
+      left: ${left}%;
+      width: ${w}px;
+      height: ${h}px;
+      background: radial-gradient(ellipse at 50% 90%, ${c[2]}, ${c[1]} 40%, ${c[0]} 70%, transparent 100%);
+      animation: ${anim} ${dur}s ease-in-out ${delay}s infinite alternate;
+      opacity: ${0.5 + Math.random() * 0.4};
+    `;
+    container.appendChild(flame);
+  }
+})();
+</script>
+
+
+</body>
+</html>
