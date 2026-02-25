@@ -305,6 +305,26 @@
     box-shadow: 0 4px 15px rgba(192,57,43,0.4);
   }
 
+  .btn-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+    position: relative;
+    z-index: 10;
+  }
+
+  .clear-btn {
+    background: linear-gradient(135deg, #555, #777);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    font-size: 0.8rem;
+    padding: 10px 28px;
+  }
+
+  .clear-btn:hover {
+    background: linear-gradient(135deg, #777, #555);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.5);
+  }
+
   .new-card-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 25px rgba(192,57,43,0.6);
@@ -521,7 +541,10 @@
   </div>
 </div>
 
-<button class="new-card-btn" onclick="newCard()">New Card</button>
+<div class="btn-row">
+  <button class="new-card-btn" onclick="newCard()">New Card</button>
+  <button class="new-card-btn clear-btn" onclick="clearCard()">Clear Stamps</button>
+</div>
 <div class="instructions">Click squares to stamp them &bull; Drink responsibly (or don't)</div>
 
 <div class="watch-info">
@@ -1387,12 +1410,19 @@ function shuffle(arr) {
   return a;
 }
 
-function newCard() {
+// Stamped squares tracked by text content
+let stampedSet = new Set(JSON.parse(localStorage.getItem('bingo-stamped') || '[]'));
+
+function saveState(picked) {
+  localStorage.setItem('bingo-card', JSON.stringify(picked));
+  localStorage.setItem('bingo-stamped', JSON.stringify([...stampedSet]));
+}
+
+function renderCard(picked) {
   const grid = document.getElementById('grid');
   grid.innerHTML = '';
-  const picked = shuffle(SQUARES).slice(0, 24);
-  // Insert center at position 12
-  picked.splice(12, 0, null);
+  const cells = [...picked];
+  cells.splice(12, 0, null);
 
   for (let i = 0; i < 25; i++) {
     const cell = document.createElement('div');
@@ -1402,20 +1432,52 @@ function newCard() {
     if (i === 12) {
       cell.classList.add('center');
       cell.innerHTML = '<span class="star">\u2605</span>Dies on Stage';
+      if (stampedSet.has('__CENTER__')) cell.classList.add('stamped');
     } else {
-      cell.textContent = picked[i];
+      cell.textContent = cells[i];
+      if (stampedSet.has(cells[i])) cell.classList.add('stamped');
     }
     grid.appendChild(cell);
   }
+  checkBingo();
+}
+
+function newCard() {
+  const picked = shuffle(SQUARES).slice(0, 24);
+  saveState(picked);
+  renderCard(picked);
+}
+
+function loadCard() {
+  const saved = localStorage.getItem('bingo-card');
+  if (saved) {
+    renderCard(JSON.parse(saved));
+  } else {
+    newCard();
+  }
+}
+
+function clearCard() {
+  stampedSet.clear();
+  localStorage.setItem('bingo-stamped', '[]');
+  document.querySelectorAll('#grid .cell.stamped').forEach(c => c.classList.remove('stamped'));
 }
 
 function stamp(el) {
   el.classList.toggle('stamped');
+  const key = el.classList.contains('center') ? '__CENTER__' : el.textContent;
+  if (el.classList.contains('stamped')) {
+    stampedSet.add(key);
+  } else {
+    stampedSet.delete(key);
+  }
+  localStorage.setItem('bingo-stamped', JSON.stringify([...stampedSet]));
   checkBingo();
 }
 
 function checkBingo() {
   const cells = document.querySelectorAll('#grid .cell');
+  if (cells.length === 0) return;
   const grid = [];
   for (let r = 0; r < 5; r++) {
     grid[r] = [];
@@ -1442,8 +1504,8 @@ function checkBingo() {
   }
 }
 
-// Generate on load
-newCard();
+// Load saved card or generate new one
+loadCard();
 
 </script>
 
