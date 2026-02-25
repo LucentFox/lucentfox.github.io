@@ -160,10 +160,10 @@
 
   h1 {
     font-family: 'Permanent Marker', cursive;
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: clamp(1.6rem, 4vw, 2.8rem);
     color: #fff;
     text-align: center;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
     text-shadow: 3px 3px 0 #c0392b, 6px 6px 0 #2c3e80;
     letter-spacing: 2px;
     position: relative;
@@ -177,7 +177,7 @@
     letter-spacing: 6px;
     font-size: clamp(0.7rem, 2vw, 1rem);
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     position: relative;
     z-index: 10;
   }
@@ -312,17 +312,18 @@
   }
 
   .footer {
-    color: #777;
+    color: #ccc;
     text-align: center;
     margin-top: 16px;
     font-size: 0.75rem;
     font-style: italic;
     position: relative;
     z-index: 10;
+    text-shadow: 0 2px 6px rgba(0,0,0,1), 0 0 20px rgba(0,0,0,1), 0 0 40px rgba(0,0,0,0.8);
   }
 
   .instructions {
-    color: #95a5a6;
+    color: #ddd;
     text-align: center;
     margin-top: 14px;
     font-size: 0.72rem;
@@ -330,6 +331,52 @@
     text-transform: uppercase;
     position: relative;
     z-index: 10;
+    text-shadow: 0 2px 6px rgba(0,0,0,1), 0 0 20px rgba(0,0,0,1), 0 0 40px rgba(0,0,0,0.8);
+  }
+
+  .watch-info {
+    color: #fff;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.82rem;
+    line-height: 1.6;
+    position: relative;
+    z-index: 10;
+    text-shadow: 0 2px 6px rgba(0,0,0,1), 0 0 20px rgba(0,0,0,1), 0 0 40px rgba(0,0,0,0.8);
+    max-width: 600px;
+  }
+
+  .watch-info strong {
+    color: #f1c40f;
+    font-size: 1rem;
+  }
+
+  .watch-info a {
+    color: #5dade2;
+    text-decoration: none;
+  }
+
+  .watch-info a:hover {
+    text-decoration: underline;
+  }
+
+  .watch-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 16px;
+    margin-top: 8px;
+  }
+
+  .watch-links a {
+    color: #5dade2;
+    text-decoration: none;
+    font-size: 0.75rem;
+    text-shadow: 0 2px 6px rgba(0,0,0,1), 0 0 20px rgba(0,0,0,1), 0 0 40px rgba(0,0,0,0.8);
+  }
+
+  .watch-links a:hover {
+    text-decoration: underline;
   }
 
   @media print {
@@ -338,6 +385,7 @@
     .cell:hover { transform: none; }
     .instructions { display: none; }
     .new-card-btn { display: none; }
+    .watch-info { display: none; }
     .dumpster, .flames-container, .flame-glow { display: none; }
     h1 { color: #333; text-shadow: 2px 2px 0 #ccc; }
     .subtitle { color: #c0392b; }
@@ -351,7 +399,7 @@
 </head>
 <body>
 
-<h1>STATE OF THE DUMPSTER FIRE<br>WE CALL THE UNITED STATES</h1>
+<h1>STATE OF THE DUMPSTER FIRE</h1>
 <div class="subtitle">Bullsh*t Bingo // 2026 Edition</div>
 
 <div class="card">
@@ -475,6 +523,19 @@
 
 <button class="new-card-btn" onclick="newCard()">New Card</button>
 <div class="instructions">Click squares to stamp them &bull; Drink responsibly (or don't)</div>
+
+<div class="watch-info">
+  <strong>Tonight, 9:00 PM ET</strong><br>
+  Watch free on C-SPAN, PBS, ABC, CBS, NBC, FOX, CNN, MSNBC, Fox News
+  <div class="watch-links">
+    <a href="https://www.youtube.com/watch?v=live" target="_blank">PBS on YouTube</a>
+    <a href="https://www.cbsnews.com/live/" target="_blank">CBS News</a>
+    <a href="https://www.c-span.org/" target="_blank">C-SPAN</a>
+    <a href="https://abcnews.go.com/live" target="_blank">ABC News Live</a>
+    <a href="https://www.nbcnews.com/now" target="_blank">NBC News NOW</a>
+  </div>
+</div>
+
 <div class="footer">Not responsible for alcohol poisoning, existential dread, or loss of faith in democracy.</div>
 
 <script>
