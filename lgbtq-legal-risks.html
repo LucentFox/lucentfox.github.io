@@ -523,7 +523,7 @@
   .spectrum-bar-row.highlight .bar-fill { box-shadow: 0 0 12px rgba(91, 206, 250, 0.3); }
 
   .bar-label {
-    width: 120px;
+    width: 150px;
     font-size: 0.78rem;
     color: var(--text-secondary);
     text-align: right;
@@ -547,6 +547,43 @@
     transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
     position: relative;
     min-width: 2px;
+    z-index: 2;
+  }
+
+  /* Ghost bar: shows where a country was ~2021 */
+  .bar-ghost {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-radius: 4px;
+    z-index: 1;
+    transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* Country backslid: ghost extends past current bar to show lost ground */
+  .bar-ghost.was-higher {
+    background: repeating-linear-gradient(
+      90deg,
+      rgba(239, 68, 68, 0.25) 0px,
+      rgba(239, 68, 68, 0.25) 4px,
+      rgba(239, 68, 68, 0.08) 4px,
+      rgba(239, 68, 68, 0.08) 8px
+    );
+    border-right: 2px solid rgba(239, 68, 68, 0.6);
+  }
+
+  /* Country improved: green striped bar behind at current score; solid bar shortened to old score */
+  .bar-ghost.was-lower {
+    z-index: 1;
+    background: repeating-linear-gradient(
+      90deg,
+      rgba(52, 211, 153, 0.3) 0px,
+      rgba(52, 211, 153, 0.3) 4px,
+      rgba(52, 211, 153, 0.08) 4px,
+      rgba(52, 211, 153, 0.08) 8px
+    );
+    border-right: 2px solid rgba(52, 211, 153, 0.7);
   }
 
   .bar-score {
@@ -558,6 +595,7 @@
     font-family: 'JetBrains Mono', monospace;
     color: var(--text-muted);
     width: 28px;
+    z-index: 3;
   }
 
   .bar-fill.tier-high {
@@ -582,7 +620,7 @@
   }
 
   .spectrum-divider {
-    margin: 14px 0 14px 128px;
+    margin: 14px 0 14px 158px;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -757,8 +795,8 @@
     .worry-number { width: auto; font-size: 1rem; }
     .risk-table { font-size: 0.82rem; }
     .risk-table td, .risk-table th { padding: 10px 12px; }
-    .bar-label { width: 80px; font-size: 0.68rem; }
-    .spectrum-divider { margin-left: 88px; }
+    .bar-label { width: 110px; font-size: 0.68rem; }
+    .spectrum-divider { margin-left: 118px; }
   }
 
   /* === DIRECTION ARROWS === */
@@ -821,7 +859,7 @@
         <div class="spectrum-legend">
           <span><span class="legend-dot" style="background: var(--trans-blue);"></span> More protective</span>
           <span><span class="legend-dot" style="background: #ef4444;"></span> More hostile</span>
-          <span style="margin-left: 8px;">Direction (2021&ndash;2026): <span class="dir-up">&#9650;</span> improving <span class="dir-down">&#9660;</span> backsliding <span class="dir-flat">&#9644;</span> stable</span>
+          <span style="margin-left: 8px;"><span class="dir-up">&#9650;</span> improving <span class="dir-down">&#9660;</span> backsliding <span class="dir-flat">&#9644;</span> stable &nbsp; Striped bar = change since ~2021</span>
         </div>
       </div>
 
@@ -830,15 +868,15 @@
         <span class="divider-line"></span>
       </div>
 
-      <div class="spectrum-bar-row" data-score="93">
+      <div class="spectrum-bar-row" data-score="93" data-prev="89">
         <span class="bar-label">Iceland <span class="dir-up">&#9650;</span></span>
         <div class="bar-track"><div class="bar-fill tier-high" style="width: 0%;"><span class="bar-score">93</span></div></div>
       </div>
-      <div class="spectrum-bar-row" data-score="87">
+      <div class="spectrum-bar-row" data-score="87" data-prev="83">
         <span class="bar-label">Norway <span class="dir-up">&#9650;</span></span>
         <div class="bar-track"><div class="bar-fill tier-high" style="width: 0%;"><span class="bar-score">87</span></div></div>
       </div>
-      <div class="spectrum-bar-row" data-score="83">
+      <div class="spectrum-bar-row" data-score="83" data-prev="77">
         <span class="bar-label">Spain <span class="dir-up">&#9650;</span></span>
         <div class="bar-track"><div class="bar-fill tier-high" style="width: 0%;"><span class="bar-score">83</span></div></div>
       </div>
@@ -850,7 +888,7 @@
         <span class="bar-label">Malta <span class="dir-flat">&#9644;</span></span>
         <div class="bar-track"><div class="bar-fill tier-high" style="width: 0%;"><span class="bar-score">80</span></div></div>
       </div>
-      <div class="spectrum-bar-row" data-score="80">
+      <div class="spectrum-bar-row" data-score="80" data-prev="74">
         <span class="bar-label">Germany <span class="dir-up">&#9650;</span></span>
         <div class="bar-track"><div class="bar-fill tier-high" style="width: 0%;"><span class="bar-score">80</span></div></div>
       </div>
@@ -888,15 +926,15 @@
         <span class="divider-line"></span>
       </div>
 
-      <div class="spectrum-bar-row highlight" data-score="68">
+      <div class="spectrum-bar-row highlight" data-score="68" data-prev="76">
         <span class="bar-label">United States <span class="dir-down">&#9660;</span></span>
         <div class="bar-track"><div class="bar-fill tier-us" style="width: 0%;"><span class="bar-score">68</span></div></div>
       </div>
-      <div class="spectrum-bar-row" data-score="68">
+      <div class="spectrum-bar-row" data-score="68" data-prev="74">
         <span class="bar-label">United Kingdom <span class="dir-down">&#9660;</span></span>
         <div class="bar-track"><div class="bar-fill tier-mid" style="width: 0%;"><span class="bar-score">68</span></div></div>
       </div>
-      <div class="spectrum-bar-row" data-score="53">
+      <div class="spectrum-bar-row" data-score="53" data-prev="46">
         <span class="bar-label">Japan <span class="dir-up">&#9650;</span></span>
         <div class="bar-track"><div class="bar-fill tier-mid" style="width: 0%;"><span class="bar-score">53</span></div></div>
       </div>
@@ -904,7 +942,7 @@
         <span class="bar-label">Poland <span class="dir-flat">&#9644;</span></span>
         <div class="bar-track"><div class="bar-fill tier-mid" style="width: 0%;"><span class="bar-score">51</span></div></div>
       </div>
-      <div class="spectrum-bar-row" data-score="49">
+      <div class="spectrum-bar-row" data-score="49" data-prev="63">
         <span class="bar-label">Hungary <span class="dir-down">&#9660;</span></span>
         <div class="bar-track"><div class="bar-fill tier-mid" style="width: 0%;"><span class="bar-score">49</span></div></div>
       </div>
@@ -914,11 +952,11 @@
         <span class="divider-line"></span>
       </div>
 
-      <div class="spectrum-bar-row" data-score="32">
+      <div class="spectrum-bar-row" data-score="32" data-prev="36">
         <span class="bar-label">Turkey <span class="dir-down">&#9660;</span></span>
         <div class="bar-track"><div class="bar-fill tier-low" style="width: 0%;"><span class="bar-score">32</span></div></div>
       </div>
-      <div class="spectrum-bar-row" data-score="29">
+      <div class="spectrum-bar-row" data-score="29" data-prev="35">
         <span class="bar-label">Russia <span class="dir-down">&#9660;</span></span>
         <div class="bar-track"><div class="bar-fill tier-low" style="width: 0%;"><span class="bar-score">29</span></div></div>
       </div>
@@ -946,7 +984,7 @@
         <span class="bar-label">Egypt <span class="dir-flat">&#9644;</span></span>
         <div class="bar-track"><div class="bar-fill tier-hostile" style="width: 0%;"><span class="bar-score">10</span></div></div>
       </div>
-      <div class="spectrum-bar-row" data-score="9">
+      <div class="spectrum-bar-row" data-score="9" data-prev="14">
         <span class="bar-label">Uganda <span class="dir-down">&#9660;</span></span>
         <div class="bar-track"><div class="bar-fill tier-hostile" style="width: 0%;"><span class="bar-score">9</span></div></div>
       </div>
@@ -960,7 +998,7 @@
         <span class="bar-label">Iran <span class="dir-flat">&#9644;</span></span>
         <div class="bar-track"><div class="bar-fill tier-hostile" style="width: 0%;"><span class="bar-score">5</span></div></div>
       </div>
-      <div class="spectrum-bar-row" data-score="1">
+      <div class="spectrum-bar-row" data-score="1" data-prev="5">
         <span class="bar-label">Afghanistan <span class="dir-down">&#9660;</span></span>
         <div class="bar-track"><div class="bar-fill tier-hostile" style="width: 0%;"><span class="bar-score">1</span></div></div>
       </div>
@@ -977,7 +1015,7 @@
       </ul>
     </div>
 
-    <p class="chart-footnote">Scores: Equaldex Equality Index (equaldex.com/equality-index), combining legal protections and public opinion, 0&ndash;100. Direction arrows reflect legislative and policy changes since 2021 based on ILGA reports, news coverage, and tracked legislation; not derived from Equaldex historical scores (which they advise against comparing over time).</p>
+    <p class="chart-footnote">Scores: Equaldex Equality Index (equaldex.com/equality-index), combining legal protections and public opinion, 0&ndash;100. Numbers show current values. Striped bars show estimated change since ~2021 based on tracked legislation and policy changes (ILGA reports, news coverage). Equaldex does not publish historical scores, so change estimates are directional, not official data.</p>
   </section>
 
   <hr class="divider">
@@ -1625,17 +1663,47 @@ window.addEventListener('scroll', () => {
   document.getElementById('progressBar').style.width = progress + '%';
 });
 
-// Animate chart bars on scroll into view
+// Animate chart bars on scroll into view, with ghost bars for historical comparison
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       const bars = entry.target.querySelectorAll('.spectrum-bar-row');
       bars.forEach((row, i) => {
         const score = parseInt(row.dataset.score);
+        const prev = row.dataset.prev ? parseInt(row.dataset.prev) : null;
         const fill = row.querySelector('.bar-fill');
-        setTimeout(() => {
-          fill.style.width = score + '%';
-        }, i * 40);
+        const track = row.querySelector('.bar-track');
+
+        if (prev !== null && prev !== score && prev > score) {
+          // Country backslid: solid bar at current score, red striped ghost extends to old score
+          const ghost = document.createElement('div');
+          ghost.className = 'bar-ghost was-higher';
+          track.appendChild(ghost);
+          setTimeout(() => {
+            ghost.style.width = prev + '%';
+            fill.style.width = score + '%';
+          }, i * 40);
+        } else if (prev !== null && prev !== score && prev < score) {
+          // Country improved: solid bar stops at old score, green striped ghost extends to current score
+          const ghost = document.createElement('div');
+          ghost.className = 'bar-ghost was-lower';
+          track.appendChild(ghost);
+          // Move score label to the ghost (end of current value)
+          const scoreEl = fill.querySelector('.bar-score');
+          if (scoreEl) {
+            fill.removeChild(scoreEl);
+            ghost.appendChild(scoreEl);
+          }
+          setTimeout(() => {
+            ghost.style.width = score + '%';
+            fill.style.width = prev + '%';
+          }, i * 40);
+        } else {
+          // No change
+          setTimeout(() => {
+            fill.style.width = score + '%';
+          }, i * 40);
+        }
       });
       observer.unobserve(entry.target);
     }
