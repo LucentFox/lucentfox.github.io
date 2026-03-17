@@ -1,0 +1,1599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>When Being Queer or Trans Becomes Legally Risky</title>
+<meta property="og:title" content="When Being Queer or Trans Becomes Legally Risky">
+<meta property="og:description" content="Fact-based guide to federal and Utah legislation affecting LGBTQ+ people. What's law, what's proposed, and what's just rhetoric.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="When Being Queer or Trans Becomes Legally Risky">
+<meta name="twitter:description" content="Fact-based guide to federal and Utah legislation affecting LGBTQ+ people. Separating law from fear.">
+<meta name="theme-color" content="#5bcefa">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    /* Trans flag palette: light blue #5bcefa, pink #f5a9b8, white #ffffff */
+    --trans-blue: #5bcefa;
+    --trans-pink: #f5a9b8;
+    --trans-white: #ffffff;
+    --trans-blue-dim: #3a8ab0;
+    --trans-pink-dim: #c48794;
+
+    --bg-dark: #0c1017;
+    --bg-card: #131a24;
+    --bg-card-alt: #162030;
+    --bg-quote: #151d2a;
+    --text-primary: #e8edf4;
+    --text-secondary: #a0b0c4;
+    --text-muted: #6b7d94;
+    --accent-primary: #5bcefa;
+    --accent-secondary: #f5a9b8;
+    --accent-tertiary: #e0e8f0;
+    --status-law: #ef4444;
+    --status-eo: #f59e0b;
+    --status-proposed: #818cf8;
+    --status-failed: #6b7280;
+    --status-safe: #34d399;
+    --border-subtle: rgba(91, 206, 250, 0.12);
+    --border-glow: rgba(91, 206, 250, 0.25);
+    --gradient-hero: linear-gradient(135deg, #0c1017 0%, #122035 30%, #1a1525 60%, #0c1017 100%);
+    --shadow-card: 0 4px 24px rgba(0,0,0,0.5);
+    --shadow-glow: 0 0 40px rgba(91, 206, 250, 0.06);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* === HERO === */
+  .hero {
+    background: var(--gradient-hero);
+    padding: 80px 24px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background:
+      radial-gradient(ellipse at 25% 40%, rgba(91, 206, 250, 0.07) 0%, transparent 55%),
+      radial-gradient(ellipse at 75% 60%, rgba(245, 169, 184, 0.06) 0%, transparent 55%),
+      radial-gradient(ellipse at 50% 30%, rgba(255, 255, 255, 0.02) 0%, transparent 40%);
+    animation: drift 20s ease-in-out infinite;
+  }
+
+  @keyframes drift {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-3%, 2%); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, var(--trans-blue) 0%, var(--trans-white) 40%, var(--trans-pink) 70%, var(--trans-blue) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero .subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 640px;
+    margin: 0 auto 28px;
+    line-height: 1.7;
+  }
+
+  .hero .meta {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* === LAYOUT === */
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* === TABLE OF CONTENTS === */
+  .toc {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 16px;
+    padding: 32px 36px;
+    margin: 40px auto;
+    max-width: 900px;
+    box-shadow: var(--shadow-card);
+  }
+
+  .toc h2 {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent-primary);
+    margin-bottom: 16px;
+  }
+
+  .toc ol {
+    list-style: none;
+    counter-reset: toc-counter;
+    columns: 2;
+    column-gap: 32px;
+  }
+
+  @media (max-width: 600px) {
+    .toc ol { columns: 1; }
+  }
+
+  .toc li {
+    counter-increment: toc-counter;
+    margin-bottom: 8px;
+    break-inside: avoid;
+  }
+
+  .toc li a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    transition: color 0.2s;
+    padding: 4px 0;
+  }
+
+  .toc li a::before {
+    content: counter(toc-counter, decimal-leading-zero);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--accent-primary);
+    opacity: 0.6;
+    flex-shrink: 0;
+  }
+
+  .toc li a:hover { color: var(--accent-primary); }
+
+  /* === SECTIONS === */
+  section {
+    margin: 56px auto;
+    max-width: 900px;
+  }
+
+  section > h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  section > h2 .section-icon {
+    font-size: 0.9rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(91, 206, 250, 0.1), rgba(245, 169, 184, 0.08));
+    border-radius: 12px;
+    flex-shrink: 0;
+    color: var(--accent-primary);
+  }
+
+  section > .section-lead {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    margin-bottom: 28px;
+    max-width: 720px;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 32px 0 12px;
+    color: var(--text-primary);
+  }
+
+  h4 { font-size: 1rem; font-weight: 600; margin: 20px 0 8px; color: var(--text-secondary); }
+  p { margin-bottom: 14px; color: var(--text-secondary); }
+  strong { color: var(--text-primary); font-weight: 600; }
+
+  /* === STATUS BADGES === */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .badge-law { background: rgba(239, 68, 68, 0.15); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.25); }
+  .badge-eo { background: rgba(245, 158, 11, 0.15); color: #fcd34d; border: 1px solid rgba(245, 158, 11, 0.25); }
+  .badge-proposed { background: rgba(91, 206, 250, 0.12); color: #91dcfa; border: 1px solid rgba(91, 206, 250, 0.2); }
+  .badge-failed { background: rgba(107, 114, 128, 0.15); color: #9ca3af; border: 1px solid rgba(107, 114, 128, 0.25); }
+  .badge-safe { background: rgba(52, 211, 153, 0.15); color: #6ee7b7; border: 1px solid rgba(52, 211, 153, 0.25); }
+  .badge-legal-challenge { background: rgba(245, 169, 184, 0.12); color: #f5c4cf; border: 1px solid rgba(245, 169, 184, 0.2); }
+
+  /* === OVERVIEW TABLE === */
+  .overview-grid { display: grid; gap: 12px; margin: 24px 0; }
+
+  .overview-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1px;
+    background: var(--border-subtle);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .overview-row > div { background: var(--bg-card); padding: 14px 18px; }
+  .overview-row > div:first-child { font-weight: 600; color: var(--text-primary); font-size: 0.9rem; }
+  .overview-row > div:not(:first-child) { font-size: 0.85rem; color: var(--text-secondary); }
+
+  .overview-header {
+    font-weight: 700 !important;
+    font-size: 0.75rem !important;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted) !important;
+  }
+
+  @media (max-width: 700px) {
+    .overview-row { grid-template-columns: 1fr; }
+    .overview-row > div:nth-child(2)::before { content: "Federal: "; font-weight: 600; color: var(--text-muted); }
+    .overview-row > div:nth-child(3)::before { content: "Utah: "; font-weight: 600; color: var(--text-muted); }
+    .overview-header { display: none; }
+  }
+
+  /* === QUOTE BLOCKS === */
+  .doc-quote {
+    background: var(--bg-quote);
+    border-left: 3px solid var(--accent-primary);
+    border-radius: 0 12px 12px 0;
+    padding: 24px 28px;
+    margin: 20px 0;
+    position: relative;
+  }
+
+  .doc-quote.danger { border-left-color: var(--status-law); background: rgba(239, 68, 68, 0.04); }
+  .doc-quote.warning { border-left-color: var(--status-eo); background: rgba(245, 158, 11, 0.04); }
+
+  .doc-quote .source {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-family: 'JetBrains Mono', monospace;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .doc-quote blockquote {
+    font-style: italic;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-size: 0.95rem;
+  }
+
+  .doc-quote blockquote mark {
+    background: rgba(239, 68, 68, 0.2);
+    color: #fca5a5;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-style: italic;
+  }
+
+  /* === CALLOUTS === */
+  .callout {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 20px 0;
+    box-shadow: var(--shadow-card);
+  }
+
+  .callout-title {
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .callout.fact .callout-title { color: #6ee7b7; }
+  .callout.warning .callout-title { color: #fcd34d; }
+  .callout.danger .callout-title { color: #fca5a5; }
+  .callout.info .callout-title { color: var(--trans-blue); }
+
+  .callout ul { margin: 0; padding-left: 20px; }
+  .callout li { margin-bottom: 6px; color: var(--text-secondary); font-size: 0.92rem; }
+
+  /* === BILL CARDS === */
+  .bill-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 14px;
+    padding: 24px 28px;
+    margin: 16px 0;
+    box-shadow: var(--shadow-card);
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+
+  .bill-card:hover { border-color: var(--border-glow); box-shadow: var(--shadow-glow); }
+
+  .bill-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+  }
+
+  .bill-name { font-weight: 800; font-size: 1.1rem; color: var(--text-primary); }
+
+  .bill-title { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 14px; font-style: italic; }
+
+  .bill-details { font-size: 0.92rem; color: var(--text-secondary); }
+  .bill-details ul { padding-left: 18px; margin: 8px 0; }
+  .bill-details li { margin-bottom: 5px; }
+
+  .bill-details .detail-label {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 4px;
+  }
+
+  /* === RISK TABLE === */
+  .risk-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 20px 0;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .risk-table th {
+    background: rgba(91, 206, 250, 0.08);
+    text-align: left;
+    padding: 12px 16px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent-primary);
+  }
+
+  .risk-table td {
+    padding: 14px 16px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    background: var(--bg-card);
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .risk-table tr:first-child td { border-top: none; }
+  .risk-table td:first-child { font-weight: 600; color: var(--text-primary); }
+
+  /* === GLOBAL SPECTRUM CHART === */
+  .spectrum-chart {
+    margin: 28px 0;
+  }
+
+  .spectrum-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .spectrum-header .chart-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+  }
+
+  .spectrum-legend {
+    display: flex;
+    gap: 16px;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .spectrum-legend span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .spectrum-bar-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+    gap: 8px;
+    position: relative;
+  }
+
+  .spectrum-bar-row.highlight .bar-label { color: var(--text-primary); font-weight: 700; }
+  .spectrum-bar-row.highlight .bar-fill { box-shadow: 0 0 12px rgba(91, 206, 250, 0.3); }
+
+  .bar-label {
+    width: 120px;
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    text-align: right;
+    flex-shrink: 0;
+    font-family: 'JetBrains Mono', monospace;
+    white-space: nowrap;
+  }
+
+  .bar-track {
+    flex: 1;
+    height: 22px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+    position: relative;
+    min-width: 2px;
+  }
+
+  .bar-score {
+    position: absolute;
+    right: -36px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.7rem;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--text-muted);
+    width: 28px;
+  }
+
+  .bar-fill.tier-high {
+    background: linear-gradient(90deg, var(--trans-blue), #34d399);
+  }
+
+  .bar-fill.tier-mid {
+    background: linear-gradient(90deg, var(--trans-blue), var(--trans-pink));
+  }
+
+  .bar-fill.tier-us {
+    background: linear-gradient(90deg, var(--trans-blue), var(--trans-pink));
+    box-shadow: 0 0 14px rgba(91, 206, 250, 0.25);
+  }
+
+  .bar-fill.tier-low {
+    background: linear-gradient(90deg, #f59e0b, #ef8844);
+  }
+
+  .bar-fill.tier-hostile {
+    background: linear-gradient(90deg, #ef4444, #991b1b);
+  }
+
+  .spectrum-divider {
+    margin: 14px 0 14px 128px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .spectrum-divider .divider-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border-subtle);
+  }
+
+  .spectrum-divider .divider-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+
+  .chart-footnote {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 16px;
+    font-style: italic;
+  }
+
+  .us-marker {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(91, 206, 250, 0.1);
+    border: 1px solid rgba(91, 206, 250, 0.2);
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-size: 0.68rem;
+    color: var(--trans-blue);
+    font-weight: 700;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* === WORRY LIST === */
+  .worry-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 12px 0;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .worry-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--accent-primary);
+    opacity: 0.4;
+    flex-shrink: 0;
+    width: 32px;
+    text-align: center;
+    line-height: 1.7;
+  }
+
+  .worry-content { flex: 1; }
+  .worry-content strong { color: var(--text-primary); }
+  .worry-content p { margin-bottom: 0; font-size: 0.92rem; }
+
+  /* === RESOURCES === */
+  .resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+  }
+
+  .resource-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 20px 22px;
+    transition: border-color 0.3s, transform 0.2s;
+  }
+
+  .resource-card:hover { border-color: var(--border-glow); transform: translateY(-2px); }
+  .resource-card h4 { margin: 0 0 10px; font-size: 0.9rem; color: var(--text-primary); }
+
+  .resource-card a {
+    color: var(--accent-primary);
+    text-decoration: none;
+    font-size: 0.85rem;
+    display: block;
+    margin-bottom: 4px;
+    word-break: break-all;
+    transition: color 0.2s;
+  }
+
+  .resource-card a:hover { color: var(--accent-secondary); }
+
+  /* === DIVIDER === */
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-subtle), rgba(245, 169, 184, 0.1), var(--border-subtle), transparent);
+    margin: 48px 0;
+    border: none;
+  }
+
+  /* === FOOTER === */
+  .page-footer {
+    text-align: center;
+    padding: 48px 24px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border-subtle);
+    margin-top: 64px;
+  }
+
+  .page-footer a { color: var(--accent-primary); text-decoration: none; }
+  .page-footer p { color: var(--text-muted); margin-bottom: 8px; }
+
+  /* === IMPLEMENTATION DOTS === */
+  .impl-status { display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; margin-left: 4px; }
+  .impl-dot { width: 7px; height: 7px; border-radius: 50%; display: inline-block; }
+  .impl-dot.yes { background: var(--status-law); }
+  .impl-dot.partial { background: var(--status-eo); }
+  .impl-dot.no { background: var(--status-safe); }
+
+  /* === SCROLL PROGRESS === */
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--trans-blue), var(--trans-white), var(--trans-pink));
+    z-index: 9999;
+    transition: width 0.1s;
+    width: 0%;
+  }
+
+  /* === LEGAL LIST === */
+  .legal-list { list-style: none; padding: 0; margin: 12px 0; }
+
+  .legal-list li {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 6px 0;
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+  }
+
+  .legal-list .check { color: #6ee7b7; flex-shrink: 0; }
+  .legal-list .x-mark { color: #fca5a5; flex-shrink: 0; }
+
+  /* === MOBILE === */
+  @media (max-width: 600px) {
+    .hero { padding: 56px 20px 40px; }
+    section { margin: 36px auto; }
+    .bill-card { padding: 18px 20px; }
+    .toc { padding: 24px; }
+    .doc-quote { padding: 18px 20px; }
+    .worry-item { flex-direction: column; gap: 4px; }
+    .worry-number { width: auto; font-size: 1rem; }
+    .risk-table { font-size: 0.82rem; }
+    .risk-table td, .risk-table th { padding: 10px 12px; }
+    .bar-label { width: 80px; font-size: 0.68rem; }
+    .spectrum-divider { margin-left: 88px; }
+  }
+
+  /* === DIRECTION ARROWS === */
+  .dir-up { color: #34d399; font-weight: 700; font-size: 0.7rem; margin-left: 4px; font-family: 'JetBrains Mono', monospace; }
+  .dir-down { color: #ef4444; font-weight: 700; font-size: 0.7rem; margin-left: 4px; font-family: 'JetBrains Mono', monospace; }
+  .dir-flat { color: var(--text-muted); font-weight: 700; font-size: 0.7rem; margin-left: 4px; font-family: 'JetBrains Mono', monospace; }
+
+  /* === PRINT === */
+  @media print {
+    body { background: #fff; color: #111; }
+    .progress-bar { display: none; }
+    .hero { background: #f3f4f6; }
+    .bill-card, .callout, .toc, .worry-item, .resource-card {
+      background: #fff; border: 1px solid #d1d5db; box-shadow: none;
+    }
+    .badge { border: 1px solid #9ca3af; }
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-content">
+    <h1>When Being Queer or Trans Becomes Legally Risky</h1>
+    <p class="subtitle">There's a lot of fear right now, and some of it is warranted. But fear without facts helps no one. This page collects actual legislation, actual executive orders, and actual bill text so you can assess your own risk. Where something is scary, it says so. Where it sounds scary but isn't law, it says that too.</p>
+    <p class="meta">Focus: Utah + Federal &nbsp;|&nbsp; Last updated March 2026</p>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- TABLE OF CONTENTS -->
+  <nav class="toc">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#big-picture">The Big Picture: What's Real Right Now</a></li>
+      <li><a href="#risk-assessment">Risk Assessment: Where Things Stand</a></li>
+      <li><a href="#global-context">Global Context: Where the U.S. Actually Sits</a></li>
+      <li><a href="#project-2025">Project 2025: The Heritage Foundation's Playbook</a></li>
+      <li><a href="#federal-eo">Federal Executive Orders in Effect</a></li>
+      <li><a href="#federal-legislation">Federal Legislation</a></li>
+      <li><a href="#utah-current">Utah: Laws Already in Effect</a></li>
+      <li><a href="#utah-2026">Utah: 2026 Session Bills</a></li>
+      <li><a href="#resources">Resources</a></li>
+    </ol>
+  </nav>
+
+  <!-- === SECTION 1: BIG PICTURE === -->
+  <section id="big-picture">
+    <h2><span class="section-icon">01</span> The Big Picture</h2>
+    <p class="section-lead">Not everything proposed becomes law. Not every law survives court challenges. Here's a snapshot of where things stand right now, ordered roughly from most severe to least. Click any row's category to jump to the full details.</p>
+
+    <div class="overview-grid">
+      <div class="overview-row">
+        <div class="overview-header">Category</div>
+        <div class="overview-header">Federal Status</div>
+        <div class="overview-header">Utah Status</div>
+      </div>
+
+      <!-- MOST SEVERE FIRST -->
+      <div class="overview-row">
+        <div><a href="#eo-14183" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Military service (trans)</a></div>
+        <div><span class="badge badge-law">Banned</span> EO 14183; Supreme Court allowed enforcement May 2025. ~1,000 service members separated. Active ban.</div>
+        <div>&mdash;</div>
+      </div>
+      <div class="overview-row">
+        <div><a href="#utah-hb257" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Bathroom / changing room access</a></div>
+        <div><span class="badge badge-safe">No federal ban</span></div>
+        <div><span class="badge badge-law">Restricted</span> HB 257 (Jan 2024). Trans people barred from sex-designated changing rooms in gov't buildings. Class B misdemeanor (up to 6 months). Stand-alone restrooms are NOT covered.</div>
+      </div>
+      <div class="overview-row">
+        <div><a href="#utah-sb16" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Gender-affirming care (minors)</a></div>
+        <div><span class="badge badge-eo">EO issued</span> EO 14168 directs agencies to stop funding care for people under 19. No federal statute.</div>
+        <div><span class="badge badge-law">Moratorium</span> SB 16 (2023) froze puberty blockers and hormones for minors. HB 174 (2026) would make it permanent; passed House 54&ndash;15.</div>
+      </div>
+      <div class="overview-row">
+        <div><a href="#eo-14168" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Gender markers on federal IDs</a></div>
+        <div><span class="badge badge-eo">EO in effect</span> EO 14168 locks passports, visas, and federal IDs to birth sex. X markers eliminated. Agencies can't accept gender self-identification.</div>
+        <div><span class="badge badge-proposed">Threatened</span> Currently changeable via HB 234 (2024). HB 183 (2026) would effectively ban changes.</div>
+      </div>
+      <div class="overview-row">
+        <div><a href="#eo-14168" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Federal prisons (trans inmates)</a></div>
+        <div><span class="badge badge-eo">EO in effect</span> EO 14168 directs Bureau of Prisons to house all inmates by birth sex. Affects 2,000+ trans people in federal custody. Courts issued partial blocks.</div>
+        <div>&mdash;</div>
+      </div>
+      <div class="overview-row">
+        <div><a href="#risk-prison" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Forced detransition in prison / jail</a></div>
+        <div><span class="badge badge-eo">EO policy</span> EO 14168 directs federal prisons to house by birth sex and the policy environment discourages providing gender-affirming care to inmates. Access to hormones in federal custody has been restricted.</div>
+        <div><span class="badge badge-legal-challenge">Varies</span> Utah county jails have no consistent policy. State prisons have historically provided hormones to inmates already on them, but access is inconsistent and vulnerable to political pressure.</div>
+      </div>
+      <div class="overview-row">
+        <div><a href="#risk-employment" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Employment / housing protections</a></div>
+        <div><span class="badge badge-legal-challenge">Weakened</span> <em>Bostock v. Clayton County</em> (2020) says Title VII covers LGBTQ+ workers. Still binding law. But federal enforcement has been gutted; EEOC staffing and guidance cut.</div>
+        <div><span class="badge badge-proposed">Threatened</span> Utah currently protects trans people in housing and employment. HB 183 (2026) would strip those protections entirely.</div>
+      </div>
+      <div class="overview-row">
+        <div><a href="#risk-care-adults" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Gender-affirming care: adults, self-pay</a></div>
+        <div><span class="badge badge-safe">Legal</span> No restrictions on out-of-pocket care from willing providers.</div>
+        <div><span class="badge badge-safe">Legal</span> No restrictions. You can pay a provider directly for hormones, surgery, etc.</div>
+      </div>
+      <div class="overview-row">
+        <div><a href="#risk-care-adults" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Gender-affirming care: adults, private insurance</a></div>
+        <div><span class="badge badge-safe">Legal</span> ACA nondiscrimination provisions (Section 1557) still technically apply, though enforcement weakened. Many private insurers cover care.</div>
+        <div><span class="badge badge-safe">Legal</span> Private insurance coverage varies by plan. No state law bans it.</div>
+      </div>
+      <div class="overview-row">
+        <div><a href="#risk-care-adults" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Gender-affirming care: adults, Medicaid / state insurance</a></div>
+        <div><span class="badge badge-eo">Threatened</span> EO 14168 directs agencies to review and potentially restrict federal healthcare funding. CMS has not yet issued new rules.</div>
+        <div><span class="badge badge-failed">HB 193 failed</span> Would have banned all public funds (Medicaid, state employee insurance) from covering any gender-affirming care for any age. Failed in committee, but signals political intent.</div>
+      </div>
+      <div class="overview-row">
+        <div><a href="#risk-voting" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Voting with mismatched name / gender marker</a></div>
+        <div><span class="badge badge-safe">Protected</span> No federal law requires your gender marker to match to vote. Name mismatches can trigger signature verification issues but don't invalidate registration.</div>
+        <div><span class="badge badge-safe">Protected</span> Utah uses signature verification, not gender marker matching. If your name changed, update your registration. A gender marker mismatch alone won't prevent you from voting. <a href="surviving-the-save-act.html" style="color: var(--accent-primary);">SAVE Act guide &rarr;</a></div>
+      </div>
+      <div class="overview-row">
+        <div><a href="#risk-expression" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Cross-dressing / gender expression</a></div>
+        <div><span class="badge badge-safe">Protected</span> The First Amendment protects self-expression including clothing choices. No federal law restricts how you dress. Historical anti-cross-dressing laws were struck down decades ago as unconstitutional.</div>
+        <div><span class="badge badge-safe">Protected</span> No Utah law criminalizes cross-dressing or gender-nonconforming appearance. You can dress however you want in public.</div>
+      </div>
+      <div class="overview-row">
+        <div><a href="#risk-drag" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Drag performances</a></div>
+        <div><span class="badge badge-safe">No federal ban</span> Some states (not Utah) have passed restrictions on drag shows where minors are present, but federal courts have struck down most of them as First Amendment violations.</div>
+        <div><span class="badge badge-safe">No Utah ban</span> No law restricts drag performances in Utah. Drag is protected expression.</div>
+      </div>
+      <div class="overview-row">
+        <div><a href="#risk-identity" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Being queer or trans</a></div>
+        <div><span class="badge badge-safe">Legal</span> No federal law criminalizes LGBTQ+ identity. <em>Lawrence v. Texas</em> (2003) struck down sodomy laws. <em>Obergefell v. Hodges</em> (2015) legalized same-sex marriage.</div>
+        <div><span class="badge badge-safe">Legal</span> No Utah law criminalizes LGBTQ+ identity or same-sex relationships.</div>
+      </div>
+      <div class="overview-row">
+        <div><a href="#risk-identity" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Same-sex marriage</a></div>
+        <div><span class="badge badge-safe">Legal</span> <em>Obergefell</em> is binding Supreme Court precedent. The Respect for Marriage Act (2022) provides a federal backstop. No active effort to overturn with realistic prospects.</div>
+        <div><span class="badge badge-safe">Legal</span> Recognized in Utah. Utah's pre-<em>Obergefell</em> ban is unenforceable.</div>
+      </div>
+      <div class="overview-row">
+        <div><a href="#risk-sexoffender" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Sex offender registry for being trans</a></div>
+        <div><span class="badge badge-safe">Not law</span> This comes from Project 2025's foreword, which equates "transgender ideology" with pornography and suggests educators/librarians should be registered as sex offenders. No bill has been introduced. <a href="#project-2025" style="color: var(--accent-primary);">See full quote &rarr;</a></div>
+        <div><span class="badge badge-safe">Not law</span></div>
+      </div>
+      <div class="overview-row">
+        <div><a href="#risk-identity" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Using your chosen name socially</a></div>
+        <div><span class="badge badge-safe">Legal</span> You can go by any name you want socially. Legal name changes require a court petition but are not restricted for trans people (federally).</div>
+        <div><span class="badge badge-safe">Legal</span> Utah allows legal name changes through the courts. No restriction based on gender identity.</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- === SECTION 2: RISK ASSESSMENT === -->
+  <section id="risk-assessment">
+    <h2><span class="section-icon">02</span> Risk Assessment</h2>
+    <p class="section-lead">The honest answer to "am I in danger?" depends on your specific situation. Here's the breakdown.</p>
+
+    <h3 id="risk-identity">What is actually legal right now</h3>
+    <ul class="legal-list">
+      <li><span class="check">&#10003;</span> Being gay, bisexual, queer, or trans (<em>Lawrence v. Texas</em> struck down sodomy laws; identity is not a crime)</li>
+      <li><span class="check">&#10003;</span> Same-sex relationships and marriage (<em>Obergefell</em> + Respect for Marriage Act)</li>
+      <li id="risk-expression"><span class="check">&#10003;</span> Cross-dressing and gender-nonconforming appearance (First Amendment; no law in any state criminalizes how you dress)</li>
+      <li id="risk-drag"><span class="check">&#10003;</span> Drag performances (protected expression; courts have struck down state-level restrictions)</li>
+      <li><span class="check">&#10003;</span> Using your chosen name socially</li>
+      <li id="risk-care-adults"><span class="check">&#10003;</span> Gender-affirming care as an adult, self-pay (no restrictions anywhere)</li>
+      <li><span class="check">&#10003;</span> Gender-affirming care as an adult, private insurance (coverage varies by plan, but no law bans it in Utah)</li>
+      <li><span class="check">&#10003;</span> Changing gender markers on Utah birth certificates and driver's licenses (HB 234, still in effect)</li>
+    </ul>
+
+    <h3>What carries actual legal risk right now</h3>
+    <table class="risk-table">
+      <tr><th>Action</th><th>Risk Level</th><th>Details</th></tr>
+      <tr>
+        <td>Serving openly as trans in the U.S. military</td>
+        <td><span class="badge badge-law">Discharge</span></td>
+        <td>EO 14183. Currently in effect after SCOTUS ruling (May 2025). Not theoretical.</td>
+      </tr>
+      <tr>
+        <td>Using a gov't changing room that doesn't match birth sex (Utah)</td>
+        <td><span class="badge badge-law">Class B Misdemeanor</span></td>
+        <td>HB 257. Only changing rooms (not stand-alone restrooms). Only gov't buildings. Surgical exemption exists. Max 6 months.</td>
+      </tr>
+      <tr>
+        <td>Providing gender-affirming hormones/blockers to minors (Utah)</td>
+        <td><span class="badge badge-law">Professional Sanctions</span></td>
+        <td>SB 16 moratorium. HB 174 would make it permanent.</td>
+      </tr>
+      <tr>
+        <td>Applying for a federal passport with a non-birth-sex marker</td>
+        <td><span class="badge badge-eo">Denied</span></td>
+        <td>EO 14168. X markers and self-identified gender no longer accepted on passports/visas.</td>
+      </tr>
+    </table>
+
+    <h3 id="risk-voting">Voting with a mismatched name or gender marker</h3>
+    <div class="callout info">
+      <div class="callout-title">&#8505; Your vote is safe</div>
+      <ul>
+        <li>No law (federal or Utah) requires your gender marker to match your voter registration.</li>
+        <li>Utah uses <strong>signature verification</strong>, not gender matching, to validate ballots.</li>
+        <li>If you've legally changed your name, <strong>update your voter registration</strong> to match. A name mismatch can trigger a signature flag (curable, but annoying).</li>
+        <li>A gender marker mismatch alone <strong>will not prevent you from voting</strong> or invalidate your ballot.</li>
+        <li>If you're worried about the SAVE Act's impact on voting, see the <a href="surviving-the-save-act.html" style="color: var(--accent-primary);">full SAVE Act guide</a>.</li>
+      </ul>
+    </div>
+
+    <h3 id="risk-sexoffender">What is NOT law despite the fear</h3>
+    <div class="callout fact">
+      <div class="callout-title">&#10003; Reality check</div>
+      <ul>
+        <li><strong>Being put on a sex offender registry for being trans:</strong> Not law. Project 2025 rhetoric targets educators/librarians who distribute material they define as pornographic. No bill introduced. <a href="#project-2025" style="color: var(--accent-primary);">See the actual quote below.</a></li>
+        <li><strong>Nationwide criminalization of being trans:</strong> Not happening. No such bill exists.</li>
+        <li><strong>Criminalizing cross-dressing or drag:</strong> Not law. The First Amendment protects gender expression and artistic performance. Courts have struck down attempts in other states.</li>
+        <li><strong>Banning adult gender-affirming care:</strong> Not law federally. Utah's HB 193 (public funding ban) failed. Private and self-pay care unrestricted.</li>
+        <li><strong>Forced detransition:</strong> Not law. HB 174 targets minors only.</li>
+        <li><strong>Revoking same-sex marriage:</strong> Not law. <em>Obergefell</em> + Respect for Marriage Act. No active legislation with realistic chances.</li>
+        <li><strong>Losing your right to vote because of a gender marker mismatch:</strong> Not how it works. See above.</li>
+      </ul>
+    </div>
+
+    <h3 id="risk-employment">What you should actually pay attention to</h3>
+
+    <div class="worry-item">
+      <div class="worry-number">1</div>
+      <div class="worry-content">
+        <p><strong>If you're in the military:</strong> The trans ban is in effect. This is the highest-severity, most immediately consequential item on this list.</p>
+      </div>
+    </div>
+
+    <div class="worry-item">
+      <div class="worry-number">2</div>
+      <div class="worry-content">
+        <p><strong>If you're trans in Utah and use government rec centers, school facilities, or similar:</strong> HB 257 is real. Know which spaces are changing rooms vs. restrooms. The law makes a legal distinction. Stand-alone restrooms have no criminal penalty.</p>
+      </div>
+    </div>
+
+    <div class="worry-item">
+      <div class="worry-number">3</div>
+      <div class="worry-content">
+        <p><strong>If you're a trans minor or parent of one in Utah:</strong> The care moratorium is law, and HB 174 would make it permanent. If your child is receiving treatment under grandfathering provisions, that access may end.</p>
+      </div>
+    </div>
+
+    <div class="worry-item">
+      <div class="worry-number">4</div>
+      <div class="worry-content">
+        <p><strong>If you need to update federal documents:</strong> Passport gender markers are locked to birth sex under EO 14168. Utah state documents (DL, birth certificate) are still changeable, but HB 183 could end that. If you're planning to update state docs, sooner may be better than later.</p>
+      </div>
+    </div>
+
+    <div class="worry-item">
+      <div class="worry-number">5</div>
+      <div class="worry-content">
+        <p><strong>If you rely on Medicaid or state employee insurance for gender-affirming care:</strong> HB 193 failed this session, but the political will to cut funding isn't going away. Private insurance and self-pay are safe for now. Consider backup plans for public-funded care.</p>
+      </div>
+    </div>
+
+    <div class="worry-item">
+      <div class="worry-number">6</div>
+      <div class="worry-content">
+        <p><strong>If HB 183 passes:</strong> Most significant single change for trans Utahns. Losing employment/housing protections, ability to change gender markers, and eligibility to work with children would have immediate practical consequences.</p>
+      </div>
+    </div>
+
+    <div class="worry-item">
+      <div class="worry-number">7</div>
+      <div class="worry-content">
+        <p id="risk-prison"><strong>If you're trans and could face incarceration:</strong> Federal prisons now house inmates by birth sex under EO 14168, regardless of transition status. Access to hormones in federal custody is being restricted. State and county jails in Utah have no consistent policy on providing gender-affirming care or respecting gender identity in housing. If you're on hormones, abrupt cessation during incarceration is a real medical risk. The ACLU has active litigation on this.</p>
+      </div>
+    </div>
+
+    <div class="worry-item">
+      <div class="worry-number">8</div>
+      <div class="worry-content">
+        <p><strong>If you've changed your legal name:</strong> Update your voter registration, driver's license, and bank accounts to match. Mismatched names can cause bureaucratic friction (signature verification issues on ballots, ID checks, etc.). This isn't a legal risk per se, but it's a practical one.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- === SECTION 3: GLOBAL CONTEXT === -->
+  <section id="global-context">
+    <h2><span class="section-icon">03</span> Global Context</h2>
+    <p class="section-lead">People compare the U.S. to Iran. That comparison is wrong on the facts, but the direction of travel matters. Here's where the U.S. falls on the global spectrum, using Equaldex's Equality Index (0&ndash;100, combining legal protections and public opinion).</p>
+
+    <div class="spectrum-chart">
+      <div class="spectrum-header">
+        <span class="chart-title">LGBTQ+ Equality Index by Country</span>
+        <div class="spectrum-legend">
+          <span><span class="legend-dot" style="background: var(--trans-blue);"></span> More protective</span>
+          <span><span class="legend-dot" style="background: #ef4444;"></span> More hostile</span>
+          <span style="margin-left: 8px;">Direction (2021&ndash;2026): <span class="dir-up">&#9650;</span> improving <span class="dir-down">&#9660;</span> backsliding <span class="dir-flat">&#9644;</span> stable</span>
+        </div>
+      </div>
+
+      <div class="spectrum-divider">
+        <span class="divider-label">Full Legal Protections</span>
+        <span class="divider-line"></span>
+      </div>
+
+      <div class="spectrum-bar-row" data-score="93">
+        <span class="bar-label">Iceland <span class="dir-up">&#9650;</span></span>
+        <div class="bar-track"><div class="bar-fill tier-high" style="width: 0%;"><span class="bar-score">93</span></div></div>
+      </div>
+      <div class="spectrum-bar-row" data-score="87">
+        <span class="bar-label">Norway <span class="dir-up">&#9650;</span></span>
+        <div class="bar-track"><div class="bar-fill tier-high" style="width: 0%;"><span class="bar-score">87</span></div></div>
+      </div>
+      <div class="spectrum-bar-row" data-score="83">
+        <span class="bar-label">Spain <span class="dir-up">&#9650;</span></span>
+        <div class="bar-track"><div class="bar-fill tier-high" style="width: 0%;"><span class="bar-score">83</span></div></div>
+      </div>
+      <div class="spectrum-bar-row" data-score="82">
+        <span class="bar-label">Denmark <span class="dir-flat">&#9644;</span></span>
+        <div class="bar-track"><div class="bar-fill tier-high" style="width: 0%;"><span class="bar-score">82</span></div></div>
+      </div>
+      <div class="spectrum-bar-row" data-score="80">
+        <span class="bar-label">Malta <span class="dir-flat">&#9644;</span></span>
+        <div class="bar-track"><div class="bar-fill tier-high" style="width: 0%;"><span class="bar-score">80</span></div></div>
+      </div>
+      <div class="spectrum-bar-row" data-score="80">
+        <span class="bar-label">Germany <span class="dir-up">&#9650;</span></span>
+        <div class="bar-track"><div class="bar-fill tier-high" style="width: 0%;"><span class="bar-score">80</span></div></div>
+      </div>
+      <div class="spectrum-bar-row" data-score="79">
+        <span class="bar-label">Canada <span class="dir-flat">&#9644;</span></span>
+        <div class="bar-track"><div class="bar-fill tier-high" style="width: 0%;"><span class="bar-score">79</span></div></div>
+      </div>
+      <div class="spectrum-bar-row" data-score="78">
+        <span class="bar-label">Australia <span class="dir-flat">&#9644;</span></span>
+        <div class="bar-track"><div class="bar-fill tier-high" style="width: 0%;"><span class="bar-score">78</span></div></div>
+      </div>
+      <div class="spectrum-bar-row" data-score="77">
+        <span class="bar-label">New Zealand <span class="dir-flat">&#9644;</span></span>
+        <div class="bar-track"><div class="bar-fill tier-high" style="width: 0%;"><span class="bar-score">77</span></div></div>
+      </div>
+      <div class="spectrum-bar-row" data-score="76">
+        <span class="bar-label">Netherlands <span class="dir-flat">&#9644;</span></span>
+        <div class="bar-track"><div class="bar-fill tier-high" style="width: 0%;"><span class="bar-score">76</span></div></div>
+      </div>
+      <div class="spectrum-bar-row" data-score="75">
+        <span class="bar-label">Sweden <span class="dir-flat">&#9644;</span></span>
+        <div class="bar-track"><div class="bar-fill tier-high" style="width: 0%;"><span class="bar-score">75</span></div></div>
+      </div>
+      <div class="spectrum-bar-row" data-score="74">
+        <span class="bar-label">France <span class="dir-flat">&#9644;</span></span>
+        <div class="bar-track"><div class="bar-fill tier-mid" style="width: 0%;"><span class="bar-score">74</span></div></div>
+      </div>
+      <div class="spectrum-bar-row" data-score="74">
+        <span class="bar-label">Argentina <span class="dir-flat">&#9644;</span></span>
+        <div class="bar-track"><div class="bar-fill tier-mid" style="width: 0%;"><span class="bar-score">74</span></div></div>
+      </div>
+
+      <div class="spectrum-divider">
+        <span class="divider-label">Mixed Protections</span>
+        <span class="divider-line"></span>
+      </div>
+
+      <div class="spectrum-bar-row highlight" data-score="68">
+        <span class="bar-label">United States <span class="dir-down">&#9660;</span> <span class="us-marker">YOU ARE HERE</span></span>
+        <div class="bar-track"><div class="bar-fill tier-us" style="width: 0%;"><span class="bar-score">68</span></div></div>
+      </div>
+      <div class="spectrum-bar-row" data-score="68">
+        <span class="bar-label">United Kingdom <span class="dir-down">&#9660;</span></span>
+        <div class="bar-track"><div class="bar-fill tier-mid" style="width: 0%;"><span class="bar-score">68</span></div></div>
+      </div>
+      <div class="spectrum-bar-row" data-score="53">
+        <span class="bar-label">Japan <span class="dir-up">&#9650;</span></span>
+        <div class="bar-track"><div class="bar-fill tier-mid" style="width: 0%;"><span class="bar-score">53</span></div></div>
+      </div>
+      <div class="spectrum-bar-row" data-score="51">
+        <span class="bar-label">Poland <span class="dir-flat">&#9644;</span></span>
+        <div class="bar-track"><div class="bar-fill tier-mid" style="width: 0%;"><span class="bar-score">51</span></div></div>
+      </div>
+      <div class="spectrum-bar-row" data-score="49">
+        <span class="bar-label">Hungary <span class="dir-down">&#9660;</span></span>
+        <div class="bar-track"><div class="bar-fill tier-mid" style="width: 0%;"><span class="bar-score">49</span></div></div>
+      </div>
+
+      <div class="spectrum-divider">
+        <span class="divider-label">Active Criminalization</span>
+        <span class="divider-line"></span>
+      </div>
+
+      <div class="spectrum-bar-row" data-score="32">
+        <span class="bar-label">Turkey <span class="dir-down">&#9660;</span></span>
+        <div class="bar-track"><div class="bar-fill tier-low" style="width: 0%;"><span class="bar-score">32</span></div></div>
+      </div>
+      <div class="spectrum-bar-row" data-score="29">
+        <span class="bar-label">Russia <span class="dir-down">&#9660;</span></span>
+        <div class="bar-track"><div class="bar-fill tier-low" style="width: 0%;"><span class="bar-score">29</span></div></div>
+      </div>
+      <div class="spectrum-bar-row" data-score="18">
+        <span class="bar-label">Malaysia <span class="dir-flat">&#9644;</span></span>
+        <div class="bar-track"><div class="bar-fill tier-low" style="width: 0%;"><span class="bar-score">18</span></div></div>
+      </div>
+      <div class="spectrum-bar-row" data-score="13">
+        <span class="bar-label">Iraq <span class="dir-flat">&#9644;</span></span>
+        <div class="bar-track"><div class="bar-fill tier-hostile" style="width: 0%;"><span class="bar-score">13</span></div></div>
+      </div>
+      <div class="spectrum-bar-row" data-score="12">
+        <span class="bar-label">Saudi Arabia <span class="dir-flat">&#9644;</span></span>
+        <div class="bar-track"><div class="bar-fill tier-hostile" style="width: 0%;"><span class="bar-score">12</span></div></div>
+      </div>
+      <div class="spectrum-bar-row" data-score="11">
+        <span class="bar-label">Nigeria <span class="dir-flat">&#9644;</span></span>
+        <div class="bar-track"><div class="bar-fill tier-hostile" style="width: 0%;"><span class="bar-score">11</span></div></div>
+      </div>
+      <div class="spectrum-bar-row" data-score="10">
+        <span class="bar-label">Yemen <span class="dir-flat">&#9644;</span></span>
+        <div class="bar-track"><div class="bar-fill tier-hostile" style="width: 0%;"><span class="bar-score">10</span></div></div>
+      </div>
+      <div class="spectrum-bar-row" data-score="10">
+        <span class="bar-label">Egypt <span class="dir-flat">&#9644;</span></span>
+        <div class="bar-track"><div class="bar-fill tier-hostile" style="width: 0%;"><span class="bar-score">10</span></div></div>
+      </div>
+      <div class="spectrum-bar-row" data-score="9">
+        <span class="bar-label">Uganda <span class="dir-down">&#9660;</span></span>
+        <div class="bar-track"><div class="bar-fill tier-hostile" style="width: 0%;"><span class="bar-score">9</span></div></div>
+      </div>
+
+      <div class="spectrum-divider">
+        <span class="divider-label">Death Penalty Applies</span>
+        <span class="divider-line"></span>
+      </div>
+
+      <div class="spectrum-bar-row" data-score="5">
+        <span class="bar-label">Iran <span class="dir-flat">&#9644;</span></span>
+        <div class="bar-track"><div class="bar-fill tier-hostile" style="width: 0%;"><span class="bar-score">5</span></div></div>
+      </div>
+      <div class="spectrum-bar-row" data-score="1">
+        <span class="bar-label">Afghanistan <span class="dir-down">&#9660;</span></span>
+        <div class="bar-track"><div class="bar-fill tier-hostile" style="width: 0%;"><span class="bar-score">1</span></div></div>
+      </div>
+    </div>
+
+    <div class="callout info">
+      <div class="callout-title">&#8505; How to read this</div>
+      <ul>
+        <li>The U.S. scores <strong>68 out of 100</strong>. That puts it in the "mixed protections" tier, alongside the UK.</li>
+        <li>Iran scores <strong>5</strong>. Afghanistan scores <strong>1</strong>. The U.S. is not Iran. The gap is enormous.</li>
+        <li>But the U.S. is also <strong>not Iceland (93), not Canada (79), not Spain (83)</strong>. Countries Americans typically consider peers score 10&ndash;25 points higher.</li>
+        <li>The concern isn't where the U.S. is today. It's the <strong>direction</strong>. The red <span class="dir-down">&#9660;</span> arrows show countries that have backslid since 2021. Hungary dropped from ~65 to 49 after banning Pride events and restricting LGBTQ+ content. The UK dropped after stalling gender recognition reform. The U.S. is sliding due to executive orders and the wave of state-level legislation (850+ anti-LGBTQ+ bills in 2025 alone).</li>
+        <li>12 countries still impose the death penalty for consensual same-sex activity. Two (Iran and Afghanistan) actively enforce it.</li>
+      </ul>
+    </div>
+
+    <p class="chart-footnote">Scores: Equaldex Equality Index (equaldex.com/equality-index), combining legal protections and public opinion, 0&ndash;100. Direction arrows reflect legislative and policy changes since 2021 based on ILGA reports, news coverage, and tracked legislation; not derived from Equaldex historical scores (which they advise against comparing over time).</p>
+  </section>
+
+  <hr class="divider">
+
+  <!-- === SECTION 4: PROJECT 2025 === -->
+  <section id="project-2025">
+    <h2><span class="section-icon">04</span> Project 2025</h2>
+    <p class="section-lead">The Heritage Foundation's <em>Mandate for Leadership</em> is a policy blueprint. It is <strong>not law</strong>. But portions have been implemented through executive orders, and it reveals the ideology driving current legislation.</p>
+
+    <h3>The Sex Offender Claim</h3>
+    <p>This is the passage generating the most fear. It's from the Mandate's foreword (page 5), written by Heritage Foundation president Kevin Roberts:</p>
+
+    <div class="doc-quote danger">
+      <span class="source">Project 2025 &mdash; Mandate for Leadership, Foreword, p. 5</span>
+      <blockquote>
+        "Pornography, manifested today in the omnipresent propagation of transgender ideology and sexualization of children, for instance, is not a political Gordian knot inextricably binding up disparate claims about free speech, property rights, sexual liberation, and child welfare. It has no claim to First Amendment protection. Its purveyors are child predators and misogynistic exploiters of women. Their product is as addictive as any illicit drug and as psychologically destructive as any crime. Pornography should be outlawed. The people who produce and distribute it should be imprisoned. <mark>Educators and public librarians who purvey it should be classed as registered sex offenders.</mark>"
+      </blockquote>
+    </div>
+
+    <div class="callout warning">
+      <div class="callout-title">&#9888; What this actually means</div>
+      <ul>
+        <li>The document <strong>equates "transgender ideology" with pornography</strong>. That's the rhetorical bridge used to classify LGBTQ+ visibility as obscenity.</li>
+        <li>The sex offender registry language targets educators and librarians who distribute material they define as pornographic, not trans people for existing. But the framing is designed to criminalize visibility by association.</li>
+        <li><strong>None of this is law.</strong> No bill has passed (federal or state) that puts trans or queer people on sex offender registries for their identity.</li>
+        <li>The danger is normalization. When policy documents equate queerness with predation, it creates a permission structure for future legislation.</li>
+      </ul>
+    </div>
+
+    <h3>Proposals &amp; Implementation Status</h3>
+
+    <table class="risk-table">
+      <tr><th>Proposal</th><th>Status</th></tr>
+      <tr>
+        <td>Ban trans people from military</td>
+        <td><span class="impl-status"><span class="impl-dot yes"></span> Implemented</span> &mdash; EO 14183</td>
+      </tr>
+      <tr>
+        <td>Replace "gender" with "sex" in federal policy</td>
+        <td><span class="impl-status"><span class="impl-dot yes"></span> Implemented</span> &mdash; EO 14168</td>
+      </tr>
+      <tr>
+        <td>Defund programs promoting "gender ideology"</td>
+        <td><span class="impl-status"><span class="impl-dot partial"></span> Partial</span> &mdash; funding threats issued; courts blocking some</td>
+      </tr>
+      <tr>
+        <td>Ban gender-affirming care nationwide</td>
+        <td><span class="impl-status"><span class="impl-dot partial"></span> EO only</span> &mdash; no legislation passed</td>
+      </tr>
+      <tr>
+        <td>Remove LGBTQ+ nondiscrimination protections</td>
+        <td><span class="impl-status"><span class="impl-dot no"></span> Not implemented</span> &mdash; <em>Bostock</em> still stands</td>
+      </tr>
+      <tr>
+        <td>Register educators/librarians as sex offenders</td>
+        <td><span class="impl-status"><span class="impl-dot no"></span> Not implemented</span> &mdash; rhetoric only</td>
+      </tr>
+    </table>
+  </section>
+
+  <hr class="divider">
+
+  <!-- === SECTION 4: FEDERAL EXECUTIVE ORDERS === -->
+  <section id="federal-eo">
+    <h2><span class="section-icon">05</span> Federal Executive Orders</h2>
+    <p class="section-lead">These are in effect now. Executive orders carry the force of policy until overturned by courts or a future president.</p>
+
+    <div class="bill-card">
+      <div class="bill-header">
+        <span class="bill-name">EO 14168</span>
+        <span class="badge badge-eo">In Effect</span>
+      </div>
+      <div class="bill-title">"Defending Women from Gender Ideology Extremism and Restoring Biological Truth to the Federal Government" &mdash; January 20, 2025</div>
+
+      <div class="doc-quote warning">
+        <span class="source">Executive Order 14168, Section 2</span>
+        <blockquote>"It is the policy of the United States to recognize two sexes, male and female. These sexes are not changeable and are grounded in fundamental and incontrovertible reality. [...] 'Sex' is not a synonym for and does not include the concept of 'gender identity.'"</blockquote>
+      </div>
+
+      <div class="bill-details">
+        <span class="detail-label">What it does</span>
+        <ul>
+          <li>All federal agencies must replace "gender" with "sex" in materials and forms</li>
+          <li>Passports, visas, and federal IDs must reflect birth sex only; no X markers</li>
+          <li>Agencies directed to cease funding gender-affirming care for people under 19</li>
+          <li>Federal prisons must house inmates by birth sex (affects 2,000+ trans inmates)</li>
+          <li>Federal funding withheld from programs promoting "gender ideology"</li>
+        </ul>
+        <span class="detail-label">Legal challenges</span>
+        <p>Multiple provisions challenged in court. Temporary restraining orders issued against funding withholding and forced prison transfers. Passport/ID provisions are being implemented.</p>
+      </div>
+    </div>
+
+    <div class="bill-card">
+      <div class="bill-header">
+        <span class="bill-name">EO 14183</span>
+        <span class="badge badge-law">In Effect (SCOTUS)</span>
+      </div>
+      <div class="bill-title">"Prioritizing Military Excellence and Readiness" &mdash; Transgender Military Ban &mdash; January 27, 2025</div>
+
+      <div class="doc-quote warning">
+        <span class="source">Executive Order 14183</span>
+        <blockquote>"Gender dysphoria is incompatible with the demands of military service."</blockquote>
+      </div>
+
+      <div class="bill-details">
+        <span class="detail-label">Timeline</span>
+        <ul>
+          <li><strong>Jan 27, 2025:</strong> Order signed</li>
+          <li><strong>Mar 2025:</strong> Federal judge blocked the ban</li>
+          <li><strong>May 2025:</strong> Supreme Court allowed the ban to proceed while appeals continue</li>
+          <li>~1,000 service members began voluntary separation</li>
+          <li>The ban is <strong>currently in effect</strong></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- === SECTION 5: FEDERAL LEGISLATION === -->
+  <section id="federal-legislation">
+    <h2><span class="section-icon">06</span> Federal Legislation</h2>
+    <p class="section-lead">As of March 2026, <strong>113 bills</strong> targeting LGBTQ+ people are being tracked at the federal level (119th Congress). Over 850 anti-LGBTQ+ bills were filed in 2025 alone&mdash;the most in U.S. history.</p>
+
+    <div class="bill-card">
+      <div class="bill-header">
+        <span class="bill-name">Nationwide Trans Youth Sports Ban</span>
+        <span class="badge badge-failed">Defeated</span>
+      </div>
+      <div class="bill-details">
+        <p>Passed the House but was <strong>defeated in the Senate</strong>. Would have banned trans girls from school sports nationally.</p>
+      </div>
+    </div>
+
+    <div class="bill-card">
+      <div class="bill-header">
+        <span class="bill-name">SAVE America Act (H.R. 7296)</span>
+        <span class="badge badge-proposed">In Senate</span>
+      </div>
+      <div class="bill-details">
+        <p>Primarily a voter ID bill, but Trump insisted on anti-trans amendments (sports ban, care ban) as conditions for signing. Passed House; expected to fail Senate filibuster. <a href="surviving-the-save-act.html" style="color: var(--accent-primary);">See full breakdown &rarr;</a></p>
+      </div>
+    </div>
+
+    <div class="bill-card">
+      <div class="bill-header">
+        <span class="bill-name">Transgender Bill of Rights (H.Res.1058)</span>
+        <span class="badge badge-proposed">Introduced</span>
+      </div>
+      <div class="bill-details">
+        <p>Defensive resolution reaffirming trans rights, introduced Feb 2026. No chance of passing the current Congress, but puts protections on record.</p>
+      </div>
+    </div>
+
+    <div class="callout info">
+      <div class="callout-title">&#8505; Bottom line on federal law</div>
+      <ul>
+        <li>No new federal statute criminalizing LGBTQ+ identity or conduct has been enacted.</li>
+        <li>The damage is through executive orders, agency policy, and funding threats&mdash;not legislation that passed both chambers.</li>
+        <li>Executive orders can be reversed by a future president. Statutes are harder to undo.</li>
+      </ul>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- === SECTION 6: UTAH CURRENT LAW === -->
+  <section id="utah-current">
+    <h2><span class="section-icon">07</span> Utah: Laws in Effect</h2>
+    <p class="section-lead">These are signed into law and enforceable today.</p>
+
+    <!-- HB 257 -->
+    <div class="bill-card">
+      <div class="bill-header">
+        <span class="bill-name">HB 257</span>
+        <span class="badge badge-law">Law &mdash; Jan 2024</span>
+      </div>
+      <div class="bill-title">Sex-based Designations for Privacy, Anti-bullying and Women's Opportunities</div>
+
+      <div class="bill-details">
+        <p>This is the law most likely to directly affect trans Utahns day-to-day. The details matter&mdash;it's narrower than most people think, but the penalties are real.</p>
+
+        <span class="detail-label">What's restricted</span>
+        <p>Sex-designated <strong>changing rooms</strong> (locker rooms, communal showers, fitting rooms) in <strong>government-owned buildings</strong>: schools, courthouses, libraries, rec centers, airports, state-owned arenas.</p>
+
+        <span class="detail-label">What's NOT restricted</span>
+        <ul>
+          <li><strong>Stand-alone restrooms</strong> in government buildings (no criminal penalty)</li>
+          <li>Anything in <strong>privately owned</strong> buildings (restaurants, malls, hotels, private gyms)</li>
+          <li><strong>Employee-only</strong> areas</li>
+          <li><strong>Unisex / single-occupant</strong> facilities</li>
+        </ul>
+
+        <span class="detail-label">Penalties</span>
+        <table class="risk-table" style="margin-top: 8px;">
+          <tr><th>Violation</th><th>Charge</th><th>Max Penalty</th></tr>
+          <tr>
+            <td>Entering a gov't changing room that doesn't match birth sex</td>
+            <td>Class B misdemeanor</td>
+            <td>6 months jail</td>
+          </tr>
+          <tr>
+            <td>Same, while also committing lewdness/voyeurism</td>
+            <td>Class A misdemeanor</td>
+            <td>1 year jail</td>
+          </tr>
+          <tr>
+            <td>Same, with aggravating conduct</td>
+            <td>Third-degree felony</td>
+            <td>5 years prison</td>
+          </tr>
+        </table>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 8px;">Note: lewdness and voyeurism are already crimes for everyone. The elevated penalties apply when committed in a facility that doesn't match your birth sex.</p>
+
+        <span class="detail-label">Exemptions</span>
+        <ul>
+          <li>People who've had <strong>primary sex characteristics surgery</strong> and updated their birth certificate</li>
+          <li><strong>Intersex individuals</strong></li>
+          <li>Minor children accompanied by parents</li>
+          <li>Dependent adults with caretakers</li>
+          <li>Public safety, healthcare, and maintenance personnel</li>
+        </ul>
+
+        <span class="detail-label">How it's enforced</span>
+        <p>Only law enforcement can investigate. Random citizens cannot demand your ID. The State Auditor investigates whether <em>government entities</em> are complying (posting signs, making accommodations), not policing individual bathroom users. No documentation is legally required to use a public restroom.</p>
+      </div>
+    </div>
+
+    <!-- SB 16 -->
+    <div class="bill-card">
+      <div class="bill-header">
+        <span class="bill-name">SB 16</span>
+        <span class="badge badge-law">Law &mdash; Jan 2023</span>
+      </div>
+      <div class="bill-title">Youth Gender-Affirming Care Moratorium</div>
+      <div class="bill-details">
+        <p>Placed a moratorium on puberty blockers and cross-sex hormones for minors. Existing patients could continue under certain conditions.</p>
+        <div class="callout info" style="margin-top: 12px;">
+          <div class="callout-title">&#8505; The state's own study contradicts the ban</div>
+          <ul>
+            <li>The legislature commissioned a medical evidence review under this bill.</li>
+            <li>It concluded gender-affirming care for minors with gender dysphoria "is largely found to result in positive outcomes and reduce the likelihood of suicide."</li>
+            <li>Lawmakers are pushing to make the ban permanent anyway (HB 174).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- HB 234 -->
+    <div class="bill-card">
+      <div class="bill-header">
+        <span class="bill-name">HB 234</span>
+        <span class="badge badge-law">Law &mdash; May 2024</span>
+      </div>
+      <div class="bill-title">Gender Marker Changes on Birth Certificates</div>
+      <div class="bill-details">
+        <ul>
+          <li>Minors must be at least 15.5 years old to petition; change takes effect at 16</li>
+          <li>Amended certificates won't show they were amended (unless you request it)</li>
+          <li>State keeps internal records of changes</li>
+          <li>Name changes can be bundled with gender marker petitions</li>
+        </ul>
+        <p><strong>Still in effect</strong> but would be effectively nullified by HB 183 if it passes.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- === SECTION 7: UTAH 2026 BILLS === -->
+  <section id="utah-2026">
+    <h2><span class="section-icon">08</span> Utah: 2026 Session Bills</h2>
+    <p class="section-lead">The fifth consecutive year of anti-trans legislation. Status as of early March 2026.</p>
+
+    <div class="bill-card">
+      <div class="bill-header">
+        <span class="bill-name">HB 174</span>
+        <span class="badge badge-proposed">Passed House &rarr; Senate</span>
+      </div>
+      <div class="bill-title">Permanent Youth Gender-Affirming Care Ban</div>
+      <div class="bill-details">
+        <p>Converts the 2023 moratorium into a <strong>permanent ban</strong>. Passed House 54&ndash;15. Requires providers to taper existing patients off treatment. The ACLU of Utah sent a veto letter to Governor Cox.</p>
+        <span class="detail-label">Why it matters</span>
+        <p>The state's own commissioned study found positive outcomes and reduced suicide risk. The legislature is overriding its own evidence.</p>
+      </div>
+    </div>
+
+    <div class="bill-card">
+      <div class="bill-header">
+        <span class="bill-name">HB 193</span>
+        <span class="badge badge-failed">Failed</span>
+      </div>
+      <div class="bill-title">Public Funding Ban for Gender-Affirming Care (All Ages)</div>
+      <div class="bill-details">
+        <p>Would have banned Medicaid, state employee insurance, and all public funds from covering gender-affirming procedures or hormones for anyone. Failed a motion to recommend.</p>
+        <p style="color: var(--text-muted); font-size: 0.88rem;">It failed, but it signals the direction. If you're on state insurance or Medicaid, coverage remains politically vulnerable.</p>
+      </div>
+    </div>
+
+    <div class="bill-card" style="border-color: rgba(239, 68, 68, 0.3);">
+      <div class="bill-header">
+        <span class="bill-name">HB 183</span>
+        <span class="badge badge-proposed">Pending Committee</span>
+      </div>
+      <div class="bill-title">Sex Designation Amendments &mdash; "The Big One"</div>
+      <div class="bill-details">
+        <p>Sitting in the House Rules Committee as of Feb 2026. The most sweeping anti-trans bill Utah has seen.</p>
+        <span class="detail-label">What it would do</span>
+        <ul>
+          <li>Replace "gender" with "sex" throughout Utah state law</li>
+          <li><strong>Remove anti-discrimination protections</strong> for trans people in housing and employment</li>
+          <li><strong>Effectively ban gender marker changes</strong> on birth certificates</li>
+          <li><strong>Bar trans people from working with children</strong> in public schools and certain healthcare settings (if they "do not present as their biological sex" and the role involves contact with a child for more than 5 minutes)</li>
+          <li>In custody disputes, courts must <strong>rule in favor of the parent</strong> who opposes a child's gender identity</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bill-card">
+      <div class="bill-header">
+        <span class="bill-name">HB 95</span>
+        <span class="badge badge-proposed">Pending</span>
+      </div>
+      <div class="bill-title">Misgendering Protection for Government Employees</div>
+      <div class="bill-details">
+        <p>Prevents disciplinary action against public school teachers or government employees who refuse to use a student's or coworker's requested name/pronouns, as long as it's done "in good faith" or based on "sincerely held religious or moral belief."</p>
+      </div>
+    </div>
+
+    <div class="bill-card">
+      <div class="bill-header">
+        <span class="bill-name">HB 404</span>
+        <span class="badge badge-proposed">Passed House &rarr; Senate</span>
+      </div>
+      <div class="bill-title">Student Housing Discrimination</div>
+      <div class="bill-details">
+        <p>Extends sex-based housing segregation rules from university-run dormitories to private dormitories and single-sex spaces.</p>
+      </div>
+    </div>
+
+    <div class="bill-card">
+      <div class="bill-header">
+        <span class="bill-name">HB 175</span>
+        <span class="badge badge-proposed">Pending</span>
+      </div>
+      <div class="bill-title">Pride Event Funding Ban</div>
+      <div class="bill-details">
+        <p>Prohibits state-funded businesses from hosting Pride-themed events.</p>
+      </div>
+    </div>
+
+    <div class="bill-card">
+      <div class="bill-header">
+        <span class="bill-name">HB 196 &amp; HB 302</span>
+        <span class="badge badge-proposed">Pending</span>
+      </div>
+      <div class="bill-title">Harvey Milk Blvd Renaming / Pride Flag Restrictions</div>
+      <div class="bill-details">
+        <p><strong>HB 196</strong> would rename Harvey Milk Boulevard in SLC for Charlie Kirk. <strong>HB 302</strong> limits cities to one official flag, letting the legislature review municipal flag adoptions.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- === SECTION 9: RESOURCES === -->
+  <section id="resources">
+    <h2><span class="section-icon">09</span> Resources</h2>
+
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h4>Legal Help</h4>
+        <a href="https://www.acluutah.org">ACLU of Utah &rarr; acluutah.org</a>
+        <a href="https://equalityutah.org">Equality Utah &rarr; equalityutah.org</a>
+        <a href="https://lambdalegal.org/tgnc-checklist-under-trump/">Lambda Legal ID Guidance &rarr; lambdalegal.org</a>
+      </div>
+      <div class="resource-card">
+        <h4>Bill Tracking</h4>
+        <a href="https://translegislation.com">Trans Legislation Tracker &rarr; translegislation.com</a>
+        <a href="https://www.aclu.org/legislative-attacks-on-lgbtq-rights-2026">ACLU National Tracker &rarr; aclu.org</a>
+        <a href="https://le.utah.gov">Utah Legislature &rarr; le.utah.gov</a>
+      </div>
+      <div class="resource-card">
+        <h4>Utah-Specific</h4>
+        <a href="https://www.acluutah.org/know-your-rights/faqs-hb-257/">ACLU HB 257 FAQ &rarr; acluutah.org</a>
+        <a href="https://www.utcourts.gov/en/self-help/case-categories/family/name-change/sex-change.html">Gender Marker Petition &rarr; utcourts.gov</a>
+        <a href="https://projectrainbowutah.org">Project Rainbow Utah &rarr; projectrainbowutah.org</a>
+      </div>
+      <div class="resource-card">
+        <h4>Federal Documents</h4>
+        <a href="https://www.whitehouse.gov/presidential-actions/2025/01/defending-women-from-gender-ideology-extremism-and-restoring-biological-truth-to-the-federal-government/">EO 14168 Full Text &rarr; whitehouse.gov</a>
+        <a href="https://www.project2025.org">Project 2025 Mandate &rarr; project2025.org</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="page-footer">
+  <p>This document presents legislation and policy as factually as possible. It is not legal advice.<br>If you're facing a specific legal situation, contact the <a href="https://www.acluutah.org">ACLU of Utah</a> or a qualified attorney.</p>
+  <p style="margin-top: 16px;">This work is licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>. You're free to share and adapt it with attribution, but not for commercial use.</p>
+  <p>&copy; 2026 lucentfox</p>
+</footer>
+
+<script>
+// Scroll progress bar
+window.addEventListener('scroll', () => {
+  const scrollTop = document.documentElement.scrollTop;
+  const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const progress = (scrollTop / scrollHeight) * 100;
+  document.getElementById('progressBar').style.width = progress + '%';
+});
+
+// Animate chart bars on scroll into view
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const bars = entry.target.querySelectorAll('.spectrum-bar-row');
+      bars.forEach((row, i) => {
+        const score = parseInt(row.dataset.score);
+        const fill = row.querySelector('.bar-fill');
+        setTimeout(() => {
+          fill.style.width = score + '%';
+        }, i * 40);
+      });
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.2 });
+
+const chart = document.querySelector('.spectrum-chart');
+if (chart) observer.observe(chart);
+</script>
+
+</body>
+</html>
