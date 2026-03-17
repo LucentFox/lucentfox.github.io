@@ -778,14 +778,19 @@
   .legal-list li {
     display: flex;
     align-items: baseline;
-    gap: 10px;
     padding: 6px 0;
     color: var(--text-secondary);
     font-size: 0.92rem;
   }
 
+  .legal-list li .check,
+  .legal-list li .x-mark {
+    margin-right: 10px;
+  }
+
   .legal-list .check { color: #6ee7b7; flex-shrink: 0; }
   .legal-list .x-mark { color: #fca5a5; flex-shrink: 0; }
+  .legal-list em { letter-spacing: -0.01em; }
 
   /* === MOBILE === */
   @media (max-width: 600px) {
@@ -880,8 +885,8 @@
 
     <h3 id="risk-identity">What is actually legal right now</h3>
     <ul class="legal-list">
-      <li><span class="check">&#10003;</span> Being gay, bisexual, queer, or trans (<em>Lawrence v. Texas</em> struck down sodomy laws; identity is not a crime)</li>
-      <li><span class="check">&#10003;</span> Same-sex relationships and marriage (<em>Obergefell</em> + Respect for Marriage Act)</li>
+      <li><span class="check">&#10003;</span> Being gay, bisexual, queer, or trans</li>
+      <li><span class="check">&#10003;</span> Same-sex relationships and marriage</li>
       <li id="risk-expression"><span class="check">&#10003;</span> Cross-dressing and gender-nonconforming appearance (First Amendment; no law in any state criminalizes how you dress)</li>
       <li id="risk-drag"><span class="check">&#10003;</span> Drag performances (protected expression; courts have struck down state-level restrictions)</li>
       <li><span class="check">&#10003;</span> Using your chosen name socially, or changing it legally through a court order</li>
@@ -1012,7 +1017,7 @@
     <ul class="legal-list">
       <li><span class="check">&#9744;</span> Update your voter registration if you've changed your legal name</li>
       <li><span class="check">&#9744;</span> Save copies of your current gender-marker documents (birth certificate, driver's license)</li>
-      <li><span class="check">&#9744;</span> Save the ACLU of Utah's number: they handle LGBTQ+ legal issues (<a href="https://www.acluutah.org" style="color: var(--accent-primary);">acluutah.org</a>)</li>
+      <li><span class="check">&#9744;</span> Save the ACLU of Utah's contact info:&nbsp;<a href="https://www.acluutah.org" style="color: var(--accent-primary);">acluutah.org</a></li>
       <li><span class="check">&#9744;</span> If you're on Medicaid or state employee insurance for gender-affirming care, look into private insurance options as a backup</li>
     </ul>
 
