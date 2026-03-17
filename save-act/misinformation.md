@@ -56,7 +56,7 @@ Taking the claims one at a time:
 
 **And the central claim — "voting doesn't require ID" — is just wrong.** [36 states](https://www.ncsl.org/elections-and-campaigns/voter-id) already require some form of ID to vote, including Utah. In Utah you currently need a photo ID or two non-photo documents. The meme presents voting as if there's zero verification anywhere, which isn't the case.
 
-**The deeper problem with the comparison:** None of the activities on the left side of the meme are constitutional rights. Voting is protected by the 15th, 19th, 24th, and 26th Amendments, which specifically prohibit barriers to eligible citizens voting. Poll taxes, literacy tests, and similar hurdles were struck down for a reason. That history is why voting has different legal standards than a liquor store transaction. You can [agree with voter ID requirements and still recognize that this meme is a bad argument for them](https://www.politifact.com/article/2026/feb/16/voter-id-beer-vote-Trump-Congress-Save-America-Act/).
+**The deeper problem with the comparison:** None of the activities listed above are constitutional rights. Voting is protected by the 15th, 19th, 24th, and 26th Amendments, which specifically prohibit barriers to eligible citizens voting. Poll taxes, literacy tests, and similar hurdles were struck down for a reason. That history is why voting has different legal standards than a liquor store transaction. You can [agree with voter ID requirements and still recognize that this meme is a bad argument for them](https://www.politifact.com/article/2026/feb/16/voter-id-beer-vote-Trump-Congress-Save-America-Act/).
 
 ---
 
