@@ -792,6 +792,46 @@
   .legal-list .x-mark { color: #fca5a5; flex-shrink: 0; }
   .legal-list em { letter-spacing: -0.01em; }
 
+  /* === INLINE CITATIONS === */
+  a.cite {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: var(--trans-pink);
+    background: rgba(245, 169, 184, 0.12);
+    border: 1px solid rgba(245, 169, 184, 0.25);
+    border-radius: 8px;
+    padding: 1px 5px;
+    margin-left: 6px;
+    text-decoration: none;
+    vertical-align: middle;
+    line-height: 1;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  a.cite:hover {
+    background: rgba(245, 169, 184, 0.25);
+    color: var(--trans-pink-bright);
+  }
+
+  /* All cite links open in new tab via JS below */
+
+  /* === LAST UPDATED BANNER === */
+  .last-updated {
+    display: inline-block;
+    background: rgba(91, 206, 250, 0.1);
+    border: 1px solid rgba(91, 206, 250, 0.2);
+    border-radius: 8px;
+    padding: 4px 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--trans-blue);
+    margin-top: 12px;
+  }
+
   /* === MOBILE === */
   @media (max-width: 600px) {
     .hero { padding: 56px 16px 40px; }
@@ -842,7 +882,8 @@
   <div class="hero-content">
     <h1>LGBTQ+ Legal Rights: Separating Law from Fear</h1>
     <p class="subtitle">Being queer or trans is not illegal in the United States. It is not illegal in Utah. Start there. There's a lot of fear right now, and some of it is warranted. But fear without facts helps no one. This page collects actual legislation, actual executive orders, and actual bill text so you can assess your own risk. Where something is scary, it says so. Where it sounds scary but isn't law, it says that too.</p>
-    <p class="meta">Focus: United States Federal + Utah &nbsp;|&nbsp; Last updated March 2026</p>
+    <p class="meta">Focus: United States Federal + Utah</p>
+    <div class="last-updated">Last updated: March 17, 2026</div>
     <div class="flag-stripe"></div>
   </div>
 </header>
@@ -901,22 +942,22 @@
       <tr>
         <td>Serving openly as trans in the U.S. military</td>
         <td><span class="badge badge-law">Discharge</span></td>
-        <td>EO 14183. Currently in effect after SCOTUS ruling (May 2025). Not theoretical.</td>
+        <td>EO 14183. Currently in effect after SCOTUS ruling (May 2025). Not theoretical.<a class="cite" href="https://www.whitehouse.gov/presidential-actions/2025/01/prioritizing-military-excellence-and-readiness/">EO-14183</a><a class="cite" href="https://www.scotusblog.com/2025/05/supreme-court-allows-trump-to-ban-transgender-people-from-military/">Shilling v. Trump</a></td>
       </tr>
       <tr>
         <td>Using a gov't changing room that doesn't match birth sex (Utah)</td>
         <td><span class="badge badge-law">Class B Misdemeanor</span></td>
-        <td>HB 257. Only changing rooms (not stand-alone restrooms). Only gov't buildings. Surgical exemption exists. Max 6 months.</td>
+        <td>HB 257. Only changing rooms (not stand-alone restrooms). Only gov't buildings. Surgical exemption exists. Max 6 months.<a class="cite" href="https://le.utah.gov/~2024/bills/static/HB0257.html">HB-257</a><a class="cite" href="https://www.acluutah.org/know-your-rights/faqs-hb-257/">ACLU FAQ</a></td>
       </tr>
       <tr>
         <td>Providing gender-affirming hormones/blockers to minors (Utah)</td>
         <td><span class="badge badge-law">Professional Sanctions</span></td>
-        <td>SB 16 moratorium. HB 174 would make it permanent.</td>
+        <td>SB 16 moratorium. HB 174 would make it permanent.<a class="cite" href="https://le.utah.gov/~2023/bills/static/SB0016.html">SB-16</a><a class="cite" href="https://le.utah.gov/Session/2026/bills/static/HB0174.html">HB-174</a></td>
       </tr>
       <tr>
         <td>Applying for a federal passport with a non-birth-sex marker</td>
         <td><span class="badge badge-eo">Denied</span></td>
-        <td>EO 14168. X markers and self-identified gender no longer accepted on passports/visas.</td>
+        <td>EO 14168. X markers and self-identified gender no longer accepted on passports/visas.<a class="cite" href="https://www.whitehouse.gov/presidential-actions/2025/01/defending-women-from-gender-ideology-extremism-and-restoring-biological-truth-to-the-federal-government/">EO-14168</a></td>
       </tr>
     </table>
 
@@ -925,7 +966,7 @@
       <ul>
         <li>Every anti-LGBTQ+ action at the federal level has been through <strong>executive orders</strong>, not legislation. EOs can be reversed by a future president on day one.</li>
         <li><strong>No anti-LGBTQ+ statute has passed both chambers of Congress.</strong> The trans sports ban passed the House but was defeated in the Senate.</li>
-        <li>The legal infrastructure protecting LGBTQ+ rights (<em>Bostock v. Clayton County</em>, <em>Obergefell v. Hodges</em>, the Respect for Marriage Act) remains intact and binding.</li>
+        <li>The legal infrastructure protecting LGBTQ+ rights (<em>Bostock v. Clayton County</em>, <em>Obergefell v. Hodges</em>, the Respect for Marriage Act) remains intact and binding.<a class="cite" href="https://www.supremecourt.gov/opinions/19pdf/17-1618_hfci.pdf">Bostock</a></li>
       </ul>
     </div>
 
@@ -948,9 +989,9 @@
         <li><strong>Being put on a sex offender registry for being trans:</strong> Not law. Project 2025 rhetoric targets educators/librarians who distribute material they define as pornographic. No bill introduced. <a href="#project-2025" style="color: var(--accent-primary);">See the actual quote below.</a></li>
         <li><strong>Nationwide criminalization of being trans:</strong> Not happening. No such bill exists.</li>
         <li><strong>Criminalizing cross-dressing or drag:</strong> Not law. The First Amendment protects gender expression and artistic performance. Courts have struck down attempts in other states.</li>
-        <li><strong>Banning adult gender-affirming care:</strong> Not law federally. Utah's HB 193 (public funding ban) failed. Private and self-pay care unrestricted.</li>
-        <li><strong>Forced detransition:</strong> Not law. HB 174 targets minors only.</li>
-        <li><strong>Revoking same-sex marriage:</strong> Not law. <em>Obergefell</em> + Respect for Marriage Act. No active legislation with realistic chances.</li>
+        <li><strong>Banning adult gender-affirming care:</strong> Not law federally. Utah's HB 193 (public funding ban) failed. Private and self-pay care unrestricted.<a class="cite" href="https://le.utah.gov/~2026/bills/static/HB0193.html">HB-193</a></li>
+        <li><strong>Forced detransition:</strong> Not law. HB 174 targets minors only.<a class="cite" href="https://le.utah.gov/Session/2026/bills/static/HB0174.html">HB-174</a></li>
+        <li><strong>Revoking same-sex marriage:</strong> Not happening. Same-sex marriage is protected by the Supreme Court's <em>Obergefell</em> decision (2015) and backed by the Respect for Marriage Act (2022), a federal statute. No legislation to overturn either has any realistic chance of passing.</li>
         <li><strong>Losing your right to vote because of a gender marker mismatch:</strong> Not how it works. See above.</li>
       </ul>
     </div>
@@ -960,50 +1001,50 @@
     <div class="worry-item">
       <div class="worry-number">1</div>
       <div class="worry-content">
-        <p><strong>If you're in the military:</strong> The trans ban is in effect. This is the highest-severity, most immediately consequential item on this list.</p>
+        <p><strong>If you're in the military:</strong> The trans ban is in effect. This is the highest-severity, most immediately consequential item on this list.<a class="cite" href="https://www.whitehouse.gov/presidential-actions/2025/01/prioritizing-military-excellence-and-readiness/">EO-14183</a></p>
       </div>
     </div>
     <div class="worry-item">
       <div class="worry-number">2</div>
       <div class="worry-content">
-        <p><strong>If you're trans in Utah and use government rec centers, school facilities, or similar:</strong> HB 257 is real. Know which spaces are changing rooms vs. restrooms. The law makes a legal distinction. Stand-alone restrooms have no criminal penalty.</p>
+        <p><strong>If you're trans in Utah and use government rec centers, school facilities, or similar:</strong> HB 257 is real. Know which spaces are changing rooms vs. restrooms. The law makes a legal distinction. Stand-alone restrooms have no criminal penalty.<a class="cite" href="https://www.acluutah.org/know-your-rights/faqs-hb-257/">ACLU FAQ</a></p>
       </div>
     </div>
     <div class="worry-item">
       <div class="worry-number">3</div>
       <div class="worry-content">
-        <p><strong>If you're a trans minor or parent of one in Utah:</strong> The care moratorium is law, and HB 174 would make it permanent. If your child is receiving treatment under grandfathering provisions, that access may end.</p>
+        <p><strong>If you're a trans minor or parent of one in Utah:</strong> The care moratorium is law, and HB 174 would make it permanent. If your child is receiving treatment under grandfathering provisions, that access may end.<a class="cite" href="https://le.utah.gov/~2023/bills/static/SB0016.html">SB-16</a><a class="cite" href="https://le.utah.gov/Session/2026/bills/static/HB0174.html">HB-174</a></p>
       </div>
     </div>
     <div class="worry-item">
       <div class="worry-number">4</div>
       <div class="worry-content">
-        <p><strong>If you need to update federal documents:</strong> Passport gender markers are locked to birth sex under EO 14168. Utah state documents (DL, birth certificate) are still changeable, but HB 183 could end that. If you're planning to update state docs, sooner may be better than later.</p>
+        <p><strong>If you need to update federal documents:</strong> Passport gender markers are locked to birth sex under EO 14168. Utah state documents (DL, birth certificate) are still changeable, but HB 183 could end that if reintroduced.<a class="cite" href="https://www.whitehouse.gov/presidential-actions/2025/01/defending-women-from-gender-ideology-extremism-and-restoring-biological-truth-to-the-federal-government/">EO-14168</a><a class="cite" href="https://le.utah.gov/Session/2026/bills/static/HB0183.html">HB-183</a></p>
       </div>
     </div>
     <div class="worry-item">
       <div class="worry-number">5</div>
       <div class="worry-content">
-        <p><strong>If you're trans and not a U.S. citizen:</strong> Document mismatches are now a real risk. USCIS only recognizes birth sex on immigration forms. Consular officers can request proof of birth sex and deny visas over mismatches, and those discrepancies feed into ICE enforcement databases. Even if you've legally changed your gender marker on a state ID, your federal immigration records may not match. Get legal advice from <a href="https://immigrationequality.org" style="color: var(--accent-primary);">Immigration Equality</a> before changing any documents or traveling internationally.</p>
+        <p><strong>If you're trans and not a U.S. citizen:</strong> Document mismatches are now a real risk. USCIS only recognizes birth sex on immigration forms.<a class="cite" href="https://www.uscis.gov/sites/default/files/document/policy-manual-updates/20250402-RecognizingMaleAndFemaleSexes.pdf">USCIS</a> Consular officers can request proof of birth sex and deny visas over mismatches, and those discrepancies feed into ICE enforcement databases.<a class="cite" href="https://www.advocate.com/politics/national/new-visa-rules-transgender-immigration">Advocate</a> Even if you've legally changed your gender marker on a state ID, your federal immigration records may not match. Get legal advice from <a href="https://immigrationequality.org" style="color: var(--accent-primary);">Immigration Equality</a> before changing any documents or traveling internationally.</p>
       </div>
     </div>
 
     <div class="worry-item">
       <div class="worry-number">6</div>
       <div class="worry-content">
-        <p><strong>If you rely on Medicaid or state employee insurance for gender-affirming care:</strong> HB 193 failed this session, but the political will to cut funding isn't going away. Private insurance and self-pay are safe for now. Consider backup plans for public-funded care.</p>
+        <p><strong>If you rely on Medicaid or state employee insurance for gender-affirming care:</strong> HB 193 failed this session, but the political will to cut funding isn't going away. Private insurance and self-pay are safe for now. Consider backup plans for public-funded care.<a class="cite" href="https://le.utah.gov/~2026/bills/static/HB0193.html">HB-193</a></p>
       </div>
     </div>
     <div class="worry-item">
       <div class="worry-number">7</div>
       <div class="worry-content">
-        <p><strong>If HB 183 is reintroduced and passes:</strong> It died in committee this session, but could come back. It would be the most significant single change for trans Utahns: losing employment/housing protections, ability to change gender markers, and eligibility to work with children.</p>
+        <p><strong>If HB 183 is reintroduced and passes:</strong> It died in committee this session, but could come back. It would be the most significant single change for trans Utahns: losing employment/housing protections, ability to change gender markers, and eligibility to work with children.<a class="cite" href="https://le.utah.gov/Session/2026/bills/static/HB0183.html">HB-183</a></p>
       </div>
     </div>
     <div class="worry-item">
       <div class="worry-number">8</div>
       <div class="worry-content">
-        <p id="risk-prison"><strong>If you're trans and could face incarceration:</strong> Federal prisons now house inmates by birth sex under EO 14168, regardless of transition status. Access to hormones in federal custody is being restricted. State and county jails in Utah have no consistent policy on providing gender-affirming care or respecting gender identity in housing. If you're on hormones, abrupt cessation during incarceration is a real medical risk. The ACLU has active litigation on this.</p>
+        <p id="risk-prison"><strong>If you're trans and could face incarceration:</strong> Federal prisons now house inmates by birth sex under EO 14168, regardless of transition status.<a class="cite" href="https://www.whitehouse.gov/presidential-actions/2025/01/defending-women-from-gender-ideology-extremism-and-restoring-biological-truth-to-the-federal-government/">EO-14168</a> Access to hormones in federal custody is being restricted. State and county jails in Utah have no consistent policy on providing gender-affirming care or respecting gender identity in housing. If you're on hormones, abrupt cessation during incarceration is a real medical risk.</p>
       </div>
     </div>
     <div class="worry-item">
@@ -1024,8 +1065,8 @@
     <div class="callout warning" style="margin-top: 20px;">
       <div class="callout-title">&#9888; Should you update your gender marker?</div>
       <p style="margin-bottom: 12px;">Utah's HB 234 still allows gender marker changes on birth certificates and driver's licenses. HB 183 could end that if reintroduced. But rushing to change isn't always the right move.</p>
-      <p style="margin-bottom: 12px;"><strong>Risk of changing:</strong> In Kansas, SB 244 (Feb 2026) retroactively invalidated the driver's licenses of ~1,700 trans residents who had already changed their markers, with no grace period. If Utah passes something similar, an updated marker could become a liability rather than a protection.</p>
-      <p style="margin-bottom: 12px;"><strong>Risk for non-citizens:</strong> Mismatched gender markers across documents (passport, visa, green card, DL) can trigger fraud investigations, visa denials, and ICE scrutiny. USCIS now only recognizes birth sex on immigration forms. Consular officers can request proof of birth sex and deny visas over mismatches. Immigration attorneys warn these discrepancies feed into enforcement databases.</p>
+      <p style="margin-bottom: 12px;"><strong>Risk of changing:</strong> In Kansas, SB 244 (Feb 2026) retroactively invalidated the driver's licenses of ~1,700 trans residents who had already changed their markers, with no grace period.<a class="cite" href="https://www.npr.org/2026/02/28/nx-s1-5728969/kansas-revokes-drivers-licenses-of-hundreds-of-trans-people-prompted-by-new-law">NPR</a><a class="cite" href="https://www.aclukansas.org/publications/sb244faq/">ACLU FAQ</a> If Utah passes something similar, an updated marker could become a liability rather than a protection.</p>
+      <p style="margin-bottom: 12px;"><strong>Risk for non-citizens:</strong> Mismatched gender markers across documents (passport, visa, green card, DL) can trigger fraud investigations, visa denials, and ICE scrutiny.<a class="cite" href="https://www.advocate.com/politics/national/new-visa-rules-transgender-immigration">Advocate</a> USCIS now only recognizes birth sex on immigration forms.<a class="cite" href="https://www.uscis.gov/sites/default/files/document/policy-manual-updates/20250402-RecognizingMaleAndFemaleSexes.pdf">USCIS</a> Consular officers can request proof of birth sex and deny visas over mismatches. Immigration attorneys warn these discrepancies feed into enforcement databases.</p>
       <p><strong>Bottom line:</strong> There's no clearly safe choice. If you're a U.S. citizen, weigh whether the benefit of matching documents outweighs the risk of a rollback. If you're not a U.S. citizen, get legal advice from <a href="https://immigrationequality.org" style="color: var(--accent-primary);">Immigration Equality</a> before changing any documents.</p>
     </div>
   </section>
@@ -1191,11 +1232,11 @@
     <div class="callout info">
       <div class="callout-title">&#8505; How to read this</div>
       <ul>
-        <li>The U.S. scores <strong>68 out of 100</strong>. That puts it in the "mixed protections" tier, alongside the UK.</li>
+        <li>The U.S. scores <strong>68 out of 100</strong>. That puts it in the "mixed protections" tier, alongside the UK.<a class="cite" href="https://www.equaldex.com/equality-index">Equaldex</a></li>
         <li>Iran scores <strong>5</strong>. Afghanistan scores <strong>1</strong>. The U.S. is not Iran. The gap is enormous.</li>
         <li>But the U.S. is also <strong>not Iceland (93), not Canada (79), not Spain (83)</strong>. Countries Americans typically consider peers score 10&ndash;25 points higher.</li>
-        <li>The concern isn't where the U.S. is today. It's the <strong>direction</strong>. The red <span class="dir-down">&#9660;</span> arrows show countries that have backslid since 2021. Hungary dropped from ~65 to 49 after banning Pride events and restricting LGBTQ+ content. The UK dropped after stalling gender recognition reform. The U.S. is sliding due to executive orders and the wave of state-level legislation (850+ anti-LGBTQ+ bills in 2025 alone).</li>
-        <li>12 countries still impose the death penalty for consensual same-sex activity. Two (Iran and Afghanistan) actively enforce it.</li>
+        <li>The concern isn't where the U.S. is today. It's the <strong>direction</strong>. The red <span class="dir-down">&#9660;</span> arrows show countries that have backslid since 2021. Hungary dropped from ~65 to 49 after banning Pride events and restricting LGBTQ+ content.<a class="cite" href="https://www.ilga-europe.org/report/rainbow-map-2025/">ILGA-Europe</a> The UK dropped after stalling gender recognition reform. The U.S. is sliding due to executive orders and the wave of state-level legislation (850+ anti-LGBTQ+ bills in 2025 alone).<a class="cite" href="https://truthout.org/articles/more-than-850-anti-lgbtq-bills-filed-so-far-in-2025-the-most-in-us-history/">Truthout</a></li>
+        <li>12 countries still impose the death penalty for consensual same-sex activity. Two (Iran and Afghanistan) actively enforce it.<a class="cite" href="https://www.ecpm.org/en/2025/06/02/pride-month-12-states-in-the-world-still-provide-the-death-penalty-for-homosexuality-in-their-penal-codes/">ECPM</a></li>
       </ul>
     </div>
 
@@ -1219,38 +1260,38 @@
       <!-- MOST SEVERE FIRST -->
       <div class="overview-row">
         <div><a href="#eo-14183" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Military service (trans)</a></div>
-        <div><span class="badge badge-law">Banned</span> EO 14183, SCOTUS upheld</div>
+        <div><span class="badge badge-law">Banned</span> EO 14183, SCOTUS upheld<a class="cite" href="https://www.whitehouse.gov/presidential-actions/2025/01/prioritizing-military-excellence-and-readiness/">EO-14183</a><a class="cite" href="https://www.scotusblog.com/2025/05/supreme-court-allows-trump-to-ban-transgender-people-from-military/">Shilling v. Trump</a></div>
         <div>&mdash;</div>
       </div>
       <div class="overview-row">
         <div><a href="#utah-hb257" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Bathroom / changing room access</a></div>
         <div><span class="badge badge-safe">No federal ban</span></div>
-        <div><span class="badge badge-law">Restricted</span> HB 257; gov't changing rooms only</div>
+        <div><span class="badge badge-law">Restricted</span> Gov't changing rooms only<a class="cite" href="https://le.utah.gov/~2024/bills/static/HB0257.html">HB-257</a></div>
       </div>
       <div class="overview-row">
         <div><a href="#utah-sb16" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Gender-affirming care (minors)</a></div>
-        <div><span class="badge badge-eo">EO issued</span> Agencies directed to defund</div>
-        <div><span class="badge badge-law">Moratorium</span> SB 16; HB 174 would make permanent</div>
+        <div><span class="badge badge-eo">EO issued</span> Agencies directed to defund<a class="cite" href="https://www.whitehouse.gov/presidential-actions/2025/01/defending-women-from-gender-ideology-extremism-and-restoring-biological-truth-to-the-federal-government/">EO-14168</a></div>
+        <div><span class="badge badge-law">Moratorium</span> HB 174 would make permanent<a class="cite" href="https://le.utah.gov/~2023/bills/static/SB0016.html">SB-16</a><a class="cite" href="https://le.utah.gov/Session/2026/bills/static/HB0174.html">HB-174</a></div>
       </div>
       <div class="overview-row">
         <div><a href="#eo-14168" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Gender markers on federal IDs</a></div>
-        <div><span class="badge badge-eo">EO in effect</span> Locked to birth sex</div>
-        <div><span class="badge badge-proposed">Threatened</span> HB 183 would ban state changes</div>
+        <div><span class="badge badge-eo">EO in effect</span> Locked to birth sex<a class="cite" href="https://www.whitehouse.gov/presidential-actions/2025/01/defending-women-from-gender-ideology-extremism-and-restoring-biological-truth-to-the-federal-government/">EO-14168</a></div>
+        <div><span class="badge badge-proposed">Threatened</span> Died in committee; could return<a class="cite" href="https://le.utah.gov/Session/2026/bills/static/HB0183.html">HB-183</a></div>
       </div>
       <div class="overview-row">
         <div><a href="#eo-14168" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Federal prisons (trans inmates)</a></div>
-        <div><span class="badge badge-eo">EO in effect</span> Housed by birth sex</div>
+        <div><span class="badge badge-eo">EO in effect</span> Housed by birth sex<a class="cite" href="https://www.whitehouse.gov/presidential-actions/2025/01/defending-women-from-gender-ideology-extremism-and-restoring-biological-truth-to-the-federal-government/">EO-14168</a></div>
         <div>&mdash;</div>
       </div>
       <div class="overview-row">
         <div><a href="#risk-prison" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Hormone access in prison / jail</a></div>
-        <div><span class="badge badge-eo">Restricted</span> Federal policy discourages care</div>
+        <div><span class="badge badge-eo">Restricted</span> Federal policy discourages care<a class="cite" href="https://www.whitehouse.gov/presidential-actions/2025/01/defending-women-from-gender-ideology-extremism-and-restoring-biological-truth-to-the-federal-government/">EO-14168</a></div>
         <div><span class="badge badge-legal-challenge">Varies</span> No consistent Utah policy</div>
       </div>
       <div class="overview-row">
         <div><a href="#eo-14168" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Employment / housing protections</a></div>
-        <div><span class="badge badge-legal-challenge">Weakened</span> <em>Bostock</em> stands; enforcement gutted</div>
-        <div><span class="badge badge-proposed">Threatened</span> HB 183 would remove protections</div>
+        <div><span class="badge badge-legal-challenge">Weakened</span> <em>Bostock</em> stands; enforcement gutted<a class="cite" href="https://www.supremecourt.gov/opinions/19pdf/17-1618_hfci.pdf">Bostock opinion</a></div>
+        <div><span class="badge badge-proposed">Threatened</span> Died in committee; could return<a class="cite" href="https://le.utah.gov/Session/2026/bills/static/HB0183.html">HB-183</a></div>
       </div>
       <div class="overview-row">
         <div><a href="#risk-care-adults" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Adult care: self-pay</a></div>
@@ -1264,8 +1305,8 @@
       </div>
       <div class="overview-row">
         <div><a href="#risk-care-adults" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Adult care: Medicaid / state insurance</a></div>
-        <div><span class="badge badge-eo">Threatened</span> Federal funding under review</div>
-        <div><span class="badge badge-failed">HB 193 failed</span> Public funding ban died in committee</div>
+        <div><span class="badge badge-eo">Threatened</span> Federal funding under review<a class="cite" href="https://www.whitehouse.gov/presidential-actions/2025/01/defending-women-from-gender-ideology-extremism-and-restoring-biological-truth-to-the-federal-government/">EO-14168</a></div>
+        <div><span class="badge badge-failed">HB 193 failed</span> Public funding ban died in committee<a class="cite" href="https://le.utah.gov/~2026/bills/static/HB0193.html">HB-193</a></div>
       </div>
       <div class="overview-row">
         <div><a href="#risk-voting" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Voting with mismatched markers</a></div>
@@ -1294,7 +1335,7 @@
       </div>
       <div class="overview-row">
         <div><a href="#risk-sexoffender" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Sex offender registry for being trans</a></div>
-        <div><span class="badge badge-safe">Not law</span> Project 2025 rhetoric only</div>
+        <div><span class="badge badge-safe">Not law</span> Project 2025 rhetoric only<a class="cite" href="https://static.heritage.org/project2025/2025_MandateForLeadership_FULL.pdf">Project 2025</a></div>
         <div><span class="badge badge-safe">Not law</span></div>
       </div>
       <div class="overview-row">
@@ -1316,7 +1357,7 @@
     <p>This is the passage generating the most fear. It's from the Mandate's foreword (page 5), written by Heritage Foundation president Kevin Roberts:</p>
 
     <div class="doc-quote danger">
-      <span class="source">Project 2025, Mandate for Leadership, Foreword, p. 5</span>
+      <span class="source">Project 2025, Mandate for Leadership, Foreword, p. 5 <a class="cite" href="https://static.heritage.org/project2025/2025_MandateForLeadership_FULL.pdf">Project 2025</a></span>
       <blockquote>
         "Pornography, manifested today in the omnipresent propagation of transgender ideology and sexualization of children, for instance, is not a political Gordian knot inextricably binding up disparate claims about free speech, property rights, sexual liberation, and child welfare. It has no claim to First Amendment protection. Its purveyors are child predators and misogynistic exploiters of women. Their product is as addictive as any illicit drug and as psychologically destructive as any crime. Pornography should be outlawed. The people who produce and distribute it should be imprisoned. <mark>Educators and public librarians who purvey it should be classed as registered sex offenders.</mark>"
       </blockquote>
@@ -1338,27 +1379,27 @@
       <tr><th>Proposal</th><th>Status</th></tr>
       <tr>
         <td>Ban trans people from military</td>
-        <td><span class="impl-status"><span class="impl-dot yes"></span> Implemented</span> via EO 14183</td>
+        <td><span class="impl-status"><span class="impl-dot yes"></span> Implemented</span> via EO 14183<a class="cite" href="https://www.whitehouse.gov/presidential-actions/2025/01/prioritizing-military-excellence-and-readiness/">EO-14183</a></td>
       </tr>
       <tr>
         <td>Replace "gender" with "sex" in federal policy</td>
-        <td><span class="impl-status"><span class="impl-dot yes"></span> Implemented</span> via EO 14168</td>
+        <td><span class="impl-status"><span class="impl-dot yes"></span> Implemented</span> via EO 14168<a class="cite" href="https://www.whitehouse.gov/presidential-actions/2025/01/defending-women-from-gender-ideology-extremism-and-restoring-biological-truth-to-the-federal-government/">EO-14168</a></td>
       </tr>
       <tr>
         <td>Defund programs promoting "gender ideology"</td>
-        <td><span class="impl-status"><span class="impl-dot partial"></span> Partial</span> Funding threats issued; courts blocking some</td>
+        <td><span class="impl-status"><span class="impl-dot partial"></span> Partial</span> Funding threats issued; courts blocking some<a class="cite" href="https://www.whitehouse.gov/presidential-actions/2025/01/defending-women-from-gender-ideology-extremism-and-restoring-biological-truth-to-the-federal-government/">EO-14168</a><a class="cite" href="https://williamsinstitute.law.ucla.edu/publications/impact-eo-redefine-sex-tbi/">Williams Inst.</a></td>
       </tr>
       <tr>
         <td>Ban gender-affirming care nationwide</td>
-        <td><span class="impl-status"><span class="impl-dot partial"></span> EO only</span> No legislation passed</td>
+        <td><span class="impl-status"><span class="impl-dot partial"></span> EO only</span> No legislation passed<a class="cite" href="https://www.whitehouse.gov/presidential-actions/2025/01/defending-women-from-gender-ideology-extremism-and-restoring-biological-truth-to-the-federal-government/">EO-14168</a><a class="cite" href="https://translegislation.com/">Trans Legislation Tracker</a></td>
       </tr>
       <tr>
         <td>Remove LGBTQ+ nondiscrimination protections</td>
-        <td><span class="impl-status"><span class="impl-dot no"></span> Not implemented</span> <em>Bostock</em> still stands</td>
+        <td><span class="impl-status"><span class="impl-dot no"></span> Not implemented</span> <em>Bostock</em> still stands<a class="cite" href="https://www.supremecourt.gov/opinions/19pdf/17-1618_hfci.pdf">Bostock opinion</a></td>
       </tr>
       <tr>
         <td>Register educators/librarians as sex offenders</td>
-        <td><span class="impl-status"><span class="impl-dot no"></span> Not implemented</span> Rhetoric only</td>
+        <td><span class="impl-status"><span class="impl-dot no"></span> Not implemented</span> Rhetoric only<a class="cite" href="https://static.heritage.org/project2025/2025_MandateForLeadership_FULL.pdf">Project 2025, p. 5</a></td>
       </tr>
     </table>
   </section>
@@ -1378,7 +1419,7 @@
       <div class="bill-title">"Defending Women from Gender Ideology Extremism and Restoring Biological Truth to the Federal Government," January 20, 2025</div>
 
       <div class="doc-quote warning">
-        <span class="source">Executive Order 14168, Section 2</span>
+        <span class="source">Executive Order 14168, Section 2 <a class="cite" href="https://www.whitehouse.gov/presidential-actions/2025/01/defending-women-from-gender-ideology-extremism-and-restoring-biological-truth-to-the-federal-government/">EO-14168</a></span>
         <blockquote>"It is the policy of the United States to recognize two sexes, male and female. These sexes are not changeable and are grounded in fundamental and incontrovertible reality. [...] 'Sex' is not a synonym for and does not include the concept of 'gender identity.'"</blockquote>
       </div>
 
@@ -1404,7 +1445,7 @@
       <div class="bill-title">"Prioritizing Military Excellence and Readiness" / Transgender Military Ban, January 27, 2025</div>
 
       <div class="doc-quote warning">
-        <span class="source">Executive Order 14183</span>
+        <span class="source">Executive Order 14183 <a class="cite" href="https://www.whitehouse.gov/presidential-actions/2025/01/prioritizing-military-excellence-and-readiness/">EO-14183</a></span>
         <blockquote>"Gender dysphoria is incompatible with the demands of military service."</blockquote>
       </div>
 
@@ -1413,8 +1454,8 @@
         <ul>
           <li><strong>Jan 27, 2025:</strong> Order signed</li>
           <li><strong>Mar 2025:</strong> Federal judge blocked the ban</li>
-          <li><strong>May 2025:</strong> Supreme Court allowed the ban to proceed while appeals continue</li>
-          <li>~1,000 service members began voluntary separation</li>
+          <li><strong>May 2025:</strong> Supreme Court allowed the ban to proceed while appeals continue<a class="cite" href="https://www.scotusblog.com/2025/05/supreme-court-allows-trump-to-ban-transgender-people-from-military/">Shilling v. Trump</a></li>
+          <li>~1,000 service members began voluntary separation<a class="cite" href="https://www.military.com/daily-news/2025/05/09/about-1000-troops-slated-immediate-separation-under-reinstated-transgender-ban.html">Military.com</a></li>
           <li>The ban is <strong>currently in effect</strong></li>
         </ul>
       </div>
@@ -1426,7 +1467,7 @@
   <!-- === SECTION 5: FEDERAL LEGISLATION === -->
   <section id="federal-legislation">
     <h2><span class="section-icon">06</span> Federal Legislation</h2>
-    <p class="section-lead">As of March 2026, <strong>113 bills</strong> targeting LGBTQ+ people are being tracked at the federal level (119th Congress). Over 850 anti-LGBTQ+ bills were filed in 2025 alone, the most in U.S. history.</p>
+    <p class="section-lead">As of March 2026, <strong>113 bills</strong> targeting LGBTQ+ people are being tracked at the federal level (119th Congress).<a class="cite" href="https://translegislation.com/">Trans Legislation Tracker</a> Over 850 anti-LGBTQ+ bills were filed in 2025 alone, the most in U.S. history.<a class="cite" href="https://truthout.org/articles/more-than-850-anti-lgbtq-bills-filed-so-far-in-2025-the-most-in-us-history/">Truthout</a></p>
 
     <div class="bill-card">
       <div class="bill-header">
@@ -1434,13 +1475,13 @@
         <span class="badge badge-failed">Defeated</span>
       </div>
       <div class="bill-details">
-        <p>Passed the House but was <strong>defeated in the Senate</strong>. Would have banned trans girls from school sports nationally.</p>
+        <p>Passed the House but was <strong>defeated in the Senate</strong>. Would have banned trans girls from school sports nationally.<a class="cite" href="https://www.aclu.org/legislative-attacks-on-lgbtq-rights-2026">ACLU tracker</a></p>
       </div>
     </div>
 
     <div class="bill-card">
       <div class="bill-header">
-        <span class="bill-name">SAVE America Act (H.R. 7296)</span>
+        <span class="bill-name">SAVE America Act (H.R. 7296)<a class="cite" href="https://www.congress.gov/bill/119th-congress/house-bill/7296">H.R. 7296</a></span>
         <span class="badge badge-proposed">In Senate</span>
       </div>
       <div class="bill-details">
@@ -1450,7 +1491,7 @@
 
     <div class="bill-card">
       <div class="bill-header">
-        <span class="bill-name">Transgender Bill of Rights (H.Res.1058)</span>
+        <span class="bill-name">Transgender Bill of Rights (H.Res.1058)<a class="cite" href="https://www.congress.gov/bill/119th-congress/house-resolution/1058">H.Res. 1058</a></span>
         <span class="badge badge-proposed">Introduced</span>
       </div>
       <div class="bill-details">
@@ -1493,7 +1534,7 @@
         <span class="bill-name">HB 257</span>
         <span class="badge badge-law">Law, Jan 2024</span>
       </div>
-      <div class="bill-title">Sex-based Designations for Privacy, Anti-bullying and Women's Opportunities</div>
+      <div class="bill-title">Sex-based Designations for Privacy, Anti-bullying and Women's Opportunities<a class="cite" href="https://le.utah.gov/~2024/bills/static/HB0257.html">HB-257</a><a class="cite" href="https://www.acluutah.org/know-your-rights/faqs-hb-257/">ACLU FAQ</a></div>
 
       <div class="bill-details">
         <p>This is the law most likely to directly affect trans Utahns day-to-day. The details matter; it's narrower than most people think, but the penalties are real.</p>
@@ -1550,15 +1591,15 @@
         <span class="bill-name">SB 16</span>
         <span class="badge badge-law">Law, Jan 2023</span>
       </div>
-      <div class="bill-title">Youth Gender-Affirming Care Moratorium</div>
+      <div class="bill-title">Youth Gender-Affirming Care Moratorium<a class="cite" href="https://le.utah.gov/~2023/bills/static/SB0016.html">SB-16</a></div>
       <div class="bill-details">
         <p>Placed a moratorium on puberty blockers and cross-sex hormones for minors. Existing patients could continue under certain conditions.</p>
         <div class="callout info" style="margin-top: 12px;">
           <div class="callout-title">&#8505; The state's own study contradicts the ban</div>
           <ul>
             <li>The legislature commissioned a medical evidence review under this bill.</li>
-            <li>It concluded gender-affirming care for minors with gender dysphoria "is largely found to result in positive outcomes and reduce the likelihood of suicide."</li>
-            <li>HB 174 (2026) would make the ban permanent.</li>
+            <li>It concluded gender-affirming care for minors with gender dysphoria "is largely found to result in positive outcomes and reduce the likelihood of suicide."<a class="cite" href="https://19thnews.org/2026/02/transgender-health-care-utah-lawmakers/">19th News</a></li>
+            <li>HB 174 (2026) would make the ban permanent.<a class="cite" href="https://le.utah.gov/Session/2026/bills/static/HB0174.html">HB-174</a></li>
           </ul>
         </div>
       </div>
@@ -1570,7 +1611,7 @@
         <span class="bill-name">HB 234</span>
         <span class="badge badge-law">Law, May 2024</span>
       </div>
-      <div class="bill-title">Gender Marker Changes on Birth Certificates</div>
+      <div class="bill-title">Gender Marker Changes on Birth Certificates<a class="cite" href="https://le.utah.gov/~2024/bills/static/HB0234.html">HB-234</a></div>
       <div class="bill-details">
         <ul>
           <li>Minors must be at least 15.5 years old to petition; change takes effect at 16</li>
@@ -1595,11 +1636,11 @@
         <span class="bill-name">HB 174</span>
         <span class="badge badge-proposed">Passed House &rarr; Senate</span>
       </div>
-      <div class="bill-title">Permanent Youth Gender-Affirming Care Ban</div>
+      <div class="bill-title">Permanent Youth Gender-Affirming Care Ban<a class="cite" href="https://le.utah.gov/Session/2026/bills/static/HB0174.html">HB-174</a></div>
       <div class="bill-details">
-        <p>Converts the 2023 moratorium into a <strong>permanent ban</strong>. Passed House 54&ndash;15. Requires providers to taper existing patients off treatment. The ACLU of Utah sent a veto letter to Governor Cox.</p>
+        <p>Converts the 2023 moratorium into a <strong>permanent ban</strong>. Passed House 54&ndash;15. Requires providers to taper existing patients off treatment.<a class="cite" href="https://utahnewsdispatch.com/2026/02/05/utah-house-passes-ban-transgender-treatments-for-minors/">UT News Dispatch</a> The ACLU of Utah sent a veto letter to Governor Cox.<a class="cite" href="https://www.acluutah.org/press-releases/veto-letter-to-governor-cox-on-hb174/">ACLU letter</a></p>
         <span class="detail-label">Why it matters</span>
-        <p>The state's own commissioned study found positive outcomes and reduced suicide risk. The legislature is advancing the ban despite the study's findings.</p>
+        <p>The state's own commissioned study found positive outcomes and reduced suicide risk. The legislature is advancing the ban despite the study's findings.<a class="cite" href="https://19thnews.org/2026/02/transgender-health-care-utah-lawmakers/">19th News</a></p>
       </div>
     </div>
 
@@ -1608,7 +1649,7 @@
         <span class="bill-name">HB 193</span>
         <span class="badge badge-failed">Failed</span>
       </div>
-      <div class="bill-title">Public Funding Ban for Gender-Affirming Care (All Ages)</div>
+      <div class="bill-title">Public Funding Ban for Gender-Affirming Care (All Ages)<a class="cite" href="https://le.utah.gov/~2026/bills/static/HB0193.html">HB-193</a></div>
       <div class="bill-details">
         <p>Would have banned Medicaid, state employee insurance, and all public funds from covering gender-affirming procedures or hormones for anyone. Failed a motion to recommend.</p>
         <p style="color: var(--text-muted); font-size: 0.88rem;">It failed, but it signals the direction. If you're on state insurance or Medicaid, coverage remains politically vulnerable.</p>
@@ -1620,7 +1661,7 @@
         <span class="bill-name">HB 183</span>
         <span class="badge badge-failed">Died in Committee</span>
       </div>
-      <div class="bill-title">Sex Designation Amendments ("The Big One")</div>
+      <div class="bill-title">Sex Designation Amendments ("The Big One")<a class="cite" href="https://le.utah.gov/Session/2026/bills/static/HB0183.html">HB-183</a></div>
       <div class="bill-details">
         <p>Was sitting in the House Rules Committee when the session adjourned sine die. Did not pass. Could be reintroduced in a future session. This was the most sweeping anti-trans bill Utah has seen.</p>
         <span class="detail-label">What it would do</span>
@@ -1639,7 +1680,7 @@
         <span class="bill-name">HB 95</span>
         <span class="badge badge-failed">Died in Committee</span>
       </div>
-      <div class="bill-title">Misgendering Protection for Government Employees</div>
+      <div class="bill-title">Misgendering Protection for Government Employees<a class="cite" href="https://le.utah.gov/Session/2026/bills/static/HB0095.html">HB-95</a></div>
       <div class="bill-details">
         <p>Prevents disciplinary action against public school teachers or government employees who refuse to use a student's or coworker's requested name/pronouns, as long as it's done "in good faith" or based on "sincerely held religious or moral belief."</p>
       </div>
@@ -1650,7 +1691,7 @@
         <span class="bill-name">HB 404</span>
         <span class="badge badge-proposed">Passed House &rarr; Senate</span>
       </div>
-      <div class="bill-title">Student Housing Discrimination</div>
+      <div class="bill-title">Student Housing Discrimination<a class="cite" href="https://le.utah.gov/Session/2026/bills/static/HB0404.html">HB-404</a></div>
       <div class="bill-details">
         <p>Extends sex-based housing segregation rules from university-run dormitories to private dormitories and single-sex spaces.</p>
       </div>
@@ -1661,7 +1702,7 @@
         <span class="bill-name">HB 175</span>
         <span class="badge badge-failed">Died in Committee</span>
       </div>
-      <div class="bill-title">Pride Event Funding Ban</div>
+      <div class="bill-title">Pride Event Funding Ban<a class="cite" href="https://le.utah.gov/Session/2026/bills/static/HB0175.html">HB-175</a></div>
       <div class="bill-details">
         <p>Prohibits state-funded businesses from hosting Pride-themed events.</p>
       </div>
@@ -1672,7 +1713,7 @@
         <span class="bill-name">HB 196 &amp; HB 302</span>
         <span class="badge badge-failed">Died in Committee</span>
       </div>
-      <div class="bill-title">Harvey Milk Blvd Renaming / Pride Flag Restrictions</div>
+      <div class="bill-title">Harvey Milk Blvd Renaming / Pride Flag Restrictions<a class="cite" href="https://le.utah.gov/Session/2026/bills/static/HB0196.html">HB-196</a><a class="cite" href="https://le.utah.gov/Session/2026/bills/static/HB0302.html">HB-302</a></div>
       <div class="bill-details">
         <p><strong>HB 196</strong> would rename Harvey Milk Boulevard in SLC for Charlie Kirk. <strong>HB 302</strong> limits cities to one official flag, letting the legislature review municipal flag adoptions.</p>
       </div>
@@ -1707,7 +1748,7 @@
       <div class="resource-card">
         <h4>Federal Documents</h4>
         <a href="https://www.whitehouse.gov/presidential-actions/2025/01/defending-women-from-gender-ideology-extremism-and-restoring-biological-truth-to-the-federal-government/">EO 14168 Full Text &rarr; whitehouse.gov</a>
-        <a href="https://www.project2025.org">Project 2025 Mandate &rarr; project2025.org</a>
+        <a href="https://static.heritage.org/project2025/2025_MandateForLeadership_FULL.pdf">Project 2025 Mandate &rarr; project2025.org</a>
       </div>
     </div>
   </section>
@@ -1754,7 +1795,7 @@
 
     <h3>Project 2025</h3>
     <ul style="list-style: none; padding: 0;">
-      <li style="margin-bottom: 10px; color: var(--text-secondary); font-size: 0.9rem;">Heritage Foundation, <em>Mandate for Leadership: The Conservative Promise</em> (2023). Foreword by Kevin Roberts, p. 5. <a href="https://www.project2025.org" style="color: var(--accent-primary);">project2025.org</a></li>
+      <li style="margin-bottom: 10px; color: var(--text-secondary); font-size: 0.9rem;">Heritage Foundation, <em>Mandate for Leadership: The Conservative Promise</em> (2023). Foreword by Kevin Roberts, p. 5. <a href="https://static.heritage.org/project2025/2025_MandateForLeadership_FULL.pdf" style="color: var(--accent-primary);">project2025.org</a></li>
       <li style="margin-bottom: 10px; color: var(--text-secondary); font-size: 0.9rem;">GLAAD, "Project 2025 Exposed." <a href="https://glaad.org/project-2025/" style="color: var(--accent-primary);">glaad.org</a></li>
       <li style="margin-bottom: 10px; color: var(--text-secondary); font-size: 0.9rem;">ACLU, "Project 2025, Explained." <a href="https://www.aclu.org/project-2025-explained" style="color: var(--accent-primary);">aclu.org</a></li>
     </ul>
@@ -1865,6 +1906,12 @@ const observer = new IntersectionObserver((entries) => {
 
 const chart = document.querySelector('.spectrum-chart');
 if (chart) observer.observe(chart);
+
+// All citation links open in new tab
+document.querySelectorAll('a.cite').forEach(a => {
+  a.setAttribute('target', '_blank');
+  a.setAttribute('rel', 'noopener');
+});
 </script>
 
 </body>
