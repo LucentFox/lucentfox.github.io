@@ -36,6 +36,30 @@ The bill addresses a problem that functionally doesn't exist at scale, while cre
 
 ---
 
+## "You need ID to buy beer but not to vote"
+
+**The claim:** A widely shared meme (Turning Point USA and others) lists activities that require ID — boarding a plane, getting a prescription, applying for a job, cashing a check, applying for food stamps, driving, getting married, adopting a pet, buying alcohol — and contrasts them with voting, which it says requires no ID. The implication is that voting is uniquely unprotected.
+
+**The reality:** This is **misleading** on almost every count. Most of the comparisons are factually wrong, and the framing ignores that voting has different legal protections than buying a six-pack.
+
+Taking the claims one at a time:
+
+- **Boarding a plane:** You don't actually need ID to fly. TSA has a process for passengers without ID; they verify identity through security questions and database lookups. You can still board. ([TSA's own website describes the process.](https://www.tsa.gov/travel/security-screening/identification))
+- **Getting a prescription:** No ID is required for most prescriptions. Pharmacies may ask for ID for controlled substances (opioids, etc.), but for the majority of medications you just provide your name and date of birth.
+- **Applying for a job:** I-9 employment verification accepts a wide range of documents, not just photo ID. A birth certificate plus a Social Security card works. No single "valid ID" is required.
+- **Cashing a check:** True if you walk into a bank with a paper check. But millions of people use direct deposit or mobile deposit without showing ID at all.
+- **Applying for food stamps (SNAP):** You need to verify identity, but SNAP accepts a broad range of documents and doesn't strictly require a photo ID. Utility bills, mail, and other non-photo documents can work. States have flexibility.
+- **Driving:** You need a license to drive, yes. But you only show it if pulled over; there's no checkpoint before you start your car. And driving is a state-granted privilege, not a constitutional right.
+- **Getting married:** Requirements vary by state. Some require ID, some accept witnesses or other verification. Either way, a marriage license is a legal contract, not participation in self-governance.
+- **Adopting a pet:** This depends entirely on the shelter or rescue organization. Many don't require ID. This is a private organization's policy, not a government mandate.
+- **Buying alcohol:** You only get carded if you look young. Stores aren't required to ID every customer; they're required not to sell to minors. Utah is stricter than most states here, but even in Utah, the requirement is about age verification, not identity verification.
+
+**And the central claim — "voting doesn't require ID" — is just wrong.** [36 states](https://www.ncsl.org/elections-and-campaigns/voter-id) already require some form of ID to vote, including Utah. In Utah you currently need a photo ID or two non-photo documents. The meme presents voting as if there's zero verification anywhere, which isn't the case.
+
+**The deeper problem with the comparison:** None of the activities on the left side of the meme are constitutional rights. Voting is protected by the 15th, 19th, 24th, and 26th Amendments, which specifically prohibit barriers to eligible citizens voting. Poll taxes, literacy tests, and similar hurdles were struck down for a reason. That history is why voting has different legal standards than a liquor store transaction. You can [agree with voter ID requirements and still recognize that this meme is a bad argument for them](https://www.politifact.com/article/2026/feb/16/voter-id-beer-vote-Trump-Congress-Save-America-Act/).
+
+---
+
 ## "Your REAL ID proves citizenship"
 
 **The claim:** If you have a REAL ID (the one with the gold star), you're already set for the SAVE Act because it proves you're a citizen.

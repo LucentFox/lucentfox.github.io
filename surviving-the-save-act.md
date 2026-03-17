@@ -43,6 +43,7 @@ See [Misinformation vs. Reality](save-act/misinformation.md) for fact-checks on 
 - "Married women who changed their name can't vote" (mostly false, but with caveats)
 - "Noncitizens are voting in large numbers" (not supported by evidence)
 - "This bill just enforces existing law" (it goes further than current requirements)
+- "You need ID to buy beer but not to vote" (wrong on most counts; 36 states already require voter ID)
 - "Your REAL ID proves citizenship" (false for most states, including Utah)
 - "The SAVE Act bans trans people from sports / bans gender-affirming care" (not in any passed version of the bill)
 
