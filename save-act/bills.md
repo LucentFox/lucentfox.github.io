@@ -36,9 +36,9 @@ The SAVE America Act is an expanded version of H.R. 22 that adds photo ID requir
 |---|---|
 | **Sponsor** | Rep. Chip Roy (R-TX) |
 | **Level** | Federal |
-| **Status** | Passed House; awaiting Senate action |
-| **Chance of passage** | ~20% (Senate filibuster remains the obstacle) |
-| **Status as of** | February 2026 |
+| **Status** | Passed House; Senate debate began week of Mar 16, expected to fail filibuster |
+| **Chance of passage** | Low (needs 60 votes; Republicans hold 53, no Democrats supporting) |
+| **Status as of** | March 2026 |
 | **Track it** | [congress.gov](https://www.congress.gov/bill/119th-congress/house-bill/7296) |
 
 ### Legislative progress
@@ -47,9 +47,9 @@ The SAVE America Act is an expanded version of H.R. 22 that adds photo ID requir
 |------|--------|------|
 | Introduced in House | Done | Jan 30, 2026 |
 | Passed House | Done | Feb 11, 2026 (218-213) |
-| Received in Senate | Pending | — |
-| Senate Committee | Pending | — |
-| Senate Floor Vote | Pending | — |
+| Received in Senate | Done | Feb 2026 |
+| Senate Committee | Bypassed | — |
+| Senate Floor Vote | Debate began | Week of Mar 16, 2026 |
 | Conference Committee | — | — |
 | Presidential Signature | — | — |
 
@@ -80,6 +80,12 @@ The bill needs 60 votes to clear a filibuster. Republicans hold 53 seats, so at 
 - **Sen. Mitch McConnell (R-KY)** has long insisted elections should be managed by states
 
 Sen. Mike Lee (R-UT) is exploring a "talking filibuster" approach, and there's discussion of attaching provisions to must-pass legislation (like an intelligence funding bill in April). Neither strategy currently has enough support.
+
+### Trump's additional demands (March 2026)
+
+On March 9, Trump posted on Truth Social that he would refuse to sign any legislation until Congress passes an expanded version of the SAVE America Act. On March 10, at a GOP retreat in Miami, he told House Republicans he wanted Speaker Johnson to "draw a new one" that includes bans on transgender girls and women in sports and restrictions on gender-affirming care for minors.
+
+These provisions are **not in any version of the bill that has passed either chamber**. The House-passed version (Feb 11, 2026) contains only voter registration and ID requirements. Adding Trump's demands would require both chambers to pass a new version, and analysts note it would likely reduce Senate support rather than increase it. Trump has threatened executive action on voter ID if Congress doesn't comply: "There will be Voter I.D. for the Midterm Elections, whether approved by Congress or not!"
 
 ---
 
@@ -119,10 +125,10 @@ HB300 is a Utah state law signed by Governor Spencer Cox in March 2025. It ends 
 
 Utah County tested the four-digit ID requirement during the August 2025 municipal primaries. The results raised concerns: **790 ballots had mismatched signatures but correct four-digit ID numbers**, suggesting the new system may be less secure than signature matching alone. Weber County Clerk Ricky Hatch noted that forging a signature is harder than obtaining someone's last four ID digits, especially within the same household. Utah County chose not to repeat the test for the November 2025 elections.
 
-These findings are driving corrective legislation in the 2026 session:
+These findings drove corrective legislation in the 2026 session. Both bills passed:
 
-- **SB194** (Sen. Mike McKell): Would require county clerks to continue using ballot affidavits for identity verification even when valid ID numbers are provided
-- **HB311** (Rep. Jefferson Burton): Would restore signature affidavit requirements alongside ID number verification
+- **SB194** (Sen. Mike McKell): Requires county clerks to verify both signatures and ID numbers on every ballot; also requires the lieutenant governor to write a conflict-of-interest recusal plan for election oversight
+- **HB311** (Rep. Jefferson Burton): Directs $100,000 to the Gary Herbert Institute for Public Policy and the Center for Constitutional Studies at Utah Valley University to study the security of in-person voting vs. voting by mail and best practices for ID verification at drop boxes
 
 ### How to opt in for mail voting
 
@@ -135,15 +141,28 @@ You can request mail-in ballot status when you:
 
 ---
 
-## <u>HB479: Voting by Mail Requirements</u>
+## <u>HB209: Proof of Citizenship for State Registration</u>
 
-HB479 is a Utah state proposal introduced in February 2026 by House Speaker Mike Schultz. It would go significantly further than HB300 by requiring most voters to return their mail ballots in person at a polling place or drop box, presenting valid voter ID to a poll worker. The bill would require two poll workers to staff each drop box from 8 AM to 8 PM during the five days before Election Day. Voters with disabilities could request an exception to vote entirely by mail, and military service members would automatically qualify for full mail-in voting. Other voters could apply for a two-year mail-in designation from their county clerk. The bill mirrors a 2024 proposal that was scaled back into HB300; with renewed federal pressure to limit mail voting, it has gained new support but still faces uncertain prospects in the Senate.
+HB209 is a Utah state law modeled on Sen. Mike Lee's federal SAVE Act. It requires documentary proof of U.S. citizenship to register to vote in state elections and creates a bifurcated ballot system (similar to military voting procedures) so that voters who haven't yet provided citizenship documentation can still cast ballots in races where they're eligible while their documentation is being verified. The bill passed during the 2026 session and was signed into law.
+
+| | |
+|---|---|
+| **Sponsor** | TBD |
+| **Level** | Utah State |
+| **Status** | Signed into law (2026) |
+| **Track it** | [le.utah.gov](https://le.utah.gov/~2026/bills/static/HB0209.html) |
+
+---
+
+## <u>HB479: Voting by Mail Requirements — Failed</u>
+
+HB479 was a Utah state proposal introduced in February 2026 by House Speaker Mike Schultz. It would have gone significantly further than HB300 by requiring most voters to return their mail ballots in person at a polling place or drop box, presenting valid voter ID to a poll worker. The bill passed the House but stalled in a Senate committee on March 4, 2026, when Senate Majority Assistant Whip Mike McKell (the bill's Senate sponsor) motioned to move on without taking action. Senators were concerned about the logistics and the $10M+ cost of staffing drop boxes statewide. Instead, the Legislature passed HB311 (a study commission) as a compromise.
 
 | | |
 |---|---|
 | **Sponsor** | House Speaker Mike Schultz (R-Hooper) |
 | **Level** | Utah State |
-| **Status** | In committee |
+| **Status** | Failed (stalled in Senate committee, Mar 4, 2026) |
 | **Introduced** | February 2026 |
 | **Track it** | [le.utah.gov](https://le.utah.gov/~2026/bills/static/HB0479.html) |
 
@@ -165,7 +184,7 @@ HB479 is a Utah state proposal introduced in February 2026 by House Speaker Mike
 
 ### Context
 
-This bill is more restrictive than HB300. It mirrors a proposal from 2024 that was scaled back. With increased federal pressure to limit mail voting, it has renewed support but still faces uncertain prospects in the Senate. The estimated implementation cost exceeds **$10 million** (primarily for staffing drop boxes statewide), which has drawn Senate concern. The 2026 legislative session ends in early March, so the bill would need to move quickly to pass this year.
+This bill was more restrictive than HB300 and mirrored a 2024 proposal that was scaled back. The estimated implementation cost exceeded **$10 million** (primarily for staffing drop boxes statewide), which was ultimately what killed it in the Senate. The 2026 legislative session ended March 6; the Legislature passed HB311 (a $100K voting security study) as a compromise.
 
 ---
 

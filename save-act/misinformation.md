@@ -48,4 +48,20 @@ Only 6 states offer IDs that indicate citizenship (MI, MN, NY, VT, WA, and ID). 
 
 ---
 
+## "The SAVE Act bans trans people from sports / bans gender-affirming care for minors"
+
+**The claim:** President Trump and the White House have repeatedly stated that the SAVE America Act includes bans on transgender women in women's sports and on "transgender mutilation surgery for children."
+
+**The reality:** This is **false**. No version of the SAVE Act or SAVE America Act that has passed either chamber of Congress contains any provisions about transgender athletes, gender-affirming care, or gender identity. The bills deal exclusively with voter registration and voter ID requirements. [Snopes](https://www.snopes.com/news/2026/03/13/save-america-act-trans-issues/) confirmed this in a March 13, 2026 fact-check.
+
+**What actually happened:** On March 9, 2026, Trump posted on Truth Social that he would refuse to sign any legislation until Congress passes the SAVE America Act with additional provisions, including bans on trans athletes and gender-affirming care for minors. On March 10, at a GOP retreat in Miami, he told lawmakers he wanted Speaker Johnson to "draw a new one" including those items. White House press secretary Karoline Leavitt echoed the claims at a press briefing.
+
+But these are demands for a *future* version of the bill, not descriptions of the current one. The version that passed the House on February 11, 2026 (218-213) contains zero references to transgender people, sports, or healthcare. For lawmakers to include those provisions, both the House and Senate would need to pass an entirely new version of the bill.
+
+**Why this matters:** The conflation of voter ID legislation with anti-trans policy is confusing on purpose. It lets supporters claim the bill does things it doesn't, and it makes it harder for people to understand what the bill actually requires of them as voters.
+
+**Separate concern: how the bill affects trans voters.** While the bill doesn't *target* trans people, its document-matching requirements create real barriers. According to the [2015 U.S. Transgender Survey](https://www.ustranssurvey.org/), only 11% of trans respondents had their correct name and gender marker on all their IDs, and just 18% of those who go by a different name had updated their birth certificate. The SAVE Act's requirement to present a birth certificate matching your current ID would be a problem for many trans voters, the same way it creates friction for married women who changed their name. The bill's "alternative process" language doesn't specify what documents states must accept in these situations.
+
+---
+
 [Back to main guide](../surviving-the-save-act.md)

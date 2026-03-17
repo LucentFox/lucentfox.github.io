@@ -1,6 +1,6 @@
 # Surviving the SAVE Act
 
-The Safeguard American Voter Eligibility (SAVE) Act would require documentary proof of U.S. citizenship to register to vote in federal elections. An expanded version, the SAVE America Act (H.R. 7296), passed the House on February 11, 2026, adding photo ID requirements for voting. This guide covers what the bills propose, how to check your registration in Salt Lake County, and how to ensure your ballot won't get flagged for a signature mismatch.
+The Safeguard American Voter Eligibility (SAVE) Act would require documentary proof of U.S. citizenship to register to vote in federal elections. An expanded version, the SAVE America Act (H.R. 7296), passed the House on February 11, 2026, adding photo ID requirements for voting. The Senate began debating the bill the week of March 16, but it is expected to fail the 60-vote filibuster threshold. This guide covers what the bills propose, how to check your registration in Salt Lake County, and how to ensure your ballot won't get flagged for a signature mismatch.
 
 ### What this guide covers
 
@@ -24,14 +24,15 @@ The Safeguard American Voter Eligibility (SAVE) Act would require documentary pr
 
 ## Bills Affecting Voting
 
-Four bills are shaping voter requirements: two federal, two state. See [Bills Affecting Voting](save-act/bills.md) for full details.
+Several bills are shaping voter requirements at the federal and state level. See [Bills Affecting Voting](save-act/bills.md) for full details.
 
 | Bill | Status | What it does |
 |------|--------|--------------|
 | **SAVE Act** (H.R. 22, federal) | Stalled in Senate; superseded by H.R. 7296 | Required citizenship documents to register; eliminated online/mail registration |
-| **SAVE America Act** (H.R. 7296, federal) | Passed House Feb 11, 2026 (~20% chance in Senate) | Everything in the SAVE Act, plus photo ID for in-person voting and ID copies for absentee ballots |
-| **HB300** (Utah) | Law (signed Mar 2025) | Phases out auto mail voting by 2029; requires last 4 of ID on envelope. Early testing raised security concerns; corrective bills pending. |
-| **HB479** (Utah) | In committee | Would require in-person ballot return with ID; $10M+ cost a concern |
+| **SAVE America Act** (H.R. 7296, federal) | Passed House Feb 11, 2026; Senate debate began week of Mar 16 (expected to fail filibuster) | Everything in the SAVE Act, plus photo ID for in-person voting and ID copies for absentee ballots |
+| **HB300** (Utah) | Law (signed Mar 2025) | Phases out auto mail voting by 2029; requires last 4 of ID on envelope. Corrective bills SB194 and HB311 passed in 2026 session. |
+| **HB209** (Utah) | Signed into law (2026) | Requires documentary proof of citizenship for state voter registration; creates bifurcated ballot system |
+| **HB479** (Utah) | Failed (stalled in Senate committee, Mar 2026) | Would have required in-person ballot return with ID; $10M+ cost killed it |
 
 ---
 
@@ -43,6 +44,7 @@ See [Misinformation vs. Reality](save-act/misinformation.md) for fact-checks on 
 - "Noncitizens are voting in large numbers" (not supported by evidence)
 - "This bill just enforces existing law" (it goes further than current requirements)
 - "Your REAL ID proves citizenship" (false for most states, including Utah)
+- "The SAVE Act bans trans people from sports / bans gender-affirming care" (not in any passed version of the bill)
 
 ---
 
@@ -129,4 +131,4 @@ See [Helpful Links](save-act/helpful-links.md) for a full list of resources, inc
 
 ---
 
-*Last updated: February 2026*
+*Last updated: March 2026*
