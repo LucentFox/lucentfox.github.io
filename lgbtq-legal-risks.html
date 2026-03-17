@@ -19,15 +19,17 @@
     --trans-blue: #5bcefa;
     --trans-pink: #f5a9b8;
     --trans-white: #ffffff;
+    --trans-blue-bright: #7dd8fc;
+    --trans-pink-bright: #f8bfcc;
     --trans-blue-dim: #3a8ab0;
     --trans-pink-dim: #c48794;
 
-    --bg-dark: #0c1017;
-    --bg-card: #131a24;
-    --bg-card-alt: #162030;
-    --bg-quote: #151d2a;
-    --text-primary: #e8edf4;
-    --text-secondary: #a0b0c4;
+    --bg-dark: #0a0e18;
+    --bg-card: #101828;
+    --bg-card-alt: #142032;
+    --bg-quote: #121a2c;
+    --text-primary: #edf0f7;
+    --text-secondary: #a8b8cc;
     --text-muted: #6b7d94;
     --accent-primary: #5bcefa;
     --accent-secondary: #f5a9b8;
@@ -37,11 +39,11 @@
     --status-proposed: #818cf8;
     --status-failed: #6b7280;
     --status-safe: #34d399;
-    --border-subtle: rgba(91, 206, 250, 0.12);
-    --border-glow: rgba(91, 206, 250, 0.25);
-    --gradient-hero: linear-gradient(135deg, #0c1017 0%, #122035 30%, #1a1525 60%, #0c1017 100%);
+    --border-subtle: rgba(91, 206, 250, 0.18);
+    --border-glow: rgba(245, 169, 184, 0.35);
+    --gradient-hero: linear-gradient(135deg, #0a0e18 0%, #0f1e38 25%, #1c1228 50%, #1a0f24 75%, #0a0e18 100%);
     --shadow-card: 0 4px 24px rgba(0,0,0,0.5);
-    --shadow-glow: 0 0 40px rgba(91, 206, 250, 0.06);
+    --shadow-glow: 0 0 30px rgba(91, 206, 250, 0.08), 0 0 60px rgba(245, 169, 184, 0.04);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -72,9 +74,10 @@
     width: 200%;
     height: 200%;
     background:
-      radial-gradient(ellipse at 25% 40%, rgba(91, 206, 250, 0.07) 0%, transparent 55%),
-      radial-gradient(ellipse at 75% 60%, rgba(245, 169, 184, 0.06) 0%, transparent 55%),
-      radial-gradient(ellipse at 50% 30%, rgba(255, 255, 255, 0.02) 0%, transparent 40%);
+      radial-gradient(ellipse at 20% 30%, rgba(91, 206, 250, 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 70%, rgba(245, 169, 184, 0.13) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 20%, rgba(255, 255, 255, 0.04) 0%, transparent 35%),
+      radial-gradient(ellipse at 60% 50%, rgba(91, 206, 250, 0.06) 0%, transparent 60%);
     animation: drift 20s ease-in-out infinite;
   }
 
@@ -116,6 +119,15 @@
     font-family: 'JetBrains Mono', monospace;
   }
 
+  .hero .flag-stripe {
+    width: 200px;
+    height: 6px;
+    margin: 20px auto 0;
+    border-radius: 3px;
+    background: linear-gradient(90deg, var(--trans-blue) 0%, var(--trans-blue) 20%, var(--trans-pink) 20%, var(--trans-pink) 40%, var(--trans-white) 40%, var(--trans-white) 60%, var(--trans-pink) 60%, var(--trans-pink) 80%, var(--trans-blue) 80%, var(--trans-blue) 100%);
+    opacity: 0.7;
+  }
+
   /* === LAYOUT === */
   .container {
     max-width: 900px;
@@ -126,12 +138,26 @@
   /* === TABLE OF CONTENTS === */
   .toc {
     background: var(--bg-card);
-    border: 1px solid var(--border-subtle);
+    border: 1px solid rgba(91, 206, 250, 0.2);
+    border-image: linear-gradient(135deg, rgba(91, 206, 250, 0.25), rgba(245, 169, 184, 0.2), rgba(91, 206, 250, 0.15)) 1;
     border-radius: 16px;
+    border-image: none;
+    border-color: transparent;
+    background-clip: padding-box;
     padding: 32px 36px;
     margin: 40px auto;
     max-width: 900px;
-    box-shadow: var(--shadow-card);
+    box-shadow: var(--shadow-card), inset 0 0 0 1px rgba(91, 206, 250, 0.12), inset 0 0 0 1px rgba(245, 169, 184, 0.06);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .toc::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--trans-blue), var(--trans-white), var(--trans-pink), var(--trans-blue));
   }
 
   .toc h2 {
@@ -180,7 +206,7 @@
     flex-shrink: 0;
   }
 
-  .toc li a:hover { color: var(--accent-primary); }
+  .toc li a:hover { color: var(--trans-pink-bright); }
 
   /* === SECTIONS === */
   section {
@@ -208,10 +234,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, rgba(91, 206, 250, 0.1), rgba(245, 169, 184, 0.08));
+    background: linear-gradient(135deg, rgba(91, 206, 250, 0.18), rgba(245, 169, 184, 0.15));
+    border: 1px solid rgba(91, 206, 250, 0.15);
     border-radius: 12px;
     flex-shrink: 0;
-    color: var(--accent-primary);
+    color: var(--trans-blue-bright);
   }
 
   section > .section-lead {
@@ -226,6 +253,8 @@
     font-weight: 700;
     margin: 32px 0 12px;
     color: var(--text-primary);
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(91, 206, 250, 0.08);
   }
 
   h4 { font-size: 1rem; font-weight: 600; margin: 20px 0 8px; color: var(--text-secondary); }
@@ -247,12 +276,13 @@
     font-family: 'JetBrains Mono', monospace;
   }
 
-  .badge-law { background: rgba(239, 68, 68, 0.15); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.25); }
-  .badge-eo { background: rgba(245, 158, 11, 0.15); color: #fcd34d; border: 1px solid rgba(245, 158, 11, 0.25); }
-  .badge-proposed { background: rgba(91, 206, 250, 0.12); color: #91dcfa; border: 1px solid rgba(91, 206, 250, 0.2); }
-  .badge-failed { background: rgba(107, 114, 128, 0.15); color: #9ca3af; border: 1px solid rgba(107, 114, 128, 0.25); }
+  /* Badge spectrum: green (safe) → gray (failed) → yellow (proposed) → orange (weakened) → amber (EO) → red (law) */
   .badge-safe { background: rgba(52, 211, 153, 0.15); color: #6ee7b7; border: 1px solid rgba(52, 211, 153, 0.25); }
-  .badge-legal-challenge { background: rgba(245, 169, 184, 0.12); color: #f5c4cf; border: 1px solid rgba(245, 169, 184, 0.2); }
+  .badge-failed { background: rgba(107, 114, 128, 0.15); color: #9ca3af; border: 1px solid rgba(107, 114, 128, 0.25); }
+  .badge-proposed { background: rgba(234, 179, 8, 0.15); color: #fde047; border: 1px solid rgba(234, 179, 8, 0.25); }
+  .badge-legal-challenge { background: rgba(251, 146, 60, 0.15); color: #fdba74; border: 1px solid rgba(251, 146, 60, 0.25); }
+  .badge-eo { background: rgba(245, 158, 11, 0.15); color: #fcd34d; border: 1px solid rgba(245, 158, 11, 0.25); }
+  .badge-law { background: rgba(239, 68, 68, 0.15); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.25); }
 
   /* === OVERVIEW TABLE === */
   .overview-grid { display: grid; gap: 12px; margin: 24px 0; }
@@ -275,7 +305,8 @@
     font-size: 0.75rem !important;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: var(--text-muted) !important;
+    color: var(--trans-blue) !important;
+    background: rgba(91, 206, 250, 0.06) !important;
   }
 
   @media (max-width: 700px) {
@@ -363,7 +394,18 @@
     transition: border-color 0.3s, box-shadow 0.3s;
   }
 
+  .bill-card { position: relative; overflow: hidden; }
+  .bill-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--trans-blue), var(--trans-pink));
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
   .bill-card:hover { border-color: var(--border-glow); box-shadow: var(--shadow-glow); }
+  .bill-card:hover::before { opacity: 1; }
 
   .bill-header {
     display: flex;
@@ -405,7 +447,7 @@
   }
 
   .risk-table th {
-    background: rgba(91, 206, 250, 0.08);
+    background: linear-gradient(90deg, rgba(91, 206, 250, 0.1), rgba(245, 169, 184, 0.06));
     text-align: left;
     padding: 12px 16px;
     font-size: 0.75rem;
@@ -598,8 +640,11 @@
     font-family: 'JetBrains Mono', monospace;
     font-size: 1.4rem;
     font-weight: 800;
-    color: var(--accent-primary);
-    opacity: 0.4;
+    background: linear-gradient(180deg, var(--trans-blue), var(--trans-pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    opacity: 0.6;
     flex-shrink: 0;
     width: 32px;
     text-align: center;
@@ -626,7 +671,11 @@
     transition: border-color 0.3s, transform 0.2s;
   }
 
-  .resource-card:hover { border-color: var(--border-glow); transform: translateY(-2px); }
+  .resource-card:hover {
+    border-color: var(--border-glow);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(91, 206, 250, 0.08), 0 4px 16px rgba(245, 169, 184, 0.05);
+  }
   .resource-card h4 { margin: 0 0 10px; font-size: 0.9rem; color: var(--text-primary); }
 
   .resource-card a {
@@ -639,12 +688,12 @@
     transition: color 0.2s;
   }
 
-  .resource-card a:hover { color: var(--accent-secondary); }
+  .resource-card a:hover { color: var(--trans-pink-bright); }
 
   /* === DIVIDER === */
   .divider {
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--border-subtle), rgba(245, 169, 184, 0.1), var(--border-subtle), transparent);
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, rgba(91, 206, 250, 0.3) 20%, rgba(255, 255, 255, 0.15) 40%, rgba(245, 169, 184, 0.3) 60%, rgba(91, 206, 250, 0.2) 80%, transparent 100%);
     margin: 48px 0;
     border: none;
   }
@@ -655,7 +704,8 @@
     padding: 48px 24px;
     color: var(--text-muted);
     font-size: 0.85rem;
-    border-top: 1px solid var(--border-subtle);
+    border-top: 2px solid transparent;
+    border-image: linear-gradient(90deg, transparent, rgba(91, 206, 250, 0.3), rgba(255,255,255,0.15), rgba(245, 169, 184, 0.3), transparent) 1;
     margin-top: 64px;
   }
 
@@ -738,6 +788,7 @@
     <h1>When Being Queer or Trans Becomes Legally Risky</h1>
     <p class="subtitle">There's a lot of fear right now, and some of it is warranted. But fear without facts helps no one. This page collects actual legislation, actual executive orders, and actual bill text so you can assess your own risk. Where something is scary, it says so. Where it sounds scary but isn't law, it says that too.</p>
     <p class="meta">Focus: Utah + Federal &nbsp;|&nbsp; Last updated March 2026</p>
+    <div class="flag-stripe"></div>
   </div>
 </header>
 
@@ -747,9 +798,9 @@
   <nav class="toc">
     <h2>Contents</h2>
     <ol>
-      <li><a href="#big-picture">The Big Picture: What's Real Right Now</a></li>
-      <li><a href="#risk-assessment">Risk Assessment: Where Things Stand</a></li>
       <li><a href="#global-context">Global Context: Where the U.S. Actually Sits</a></li>
+      <li><a href="#risk-assessment">Risk Assessment: Where Things Stand</a></li>
+      <li><a href="#big-picture">The Big Picture: What's Real Right Now</a></li>
       <li><a href="#project-2025">Project 2025: The Heritage Foundation's Playbook</a></li>
       <li><a href="#federal-eo">Federal Executive Orders in Effect</a></li>
       <li><a href="#federal-legislation">Federal Legislation</a></li>
@@ -759,241 +810,9 @@
     </ol>
   </nav>
 
-  <!-- === SECTION 1: BIG PICTURE === -->
-  <section id="big-picture">
-    <h2><span class="section-icon">01</span> The Big Picture</h2>
-    <p class="section-lead">Not everything proposed becomes law. Not every law survives court challenges. Here's a snapshot of where things stand right now, ordered roughly from most severe to least. Click any row's category to jump to the full details.</p>
-
-    <div class="overview-grid">
-      <div class="overview-row">
-        <div class="overview-header">Category</div>
-        <div class="overview-header">Federal Status</div>
-        <div class="overview-header">Utah Status</div>
-      </div>
-
-      <!-- MOST SEVERE FIRST -->
-      <div class="overview-row">
-        <div><a href="#eo-14183" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Military service (trans)</a></div>
-        <div><span class="badge badge-law">Banned</span> EO 14183; Supreme Court allowed enforcement May 2025. ~1,000 service members separated. Active ban.</div>
-        <div>&mdash;</div>
-      </div>
-      <div class="overview-row">
-        <div><a href="#utah-hb257" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Bathroom / changing room access</a></div>
-        <div><span class="badge badge-safe">No federal ban</span></div>
-        <div><span class="badge badge-law">Restricted</span> HB 257 (Jan 2024). Trans people barred from sex-designated changing rooms in gov't buildings. Class B misdemeanor (up to 6 months). Stand-alone restrooms are NOT covered.</div>
-      </div>
-      <div class="overview-row">
-        <div><a href="#utah-sb16" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Gender-affirming care (minors)</a></div>
-        <div><span class="badge badge-eo">EO issued</span> EO 14168 directs agencies to stop funding care for people under 19. No federal statute.</div>
-        <div><span class="badge badge-law">Moratorium</span> SB 16 (2023) froze puberty blockers and hormones for minors. HB 174 (2026) would make it permanent; passed House 54&ndash;15.</div>
-      </div>
-      <div class="overview-row">
-        <div><a href="#eo-14168" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Gender markers on federal IDs</a></div>
-        <div><span class="badge badge-eo">EO in effect</span> EO 14168 locks passports, visas, and federal IDs to birth sex. X markers eliminated. Agencies can't accept gender self-identification.</div>
-        <div><span class="badge badge-proposed">Threatened</span> Currently changeable via HB 234 (2024). HB 183 (2026) would effectively ban changes.</div>
-      </div>
-      <div class="overview-row">
-        <div><a href="#eo-14168" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Federal prisons (trans inmates)</a></div>
-        <div><span class="badge badge-eo">EO in effect</span> EO 14168 directs Bureau of Prisons to house all inmates by birth sex. Affects 2,000+ trans people in federal custody. Courts issued partial blocks.</div>
-        <div>&mdash;</div>
-      </div>
-      <div class="overview-row">
-        <div><a href="#risk-prison" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Forced detransition in prison / jail</a></div>
-        <div><span class="badge badge-eo">EO policy</span> EO 14168 directs federal prisons to house by birth sex and the policy environment discourages providing gender-affirming care to inmates. Access to hormones in federal custody has been restricted.</div>
-        <div><span class="badge badge-legal-challenge">Varies</span> Utah county jails have no consistent policy. State prisons have historically provided hormones to inmates already on them, but access is inconsistent and vulnerable to political pressure.</div>
-      </div>
-      <div class="overview-row">
-        <div><a href="#risk-employment" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Employment / housing protections</a></div>
-        <div><span class="badge badge-legal-challenge">Weakened</span> <em>Bostock v. Clayton County</em> (2020) says Title VII covers LGBTQ+ workers. Still binding law. But federal enforcement has been gutted; EEOC staffing and guidance cut.</div>
-        <div><span class="badge badge-proposed">Threatened</span> Utah currently protects trans people in housing and employment. HB 183 (2026) would strip those protections entirely.</div>
-      </div>
-      <div class="overview-row">
-        <div><a href="#risk-care-adults" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Gender-affirming care: adults, self-pay</a></div>
-        <div><span class="badge badge-safe">Legal</span> No restrictions on out-of-pocket care from willing providers.</div>
-        <div><span class="badge badge-safe">Legal</span> No restrictions. You can pay a provider directly for hormones, surgery, etc.</div>
-      </div>
-      <div class="overview-row">
-        <div><a href="#risk-care-adults" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Gender-affirming care: adults, private insurance</a></div>
-        <div><span class="badge badge-safe">Legal</span> ACA nondiscrimination provisions (Section 1557) still technically apply, though enforcement weakened. Many private insurers cover care.</div>
-        <div><span class="badge badge-safe">Legal</span> Private insurance coverage varies by plan. No state law bans it.</div>
-      </div>
-      <div class="overview-row">
-        <div><a href="#risk-care-adults" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Gender-affirming care: adults, Medicaid / state insurance</a></div>
-        <div><span class="badge badge-eo">Threatened</span> EO 14168 directs agencies to review and potentially restrict federal healthcare funding. CMS has not yet issued new rules.</div>
-        <div><span class="badge badge-failed">HB 193 failed</span> Would have banned all public funds (Medicaid, state employee insurance) from covering any gender-affirming care for any age. Failed in committee, but signals political intent.</div>
-      </div>
-      <div class="overview-row">
-        <div><a href="#risk-voting" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Voting with mismatched name / gender marker</a></div>
-        <div><span class="badge badge-safe">Protected</span> No federal law requires your gender marker to match to vote. Name mismatches can trigger signature verification issues but don't invalidate registration.</div>
-        <div><span class="badge badge-safe">Protected</span> Utah uses signature verification, not gender marker matching. If your name changed, update your registration. A gender marker mismatch alone won't prevent you from voting. <a href="surviving-the-save-act.html" style="color: var(--accent-primary);">SAVE Act guide &rarr;</a></div>
-      </div>
-      <div class="overview-row">
-        <div><a href="#risk-expression" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Cross-dressing / gender expression</a></div>
-        <div><span class="badge badge-safe">Protected</span> The First Amendment protects self-expression including clothing choices. No federal law restricts how you dress. Historical anti-cross-dressing laws were struck down decades ago as unconstitutional.</div>
-        <div><span class="badge badge-safe">Protected</span> No Utah law criminalizes cross-dressing or gender-nonconforming appearance. You can dress however you want in public.</div>
-      </div>
-      <div class="overview-row">
-        <div><a href="#risk-drag" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Drag performances</a></div>
-        <div><span class="badge badge-safe">No federal ban</span> Some states (not Utah) have passed restrictions on drag shows where minors are present, but federal courts have struck down most of them as First Amendment violations.</div>
-        <div><span class="badge badge-safe">No Utah ban</span> No law restricts drag performances in Utah. Drag is protected expression.</div>
-      </div>
-      <div class="overview-row">
-        <div><a href="#risk-identity" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Being queer or trans</a></div>
-        <div><span class="badge badge-safe">Legal</span> No federal law criminalizes LGBTQ+ identity. <em>Lawrence v. Texas</em> (2003) struck down sodomy laws. <em>Obergefell v. Hodges</em> (2015) legalized same-sex marriage.</div>
-        <div><span class="badge badge-safe">Legal</span> No Utah law criminalizes LGBTQ+ identity or same-sex relationships.</div>
-      </div>
-      <div class="overview-row">
-        <div><a href="#risk-identity" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Same-sex marriage</a></div>
-        <div><span class="badge badge-safe">Legal</span> <em>Obergefell</em> is binding Supreme Court precedent. The Respect for Marriage Act (2022) provides a federal backstop. No active effort to overturn with realistic prospects.</div>
-        <div><span class="badge badge-safe">Legal</span> Recognized in Utah. Utah's pre-<em>Obergefell</em> ban is unenforceable.</div>
-      </div>
-      <div class="overview-row">
-        <div><a href="#risk-sexoffender" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Sex offender registry for being trans</a></div>
-        <div><span class="badge badge-safe">Not law</span> This comes from Project 2025's foreword, which equates "transgender ideology" with pornography and suggests educators/librarians should be registered as sex offenders. No bill has been introduced. <a href="#project-2025" style="color: var(--accent-primary);">See full quote &rarr;</a></div>
-        <div><span class="badge badge-safe">Not law</span></div>
-      </div>
-      <div class="overview-row">
-        <div><a href="#risk-identity" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Using your chosen name socially</a></div>
-        <div><span class="badge badge-safe">Legal</span> You can go by any name you want socially. Legal name changes require a court petition but are not restricted for trans people (federally).</div>
-        <div><span class="badge badge-safe">Legal</span> Utah allows legal name changes through the courts. No restriction based on gender identity.</div>
-      </div>
-    </div>
-  </section>
-
-  <hr class="divider">
-
-  <!-- === SECTION 2: RISK ASSESSMENT === -->
-  <section id="risk-assessment">
-    <h2><span class="section-icon">02</span> Risk Assessment</h2>
-    <p class="section-lead">The honest answer to "am I in danger?" depends on your specific situation. Here's the breakdown.</p>
-
-    <h3 id="risk-identity">What is actually legal right now</h3>
-    <ul class="legal-list">
-      <li><span class="check">&#10003;</span> Being gay, bisexual, queer, or trans (<em>Lawrence v. Texas</em> struck down sodomy laws; identity is not a crime)</li>
-      <li><span class="check">&#10003;</span> Same-sex relationships and marriage (<em>Obergefell</em> + Respect for Marriage Act)</li>
-      <li id="risk-expression"><span class="check">&#10003;</span> Cross-dressing and gender-nonconforming appearance (First Amendment; no law in any state criminalizes how you dress)</li>
-      <li id="risk-drag"><span class="check">&#10003;</span> Drag performances (protected expression; courts have struck down state-level restrictions)</li>
-      <li><span class="check">&#10003;</span> Using your chosen name socially</li>
-      <li id="risk-care-adults"><span class="check">&#10003;</span> Gender-affirming care as an adult, self-pay (no restrictions anywhere)</li>
-      <li><span class="check">&#10003;</span> Gender-affirming care as an adult, private insurance (coverage varies by plan, but no law bans it in Utah)</li>
-      <li><span class="check">&#10003;</span> Changing gender markers on Utah birth certificates and driver's licenses (HB 234, still in effect)</li>
-    </ul>
-
-    <h3>What carries actual legal risk right now</h3>
-    <table class="risk-table">
-      <tr><th>Action</th><th>Risk Level</th><th>Details</th></tr>
-      <tr>
-        <td>Serving openly as trans in the U.S. military</td>
-        <td><span class="badge badge-law">Discharge</span></td>
-        <td>EO 14183. Currently in effect after SCOTUS ruling (May 2025). Not theoretical.</td>
-      </tr>
-      <tr>
-        <td>Using a gov't changing room that doesn't match birth sex (Utah)</td>
-        <td><span class="badge badge-law">Class B Misdemeanor</span></td>
-        <td>HB 257. Only changing rooms (not stand-alone restrooms). Only gov't buildings. Surgical exemption exists. Max 6 months.</td>
-      </tr>
-      <tr>
-        <td>Providing gender-affirming hormones/blockers to minors (Utah)</td>
-        <td><span class="badge badge-law">Professional Sanctions</span></td>
-        <td>SB 16 moratorium. HB 174 would make it permanent.</td>
-      </tr>
-      <tr>
-        <td>Applying for a federal passport with a non-birth-sex marker</td>
-        <td><span class="badge badge-eo">Denied</span></td>
-        <td>EO 14168. X markers and self-identified gender no longer accepted on passports/visas.</td>
-      </tr>
-    </table>
-
-    <h3 id="risk-voting">Voting with a mismatched name or gender marker</h3>
-    <div class="callout info">
-      <div class="callout-title">&#8505; Your vote is safe</div>
-      <ul>
-        <li>No law (federal or Utah) requires your gender marker to match your voter registration.</li>
-        <li>Utah uses <strong>signature verification</strong>, not gender matching, to validate ballots.</li>
-        <li>If you've legally changed your name, <strong>update your voter registration</strong> to match. A name mismatch can trigger a signature flag (curable, but annoying).</li>
-        <li>A gender marker mismatch alone <strong>will not prevent you from voting</strong> or invalidate your ballot.</li>
-        <li>If you're worried about the SAVE Act's impact on voting, see the <a href="surviving-the-save-act.html" style="color: var(--accent-primary);">full SAVE Act guide</a>.</li>
-      </ul>
-    </div>
-
-    <h3 id="risk-sexoffender">What is NOT law despite the fear</h3>
-    <div class="callout fact">
-      <div class="callout-title">&#10003; Reality check</div>
-      <ul>
-        <li><strong>Being put on a sex offender registry for being trans:</strong> Not law. Project 2025 rhetoric targets educators/librarians who distribute material they define as pornographic. No bill introduced. <a href="#project-2025" style="color: var(--accent-primary);">See the actual quote below.</a></li>
-        <li><strong>Nationwide criminalization of being trans:</strong> Not happening. No such bill exists.</li>
-        <li><strong>Criminalizing cross-dressing or drag:</strong> Not law. The First Amendment protects gender expression and artistic performance. Courts have struck down attempts in other states.</li>
-        <li><strong>Banning adult gender-affirming care:</strong> Not law federally. Utah's HB 193 (public funding ban) failed. Private and self-pay care unrestricted.</li>
-        <li><strong>Forced detransition:</strong> Not law. HB 174 targets minors only.</li>
-        <li><strong>Revoking same-sex marriage:</strong> Not law. <em>Obergefell</em> + Respect for Marriage Act. No active legislation with realistic chances.</li>
-        <li><strong>Losing your right to vote because of a gender marker mismatch:</strong> Not how it works. See above.</li>
-      </ul>
-    </div>
-
-    <h3 id="risk-employment">What you should actually pay attention to</h3>
-
-    <div class="worry-item">
-      <div class="worry-number">1</div>
-      <div class="worry-content">
-        <p><strong>If you're in the military:</strong> The trans ban is in effect. This is the highest-severity, most immediately consequential item on this list.</p>
-      </div>
-    </div>
-
-    <div class="worry-item">
-      <div class="worry-number">2</div>
-      <div class="worry-content">
-        <p><strong>If you're trans in Utah and use government rec centers, school facilities, or similar:</strong> HB 257 is real. Know which spaces are changing rooms vs. restrooms. The law makes a legal distinction. Stand-alone restrooms have no criminal penalty.</p>
-      </div>
-    </div>
-
-    <div class="worry-item">
-      <div class="worry-number">3</div>
-      <div class="worry-content">
-        <p><strong>If you're a trans minor or parent of one in Utah:</strong> The care moratorium is law, and HB 174 would make it permanent. If your child is receiving treatment under grandfathering provisions, that access may end.</p>
-      </div>
-    </div>
-
-    <div class="worry-item">
-      <div class="worry-number">4</div>
-      <div class="worry-content">
-        <p><strong>If you need to update federal documents:</strong> Passport gender markers are locked to birth sex under EO 14168. Utah state documents (DL, birth certificate) are still changeable, but HB 183 could end that. If you're planning to update state docs, sooner may be better than later.</p>
-      </div>
-    </div>
-
-    <div class="worry-item">
-      <div class="worry-number">5</div>
-      <div class="worry-content">
-        <p><strong>If you rely on Medicaid or state employee insurance for gender-affirming care:</strong> HB 193 failed this session, but the political will to cut funding isn't going away. Private insurance and self-pay are safe for now. Consider backup plans for public-funded care.</p>
-      </div>
-    </div>
-
-    <div class="worry-item">
-      <div class="worry-number">6</div>
-      <div class="worry-content">
-        <p><strong>If HB 183 passes:</strong> Most significant single change for trans Utahns. Losing employment/housing protections, ability to change gender markers, and eligibility to work with children would have immediate practical consequences.</p>
-      </div>
-    </div>
-
-    <div class="worry-item">
-      <div class="worry-number">7</div>
-      <div class="worry-content">
-        <p id="risk-prison"><strong>If you're trans and could face incarceration:</strong> Federal prisons now house inmates by birth sex under EO 14168, regardless of transition status. Access to hormones in federal custody is being restricted. State and county jails in Utah have no consistent policy on providing gender-affirming care or respecting gender identity in housing. If you're on hormones, abrupt cessation during incarceration is a real medical risk. The ACLU has active litigation on this.</p>
-      </div>
-    </div>
-
-    <div class="worry-item">
-      <div class="worry-number">8</div>
-      <div class="worry-content">
-        <p><strong>If you've changed your legal name:</strong> Update your voter registration, driver's license, and bank accounts to match. Mismatched names can cause bureaucratic friction (signature verification issues on ballots, ID checks, etc.). This isn't a legal risk per se, but it's a practical one.</p>
-      </div>
-    </div>
-  </section>
-
-  <hr class="divider">
-
-  <!-- === SECTION 3: GLOBAL CONTEXT === -->
+  <!-- === SECTION 1: GLOBAL CONTEXT === -->
   <section id="global-context">
-    <h2><span class="section-icon">03</span> Global Context</h2>
+    <h2><span class="section-icon">01</span> Global Context</h2>
     <p class="section-lead">People compare the U.S. to Iran. That comparison is wrong on the facts, but the direction of travel matters. Here's where the U.S. falls on the global spectrum, using Equaldex's Equality Index (0&ndash;100, combining legal protections and public opinion).</p>
 
     <div class="spectrum-chart">
@@ -1163,6 +982,238 @@
 
   <hr class="divider">
 
+  <!-- === SECTION 2: RISK ASSESSMENT === -->
+  <section id="risk-assessment">
+    <h2><span class="section-icon">02</span> Risk Assessment</h2>
+    <p class="section-lead">The honest answer to "am I in danger?" depends on your specific situation. Here's the breakdown.</p>
+
+    <h3 id="risk-identity">What is actually legal right now</h3>
+    <ul class="legal-list">
+      <li><span class="check">&#10003;</span> Being gay, bisexual, queer, or trans (<em>Lawrence v. Texas</em> struck down sodomy laws; identity is not a crime)</li>
+      <li><span class="check">&#10003;</span> Same-sex relationships and marriage (<em>Obergefell</em> + Respect for Marriage Act)</li>
+      <li id="risk-expression"><span class="check">&#10003;</span> Cross-dressing and gender-nonconforming appearance (First Amendment; no law in any state criminalizes how you dress)</li>
+      <li id="risk-drag"><span class="check">&#10003;</span> Drag performances (protected expression; courts have struck down state-level restrictions)</li>
+      <li><span class="check">&#10003;</span> Using your chosen name socially / legal name change, or changing it legally through a court order</li>
+      <li id="risk-care-adults"><span class="check">&#10003;</span> Gender-affirming care as an adult, self-pay (no restrictions anywhere)</li>
+      <li><span class="check">&#10003;</span> Gender-affirming care as an adult, private insurance (coverage varies by plan, but no law bans it in Utah)</li>
+      <li><span class="check">&#10003;</span> Changing gender markers on Utah birth certificates and driver's licenses (HB 234, still in effect)</li>
+    </ul>
+
+    <h3>What carries actual legal risk right now</h3>
+    <table class="risk-table">
+      <tr><th>Action</th><th>Risk Level</th><th>Details</th></tr>
+      <tr>
+        <td>Serving openly as trans in the U.S. military</td>
+        <td><span class="badge badge-law">Discharge</span></td>
+        <td>EO 14183. Currently in effect after SCOTUS ruling (May 2025). Not theoretical.</td>
+      </tr>
+      <tr>
+        <td>Using a gov't changing room that doesn't match birth sex (Utah)</td>
+        <td><span class="badge badge-law">Class B Misdemeanor</span></td>
+        <td>HB 257. Only changing rooms (not stand-alone restrooms). Only gov't buildings. Surgical exemption exists. Max 6 months.</td>
+      </tr>
+      <tr>
+        <td>Providing gender-affirming hormones/blockers to minors (Utah)</td>
+        <td><span class="badge badge-law">Professional Sanctions</span></td>
+        <td>SB 16 moratorium. HB 174 would make it permanent.</td>
+      </tr>
+      <tr>
+        <td>Applying for a federal passport with a non-birth-sex marker</td>
+        <td><span class="badge badge-eo">Denied</span></td>
+        <td>EO 14168. X markers and self-identified gender no longer accepted on passports/visas.</td>
+      </tr>
+    </table>
+
+    <h3 id="risk-voting">Voting with a mismatched name or gender marker</h3>
+    <div class="callout info">
+      <div class="callout-title">&#8505; Your vote is safe</div>
+      <ul>
+        <li>No law (federal or Utah) requires your gender marker to match your voter registration.</li>
+        <li>Utah uses <strong>signature verification</strong>, not gender matching, to validate ballots.</li>
+        <li>If you've legally changed your name, <strong>update your voter registration</strong> to match. A name mismatch can trigger a signature flag (curable, but annoying).</li>
+        <li>A gender marker mismatch alone <strong>will not prevent you from voting</strong> or invalidate your ballot.</li>
+        <li>If you're worried about the SAVE Act's impact on voting, see the <a href="surviving-the-save-act.html" style="color: var(--accent-primary);">full SAVE Act guide</a>.</li>
+      </ul>
+    </div>
+
+    <h3 id="risk-sexoffender">What is NOT law despite the fear</h3>
+    <div class="callout fact">
+      <div class="callout-title">&#10003; Reality check</div>
+      <ul>
+        <li><strong>Being put on a sex offender registry for being trans:</strong> Not law. Project 2025 rhetoric targets educators/librarians who distribute material they define as pornographic. No bill introduced. <a href="#project-2025" style="color: var(--accent-primary);">See the actual quote below.</a></li>
+        <li><strong>Nationwide criminalization of being trans:</strong> Not happening. No such bill exists.</li>
+        <li><strong>Criminalizing cross-dressing or drag:</strong> Not law. The First Amendment protects gender expression and artistic performance. Courts have struck down attempts in other states.</li>
+        <li><strong>Banning adult gender-affirming care:</strong> Not law federally. Utah's HB 193 (public funding ban) failed. Private and self-pay care unrestricted.</li>
+        <li><strong>Forced detransition:</strong> Not law. HB 174 targets minors only.</li>
+        <li><strong>Revoking same-sex marriage:</strong> Not law. <em>Obergefell</em> + Respect for Marriage Act. No active legislation with realistic chances.</li>
+        <li><strong>Losing your right to vote because of a gender marker mismatch:</strong> Not how it works. See above.</li>
+      </ul>
+    </div>
+
+    <h3 id="risk-employment">What you should actually pay attention to</h3>
+
+    <div class="worry-item">
+      <div class="worry-number">1</div>
+      <div class="worry-content">
+        <p><strong>If you're in the military:</strong> The trans ban is in effect. This is the highest-severity, most immediately consequential item on this list.</p>
+      </div>
+    </div>
+
+    <div class="worry-item">
+      <div class="worry-number">2</div>
+      <div class="worry-content">
+        <p><strong>If you're trans in Utah and use government rec centers, school facilities, or similar:</strong> HB 257 is real. Know which spaces are changing rooms vs. restrooms. The law makes a legal distinction. Stand-alone restrooms have no criminal penalty.</p>
+      </div>
+    </div>
+
+    <div class="worry-item">
+      <div class="worry-number">3</div>
+      <div class="worry-content">
+        <p><strong>If you're a trans minor or parent of one in Utah:</strong> The care moratorium is law, and HB 174 would make it permanent. If your child is receiving treatment under grandfathering provisions, that access may end.</p>
+      </div>
+    </div>
+
+    <div class="worry-item">
+      <div class="worry-number">4</div>
+      <div class="worry-content">
+        <p><strong>If you need to update federal documents:</strong> Passport gender markers are locked to birth sex under EO 14168. Utah state documents (DL, birth certificate) are still changeable, but HB 183 could end that. If you're planning to update state docs, sooner may be better than later.</p>
+      </div>
+    </div>
+
+    <div class="worry-item">
+      <div class="worry-number">5</div>
+      <div class="worry-content">
+        <p><strong>If you rely on Medicaid or state employee insurance for gender-affirming care:</strong> HB 193 failed this session, but the political will to cut funding isn't going away. Private insurance and self-pay are safe for now. Consider backup plans for public-funded care.</p>
+      </div>
+    </div>
+
+    <div class="worry-item">
+      <div class="worry-number">6</div>
+      <div class="worry-content">
+        <p><strong>If HB 183 passes:</strong> Most significant single change for trans Utahns. Losing employment/housing protections, ability to change gender markers, and eligibility to work with children would have immediate practical consequences.</p>
+      </div>
+    </div>
+
+    <div class="worry-item">
+      <div class="worry-number">7</div>
+      <div class="worry-content">
+        <p id="risk-prison"><strong>If you're trans and could face incarceration:</strong> Federal prisons now house inmates by birth sex under EO 14168, regardless of transition status. Access to hormones in federal custody is being restricted. State and county jails in Utah have no consistent policy on providing gender-affirming care or respecting gender identity in housing. If you're on hormones, abrupt cessation during incarceration is a real medical risk. The ACLU has active litigation on this.</p>
+      </div>
+    </div>
+
+    <div class="worry-item">
+      <div class="worry-number">8</div>
+      <div class="worry-content">
+        <p><strong>If you've changed your legal name:</strong> Update your voter registration, driver's license, and bank accounts to match. Mismatched names can cause bureaucratic friction (signature verification issues on ballots, ID checks, etc.). This isn't a legal risk per se, but it's a practical one.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- === SECTION 3: BIG PICTURE === -->
+  <section id="big-picture">
+    <h2><span class="section-icon">03</span> The Big Picture</h2>
+    <p class="section-lead">Not everything proposed becomes law. Not every law survives court challenges. Here's a snapshot of where things stand right now, ordered roughly from most severe to least. Click any row's category to jump to the full details.</p>
+
+    <div class="overview-grid">
+      <div class="overview-row">
+        <div class="overview-header">Category</div>
+        <div class="overview-header">Federal Status</div>
+        <div class="overview-header">Utah Status</div>
+      </div>
+
+      <!-- MOST SEVERE FIRST -->
+      <div class="overview-row">
+        <div><a href="#eo-14183" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Military service (trans)</a></div>
+        <div><span class="badge badge-law">Banned</span> EO 14183; Supreme Court allowed enforcement May 2025. ~1,000 service members separated. Active ban.</div>
+        <div>&mdash;</div>
+      </div>
+      <div class="overview-row">
+        <div><a href="#utah-hb257" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Bathroom / changing room access</a></div>
+        <div><span class="badge badge-safe">No federal ban</span></div>
+        <div><span class="badge badge-law">Restricted</span> HB 257 (Jan 2024). Trans people barred from sex-designated changing rooms in gov't buildings. Class B misdemeanor (up to 6 months). Stand-alone restrooms are NOT covered.</div>
+      </div>
+      <div class="overview-row">
+        <div><a href="#utah-sb16" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Gender-affirming care (minors)</a></div>
+        <div><span class="badge badge-eo">EO issued</span> EO 14168 directs agencies to stop funding care for people under 19. No federal statute.</div>
+        <div><span class="badge badge-law">Moratorium</span> SB 16 (2023) froze puberty blockers and hormones for minors. HB 174 (2026) would make it permanent; passed House 54&ndash;15.</div>
+      </div>
+      <div class="overview-row">
+        <div><a href="#eo-14168" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Gender markers on federal IDs</a></div>
+        <div><span class="badge badge-eo">EO in effect</span> EO 14168 locks passports, visas, and federal IDs to birth sex. X markers eliminated. Agencies can't accept gender self-identification.</div>
+        <div><span class="badge badge-proposed">Threatened</span> Currently changeable via HB 234 (2024). HB 183 (2026) would effectively ban changes.</div>
+      </div>
+      <div class="overview-row">
+        <div><a href="#eo-14168" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Federal prisons (trans inmates)</a></div>
+        <div><span class="badge badge-eo">EO in effect</span> EO 14168 directs Bureau of Prisons to house all inmates by birth sex. Affects 2,000+ trans people in federal custody. Courts issued partial blocks.</div>
+        <div>&mdash;</div>
+      </div>
+      <div class="overview-row">
+        <div><a href="#risk-prison" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Forced detransition in prison / jail</a></div>
+        <div><span class="badge badge-eo">EO policy</span> EO 14168 directs federal prisons to house by birth sex and the policy environment discourages providing gender-affirming care to inmates. Access to hormones in federal custody has been restricted.</div>
+        <div><span class="badge badge-legal-challenge">Varies</span> Utah county jails have no consistent policy. State prisons have historically provided hormones to inmates already on them, but access is inconsistent and vulnerable to political pressure.</div>
+      </div>
+      <div class="overview-row">
+        <div><a href="#risk-employment" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Employment / housing protections</a></div>
+        <div><span class="badge badge-legal-challenge">Weakened</span> <em>Bostock v. Clayton County</em> (2020) says Title VII covers LGBTQ+ workers. Still binding law. But federal enforcement has been gutted; EEOC staffing and guidance cut.</div>
+        <div><span class="badge badge-proposed">Threatened</span> Utah currently protects trans people in housing and employment. HB 183 (2026) would strip those protections entirely.</div>
+      </div>
+      <div class="overview-row">
+        <div><a href="#risk-care-adults" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Gender-affirming care: adults, self-pay</a></div>
+        <div><span class="badge badge-safe">Legal</span> No restrictions on out-of-pocket care from willing providers.</div>
+        <div><span class="badge badge-safe">Legal</span> No restrictions. You can pay a provider directly for hormones, surgery, etc.</div>
+      </div>
+      <div class="overview-row">
+        <div><a href="#risk-care-adults" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Gender-affirming care: adults, private insurance</a></div>
+        <div><span class="badge badge-safe">Legal</span> ACA nondiscrimination provisions (Section 1557) still technically apply, though enforcement weakened. Many private insurers cover care.</div>
+        <div><span class="badge badge-safe">Legal</span> Private insurance coverage varies by plan. No state law bans it.</div>
+      </div>
+      <div class="overview-row">
+        <div><a href="#risk-care-adults" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Gender-affirming care: adults, Medicaid / state insurance</a></div>
+        <div><span class="badge badge-eo">Threatened</span> EO 14168 directs agencies to review and potentially restrict federal healthcare funding. CMS has not yet issued new rules.</div>
+        <div><span class="badge badge-failed">HB 193 failed</span> Would have banned all public funds (Medicaid, state employee insurance) from covering any gender-affirming care for any age. Failed in committee, but signals political intent.</div>
+      </div>
+      <div class="overview-row">
+        <div><a href="#risk-voting" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Voting with mismatched name / gender marker</a></div>
+        <div><span class="badge badge-safe">Protected</span> No federal law requires your gender marker to match to vote. Name mismatches can trigger signature verification issues but don't invalidate registration.</div>
+        <div><span class="badge badge-safe">Protected</span> Utah uses signature verification, not gender marker matching. If your name changed, update your registration. A gender marker mismatch alone won't prevent you from voting. <a href="surviving-the-save-act.html" style="color: var(--accent-primary);">SAVE Act guide &rarr;</a></div>
+      </div>
+      <div class="overview-row">
+        <div><a href="#risk-expression" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Cross-dressing / gender expression</a></div>
+        <div><span class="badge badge-safe">Protected</span> The First Amendment protects self-expression including clothing choices. No federal law restricts how you dress. Historical anti-cross-dressing laws were struck down decades ago as unconstitutional.</div>
+        <div><span class="badge badge-safe">Protected</span> No Utah law criminalizes cross-dressing or gender-nonconforming appearance. You can dress however you want in public.</div>
+      </div>
+      <div class="overview-row">
+        <div><a href="#risk-drag" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Drag performances</a></div>
+        <div><span class="badge badge-safe">No federal ban</span> Some states (not Utah) have passed restrictions on drag shows where minors are present, but federal courts have struck down most of them as First Amendment violations.</div>
+        <div><span class="badge badge-safe">No Utah ban</span> No law restricts drag performances in Utah. Drag is protected expression.</div>
+      </div>
+      <div class="overview-row">
+        <div><a href="#risk-identity" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Being queer or trans</a></div>
+        <div><span class="badge badge-safe">Legal</span> No federal law criminalizes LGBTQ+ identity. <em>Lawrence v. Texas</em> (2003) struck down sodomy laws. <em>Obergefell v. Hodges</em> (2015) legalized same-sex marriage.</div>
+        <div><span class="badge badge-safe">Legal</span> No Utah law criminalizes LGBTQ+ identity or same-sex relationships.</div>
+      </div>
+      <div class="overview-row">
+        <div><a href="#risk-identity" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Same-sex marriage</a></div>
+        <div><span class="badge badge-safe">Legal</span> <em>Obergefell</em> is binding Supreme Court precedent. The Respect for Marriage Act (2022) provides a federal backstop. No active effort to overturn with realistic prospects.</div>
+        <div><span class="badge badge-safe">Legal</span> Recognized in Utah. Utah's pre-<em>Obergefell</em> ban is unenforceable.</div>
+      </div>
+      <div class="overview-row">
+        <div><a href="#risk-sexoffender" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Sex offender registry for being trans</a></div>
+        <div><span class="badge badge-safe">Not law</span> This comes from Project 2025's foreword, which equates "transgender ideology" with pornography and suggests educators/librarians should be registered as sex offenders. No bill has been introduced. <a href="#project-2025" style="color: var(--accent-primary);">See full quote &rarr;</a></div>
+        <div><span class="badge badge-safe">Not law</span></div>
+      </div>
+      <div class="overview-row">
+        <div><a href="#risk-identity" style="color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;">Using your chosen name socially / legal name change</a></div>
+        <div><span class="badge badge-safe">Legal</span> You can go by any name you want socially. Legal name changes require a court petition but are not restricted for trans people (federally).</div>
+        <div><span class="badge badge-safe">Legal</span> Utah allows legal name changes through the courts. No restriction based on gender identity.</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
   <!-- === SECTION 4: PROJECT 2025 === -->
   <section id="project-2025">
     <h2><span class="section-icon">04</span> Project 2025</h2>
@@ -1226,7 +1277,7 @@
     <h2><span class="section-icon">05</span> Federal Executive Orders</h2>
     <p class="section-lead">These are in effect now. Executive orders carry the force of policy until overturned by courts or a future president.</p>
 
-    <div class="bill-card">
+    <div class="bill-card" id="eo-14168">
       <div class="bill-header">
         <span class="bill-name">EO 14168</span>
         <span class="badge badge-eo">In Effect</span>
@@ -1252,7 +1303,7 @@
       </div>
     </div>
 
-    <div class="bill-card">
+    <div class="bill-card" id="eo-14183">
       <div class="bill-header">
         <span class="bill-name">EO 14183</span>
         <span class="badge badge-law">In Effect (SCOTUS)</span>
@@ -1332,7 +1383,7 @@
     <p class="section-lead">These are signed into law and enforceable today.</p>
 
     <!-- HB 257 -->
-    <div class="bill-card">
+    <div class="bill-card" id="utah-hb257">
       <div class="bill-header">
         <span class="bill-name">HB 257</span>
         <span class="badge badge-law">Law &mdash; Jan 2024</span>
@@ -1389,7 +1440,7 @@
     </div>
 
     <!-- SB 16 -->
-    <div class="bill-card">
+    <div class="bill-card" id="utah-sb16">
       <div class="bill-header">
         <span class="bill-name">SB 16</span>
         <span class="badge badge-law">Law &mdash; Jan 2023</span>
