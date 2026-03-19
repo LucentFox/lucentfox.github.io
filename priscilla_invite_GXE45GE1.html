@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Movie Night: Priscilla</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+  :root {
+    --gold: #e8c96b;
+    --deep: #1a0a2e;
+    --magenta: #d4398a;
+    --teal: #3ecfb2;
+    --cream: #fdf6e3;
+    --muted: #9a8fa8;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--deep);
+    font-family: 'DM Sans', sans-serif;
+    color: var(--cream);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+  }
+
+  .card {
+    max-width: 680px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Sequin shimmer background */
+  .card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 20% 10%, rgba(212,57,138,0.18) 0%, transparent 40%),
+      radial-gradient(circle at 80% 80%, rgba(62,207,178,0.14) 0%, transparent 40%),
+      radial-gradient(circle at 60% 20%, rgba(232,201,107,0.10) 0%, transparent 30%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .inner {
+    position: relative;
+    z-index: 1;
+    border: 1px solid rgba(232,201,107,0.25);
+    border-radius: 4px;
+    padding: 56px 52px;
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(2px);
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 18px;
+    font-weight: 500;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.1;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--cream);
+  }
+
+  .year-tag {
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+    margin-bottom: 32px;
+    font-weight: 300;
+  }
+
+  .divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+    margin: 28px 0;
+    opacity: 0.4;
+  }
+
+  .logline {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--cream);
+    font-weight: 300;
+    margin-bottom: 28px;
+  }
+
+  .details-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 8px 20px;
+    margin-bottom: 36px;
+    font-size: 0.92rem;
+  }
+
+  .detail-label {
+    color: var(--magenta);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+
+  .detail-value {
+    color: var(--cream);
+    font-weight: 300;
+  }
+
+  /* Content warnings section */
+  .warnings-block {
+    border: 1px solid rgba(212,57,138,0.35);
+    border-radius: 3px;
+    padding: 28px 32px;
+    background: rgba(212,57,138,0.05);
+    margin-top: 8px;
+  }
+
+  .warnings-header {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--magenta);
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+
+  .warnings-intro {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 18px;
+    font-style: italic;
+  }
+
+  .warning-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .warning-list li {
+    font-size: 0.88rem;
+    color: var(--cream);
+    font-weight: 300;
+    line-height: 1.5;
+    padding-left: 18px;
+    position: relative;
+  }
+
+  .warning-list li::before {
+    content: '◆';
+    position: absolute;
+    left: 0;
+    font-size: 7px;
+    top: 5px;
+    color: var(--magenta);
+    opacity: 0.7;
+  }
+
+  .fun-fact-block {
+    border: 1px solid rgba(62,207,178,0.3);
+    border-radius: 3px;
+    padding: 22px 28px;
+    background: rgba(62,207,178,0.05);
+    margin-top: 20px;
+  }
+
+  .fun-fact-header {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--teal);
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+
+  .fun-fact-text {
+    font-size: 0.88rem;
+    color: var(--cream);
+    font-weight: 300;
+    line-height: 1.65;
+  }
+
+  .fun-fact-text strong {
+    color: var(--gold);
+    font-weight: 500;
+  }
+
+  .rsvp-note {
+    margin-top: 36px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  .rsvp-note strong {
+    color: var(--gold);
+    font-weight: 500;
+  }
+
+  .sparkle-row {
+    text-align: center;
+    font-size: 1.3rem;
+    letter-spacing: 0.4em;
+    margin-bottom: 30px;
+    opacity: 0.6;
+    animation: shimmer 3s ease-in-out infinite alternate;
+  }
+
+  @keyframes shimmer {
+    from { opacity: 0.4; }
+    to { opacity: 0.85; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="inner">
+
+    <div class="sparkle-row">✦ ✦ ✦</div>
+
+    <div class="eyebrow">You're Invited · Movie Night</div>
+
+    <h1>The Adventures of<br><em>Priscilla,</em><br>Queen of the Desert</h1>
+    <span class="year-tag">Australia, 1994 &nbsp;·&nbsp; Directed by Stephan Elliott &nbsp;·&nbsp; Rated R</span>
+
+    <div class="divider"></div>
+
+    <p class="logline">
+      Two drag queens and a trans woman pile into a beat-up lavender bus and drive across the Australian Outback
+      to perform a cabaret show in Alice Springs. Equal parts hilarious, heartfelt, and fabulous, it's a cult classic
+      that holds up as both comedy and road movie. Hugo Weaving, Guy Pearce, and Terence Stamp are unforgettable.
+      Winner of the Academy Award for Best Costume Design.
+    </p>
+
+    <div class="details-grid">
+      <span class="detail-label">Date</span>
+      <span class="detail-value">Friday, March 20th</span>
+      <span class="detail-label">Arrive</span>
+      <span class="detail-value">6:00 PM (movie starts at 7:00 PM)</span>
+      <span class="detail-label">Location</span>
+      <span class="detail-value">The Fox Den</span>
+      <span class="detail-label">Runtime</span>
+      <span class="detail-value">1 hr 44 min</span>
+      <span class="detail-label">Bring</span>
+      <span class="detail-value">Drinks &amp; snacks to share (sequins also encouraged)</span>
+    </div>
+
+    <div class="warnings-block">
+      <div class="warnings-header">Content Warnings</div>
+      <p class="warnings-intro">
+        This is a beloved film, but it was made in 1994 and has some content worth knowing about beforehand.
+        We wanted to be upfront so everyone can decide how to engage with it.
+      </p>
+      <ul class="warning-list">
+        <li><strong>Homophobic and transphobic slurs</strong> - including "f*ggot" and "tr*nny," used both in-universe as attacks and, in one case, casually between characters</li>
+        <li><strong>Anti-LGBTQ+ violence</strong> - a drag queen is chased and attacked by a group of men in a threatening scene that includes an implied threat of sexual assault (intervened before it escalates)</li>
+        <li><strong>Transphobia / family rejection</strong> - a character references her parents cutting off contact after her transition</li>
+        <li><strong>Implied childhood sexual abuse</strong> - a brief flashback depicts an adult relative making inappropriate advances toward a child; the child escapes and the scene is treated as darkly comic</li>
+        <li><strong>Outdated terminology</strong> - the word "transsexual" is used throughout, which is the language of the era</li>
+        <li><strong>Sexist / racist stereotyping</strong> - a Filipino character is written as a broad stereotype, which critics have noted as a genuine flaw of the film</li>
+        <li><strong>Heavy profanity</strong> - pretty much constant throughout</li>
+        <li><strong>Crude sexual humor</strong> - including an extended bar scene with explicit (though mostly off-screen) sexual acts played for comedy</li>
+        <li><strong>Alcohol</strong> - characters drink heavily; one scene involves a drinking contest to the point of passing out</li>
+      </ul>
+    </div>
+
+    <div class="fun-fact-block">
+      <div class="fun-fact-header">✦ Fun Fact</div>
+      <p class="fun-fact-text">
+        The actor who plays the lead drag queen "Tick" is <strong>Hugo Weaving</strong> - yes, the same guy who later became
+        Agent Smith in <em>The Matrix</em> and Lord Elrond in <em>The Lord of the Rings</em>.
+        Priscilla was only his second major film role. His first was the 1991 Australian drama <em>Proof</em> -
+        and then he walked straight into this. The Matrix was still five years away.
+      </p>
+    </div>
+
+    <p class="rsvp-note">
+      Despite all of the above, we love this movie and think you will too.<br>
+      Hope to see you Friday!
+    </p>
+
+  </div>
+</div>
+</body>
+</html>
